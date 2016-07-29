@@ -1,7 +1,0 @@
-<linker>
-<assembly fullname="Assembly-UnityScript">
-<type fullname="CircleScript" preserve="all"/>
-<type fullname="InitiateScene" preserve="all"/>
-<type fullname="RingScript" preserve="all"/>
-</assembly>
-</linker>

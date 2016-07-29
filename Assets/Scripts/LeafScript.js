@@ -11,6 +11,25 @@ var userRotation:float;
 var center:Vector3;
 var sceneScript:SceneScript;
 var USER_ROTATE_SPEED:float;
+// var SHRINT_RATE:float;
+// var ENLARGE_RATE:float;
+// var ORIGIN_SCALE:float;
+// var TARGET_SCALE:float;
+// var SHRINK_SPEED:float;
+var totalScaleAmount:float;
+var totalEnlargeAmount:float;
+var SCALE_SPEED:float;
+// var isScaling:boolean;
+var totalTiltAmount:float;
+// var isTilting:boolean;
+var TILT_SPEED:float;
+var totalTiltBackAmount:float;
+var TILT_TARGET_AMOUNT;
+var SCALE_TARGET_AMOUNT;
+var ORIGINAL_X:float;
+var ORIGINAL_Y:float;
+var ORIGINAL_SCALE:float;
+// var touchDown:boolean;
 
 function Start () {
 	FLIP_SPEED = 200*Time.deltaTime;
@@ -24,29 +43,56 @@ function Start () {
 	colorDict.Add(1, red);
 	colorDict.Add(2, green);
 	sceneScript = Camera.main.GetComponent(SceneScript); 
+	// SHRINT_RATE = 0.8*Time.deltaTime;
+	// ENLARGE_RATE = 1.25*Time.deltaTime;
+	// ORIGIN_SCALE = transform.localScale.x;
+	// TARGET_SCALE = 1;
+	SCALE_SPEED = 0.15*Time.deltaTime;
+	userRotation = 0;
+	degreeToTurn = 0;
+	totalScaleAmount = 0;
+	// isScaling = false;
+	totalTiltAmount = 0;
+	TILT_SPEED = 30*Time.deltaTime;
+	// isTilting = false;
+	TILT_TARGET_AMOUNT = 10;
+	SCALE_TARGET_AMOUNT = 0.05;
+	ORIGINAL_X = transform.position.x;
+	ORIGINAL_Y = transform.position.y;
+	ORIGINAL_SCALE = transform.localScale.x;
+	// touchDown = false;
 }
 
 function Update () {
-	rotateAroundCenter();
+	if(!sceneScript.isTilting && !sceneScript.isScaling) flipping();
 	keepRotate(center);
+	if(!sceneScript.inUserRotation){
+		shrink();
+		enlarge();
+		tilting();
+		tiltingBack();
+	}
+
 }
 
 
 function flip(){
+	sceneScript.inFlip = true;
 	colorChanged = false;
 	degreeToTurn = 180;
 }
 
-function rotateAroundCenter(){
-	if(degreeToTurn>0){
+function flipping(){
+	if(!sceneScript.inUserRotation && degreeToTurn>0){
 		if(degreeToTurn<FLIP_SPEED) transform.Rotate(orientation, degreeToTurn,Space.World);
 		else transform.Rotate(orientation, FLIP_SPEED, Space.World);
+		degreeToTurn -= FLIP_SPEED;
 		if(!colorChanged && degreeToTurn<=90) {
 			colorChanged = true;
 			GetComponent(SpriteRenderer).color = colorDict[color]; 
 		}
+		if(degreeToTurn<=0) sceneScript.inFlip = false;
 	}
-	degreeToTurn -= FLIP_SPEED;
 }
 
 function rotate(vector:Vector3, angles:float){
@@ -66,4 +112,93 @@ function startRotate(vector:Vector3){
 	sceneScript.inUserRotation = true;
 	userRotation = 90;
 	center = vector;
+
+	// totalScaleAmount = 0.6;
 }
+
+function shrink(){
+	if(totalScaleAmount > 0){
+		if(totalScaleAmount < SCALE_SPEED) scale(-totalScaleAmount);
+		else scale(-SCALE_SPEED);
+		totalScaleAmount -= SCALE_SPEED;
+		if(totalScaleAmount<=0) totalEnlargeAmount = SCALE_TARGET_AMOUNT;
+	}
+	// if(number==0) Debug.Log("tt in shrink: "+totalScaleAmount);
+}
+
+function enlarge(){
+	if(totalEnlargeAmount > 0){
+		if(totalEnlargeAmount < SCALE_SPEED) scale(totalEnlargeAmount);
+		else scale(SCALE_SPEED);
+		totalEnlargeAmount -= SCALE_SPEED;
+		if(totalEnlargeAmount <= 0) sceneScript.isScaling = false;
+	}
+}
+
+function tilting(){
+	if(totalTiltAmount >0){
+		if(totalTiltAmount<TILT_SPEED) tilt(-totalTiltAmount);
+		else tilt(-TILT_SPEED);
+		totalTiltAmount -= TILT_SPEED;
+		if(totalTiltAmount<=0) totalTiltBackAmount = TILT_TARGET_AMOUNT;
+	}
+}
+
+function tiltingBack(){
+	if(totalTiltBackAmount>0){
+		if(totalTiltBackAmount<TILT_SPEED) tilt(totalTiltBackAmount);
+		else tilt(TILT_SPEED);
+		totalTiltBackAmount -= TILT_SPEED;
+		if(totalTiltBackAmount <=0) sceneScript.isTilting = false;
+	}
+}
+
+function triggerMatchAnimation(){
+	sceneScript.isScaling = true;
+	// sceneScript.isTilting = true;
+	totalScaleAmount = SCALE_TARGET_AMOUNT;
+	// totalTiltAmount = TILT_TARGET_AMOUNT;
+	// Debug.Log(totalScaleAmount);
+}
+
+// function touchDowning(bool:boolean){
+// 	var newSprite:Sprite;
+// 	if(bool){
+// 		newSprite = Resources.Load("Objects/Circle");
+// 		changeSprite(newSprite);
+// 	}
+// 	else{
+// 		newSprite = Resources.Load("Objects/Square");
+// 		changeSprite(newSprite);
+// 	}
+// }
+
+function scale(scaleAmount:float){
+	transform.localScale += Vector3(scaleAmount,scaleAmount, scaleAmount); 
+}
+
+function tilt(tiltAmount:float){
+	transform.Rotate(Vector3(0,0,1), tiltAmount, Space.World);
+}
+
+// function changeSprite(sprite:Sprite){
+// 	GetComponent(SpriteRenderer).sprite = sprite;
+// }
+
+
+function changeSize(){
+
+}
+
+
+// function approach(vector:Vector3){
+// 	transform.position -= (transform.position-vector)*0.2;
+// }
+
+// function holdScale(){
+// 	transform.localScale *= 0.9;
+// }
+
+
+
+
