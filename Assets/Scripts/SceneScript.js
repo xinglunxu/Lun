@@ -27,22 +27,34 @@ var inFlip:boolean;
 var isScaling:boolean;
 var isTilting:boolean;
 var lastTouchCenter:GameObject;
+var totalColorNum:int;
+var CENTER_NUM:int;
+var needCheckDeadlock:boolean;
+var lastSuccessfulRotationTime:float;
+var hintTime:float;
+var colorForHint:int;
 
 function Start () {
-	
-	
+	hintTime = 7;
+	colorForHint = -1;
+	lastSuccessfulRotationTime = Time.time;
 	colorDict = new Hashtable();
 	var red = new Color(1,0,0,1);
 	var blue = new Color(0,0,1,1);
 	var yellow = new Color(1,0.92,0.016,1);
 	var green = new Color(0,1,0,1);
+	var purple = new Color(204.0/255, 0.0, 204.0/255);
 	colorDict.Add(0, yellow);
 	colorDict.Add(1, red);
 	colorDict.Add(2, green);
+	colorDict.Add(3, purple);
+	totalColorNum = 4;
 	// FIRST_COLOR = RED;
 	// SECOND_COLOR = GREEN;
 	ROWS = 5;
 	COLS = 4;
+	CENTER_NUM = ROWS*COLS;
+	
 	centerPrefab = Resources.Load("Objects/CenterPrefab");
 	leafPrefab = Resources.Load("Objects/leafPrefab");
 
@@ -66,21 +78,36 @@ function Start () {
 
 	initiateCenters();
 	initiateLeafs();
-	shuffleAllLeaves();
+
+	do{
+		shuffleAllLeaves();
+	}
+	while(isDeckLock());
+	applyNewColorAtAllLeaves();
+
 	setIdleCurve();
 	setEnlargeCurve();
 	setShrinkCurve();
 
+	needCheckDeadlock = false;
 	// Debug.Log(CENTER_SCALE);
 	
 	// var testScript = (leaves[0] as GameObject).GetComponent(LeafScript);
 	// testScript.triggerMatchAnimation();
 	// debugArray(getLeavesFromCol(0));
+	// Debug.Log(lastSuccessfulRotationTime);
 }
 
 
 function Update () {
+	// Debug.Log("mouse up");
 	listenForClickOnCenters();
+	if(needCheckDeadlock==true && !inFlip){
+		handleDecklock();
+		needCheckDeadlock = false;
+	}
+	handleHint();
+	// isHintNeeded();
 	// rotateLeaves();
 }
 
@@ -130,7 +157,7 @@ function initiateLeafs(){
 				var object = Instantiate(leafPrefab, tempPosition, Quaternion.identity) as GameObject;
 				object.transform.localScale = Vector3(LEAF_SCALE, LEAF_SCALE, LEAF_SCALE);
 				object.transform.Rotate(0,0,90);
-				rand = Random.Range(0,2.999);
+				rand = Random.Range(0,totalColorNum-0.0001);
 				var script = object.GetComponent(LeafScript);
 				script.color = rand;
 				script.number = number;
@@ -139,6 +166,7 @@ function initiateLeafs(){
 				object.GetComponent(SpriteRenderer).color = colorDict[rand];
 				leaves.Push(object);
 				tempPosition += Vector3(2*CENTER_HALF_LENGTH,0,0);
+				// Debug.Log(number+" "+script.color);
 				number++;
 			}
 			colorSum = 0;
@@ -149,7 +177,7 @@ function initiateLeafs(){
 			for(j=0; j<COLS+1; j++){
 				object = Instantiate(leafPrefab, tempPosition, Quaternion.identity) as GameObject;
 				object.transform.localScale = Vector3(LEAF_SCALE, LEAF_SCALE, LEAF_SCALE);
-				rand = Random.Range(0,1.999);
+				rand = Random.Range(0,totalColorNum-0.0001);
 				script = object.GetComponent(LeafScript);
 				script.color = rand;
 				script.number = number;
@@ -157,8 +185,8 @@ function initiateLeafs(){
 				object.GetComponent(SpriteRenderer).color = colorDict[rand];
 				leaves.Push(object);
 				tempPosition += Vector3(2*CENTER_HALF_LENGTH,0,0);
-				number++;
-			}
+				// Debug.Log(number+" "+script.color);
+				number++;			}
 			colorSum = 0;
 			startingOddPosition += Vector3(0,-2*CENTER_HALF_LENGTH,0);
 		}
@@ -214,7 +242,7 @@ function isArraySparse(array:Array):boolean{
 function shuffleColorsAtArray(array:Array){
 	var rand:int;
 	for(var i=0;i<array.length;i++){
-		rand = Random.Range(0,2.999);
+		rand = Random.Range(0,totalColorNum-0.0001);
 		var object:GameObject = array[i];
 		var script = object.GetComponent(LeafScript);
 		script.color = rand;
@@ -246,16 +274,32 @@ function applyNewColorAtCol(index:int){
 }
 
 function shuffleAllLeaves(){
-	Debug.Log("shuffleAllLeaves called");
+	// Debug.Log("shuffleAllLeaves called");
 	var i:int;
 	for(i=0; i<ROWS+1;i++){
-		while(!isRowSparseAt(i)){shuffleColorsAtRow(i);}
+		do{shuffleColorsAtRow(i);} while(!isRowSparseAt(i));
+		// applyNewColorAtRow(i);
+		// Debug.Log(isRowSparseAt(i));
+	}
+	// Debug.Log("Check");
+	for(i=0; i<COLS+1;i++){
+		do{shuffleColorsAtCol(i);} while(!isColSparseAt(i));
+		// applyNewColorAtCol(i);
+		// Debug.Log(isColSparseAt(i));
+	}
+}
+
+
+function applyNewColorAtAllLeaves(){
+	var i:int;
+	for(i=0; i<ROWS+1;i++){
+		// while(!isRowSparseAt(i)){shuffleColorsAtRow(i);}
 		applyNewColorAtRow(i);
 		// Debug.Log(isRowSparseAt(i));
 	}
 	// Debug.Log("Check");
 	for(i=0; i<COLS+1;i++){
-		while(!isColSparseAt(i)) shuffleColorsAtCol(i);
+		// while(!isColSparseAt(i)) shuffleColorsAtCol(i);
 		applyNewColorAtCol(i);
 		// Debug.Log(isColSparseAt(i));
 	}
@@ -282,6 +326,10 @@ function listenForClickOnCenters(){
 			script.touchDowning(true);
 			lastTouchCenter = object;
 		}
+		else{
+			if(lastTouchCenter!=null)lastTouchCenter.GetComponent(CenterScript).touchDowning(false);
+			lastTouchCenter = null;
+		}
 	}
 
 	if(Input.GetMouseButtonUp(0)){
@@ -290,16 +338,16 @@ function listenForClickOnCenters(){
 			lastTouchCenter.GetComponent(CenterScript).touchDowning(false);
 			object = hit.transform.gameObject;
 			script = object.GetComponent(CenterScript);
-			if(!inUserRotation && !inFlip && !isScaling && !isTilting){
-				RotateCenter(script.number, object.transform.position);
-				handleEventsAfterRotatingCenter(script.number);
+			if(!inUserRotation && !inFlip && !isScaling && !isTilting && !needCheckDeadlock){
+				handleRotatation(script.number, object.transform.position);
+				// handleEventsAfterRotatingCenter(script.number);
 			}
 		}
 		
 	}
 }
 
-function RotateCenter(index:int, vector:Vector3){
+function handleRotatation(index:int, vector:Vector3){
 	// inUserRotation = true;
 	// var testScript = (leaves[0] as GameObject).GetComponent(LeafScript);
 	// testScript.triggerMatchAnimation();
@@ -308,6 +356,7 @@ function RotateCenter(index:int, vector:Vector3){
 	var topLeaf = getTopLeafFromCenter(index);
 	var botLeaf = getBotLeafFromCenter(index);
 
+	Debug.Log(leftLeaf);
 	var leftLeafObject:GameObject = leaves[leftLeaf];
 	var rightLeafObject:GameObject = leaves[rightLeaf];
 	var topLeafObject:GameObject = leaves[topLeaf];
@@ -323,16 +372,41 @@ function RotateCenter(index:int, vector:Vector3){
 	var topLeafScript = topLeafObject.GetComponent(LeafScript);
 	var botLeafScript = botLeafObject.GetComponent(LeafScript);
 
-	leftLeafScript.startRotate(vector);
-	rightLeafScript.startRotate(vector);
-	topLeafScript.startRotate(vector);
-	botLeafScript.startRotate(vector);
+	if(isRotationValid(index)){
+		Debug.Log("valid");
 
-	leftLeafScript.orientation = Vector3(1,0,0);
-	rightLeafScript.orientation = Vector3(1,0,0);
-	topLeafScript.orientation = Vector3(0,1,0);
-	botLeafScript.orientation = Vector3(0,1,0);
+		leftLeafScript.startRotate(vector);
+		rightLeafScript.startRotate(vector);
+		topLeafScript.startRotate(vector);
+		botLeafScript.startRotate(vector);
+
+		leftLeafScript.orientation = Vector3(1,0,0);
+		rightLeafScript.orientation = Vector3(1,0,0);
+		topLeafScript.orientation = Vector3(0,1,0);
+		botLeafScript.orientation = Vector3(0,1,0);
+
+		handleEventsAfterRotatingCenter(index);
+		needCheckDeadlock = true;
+		lastSuccessfulRotationTime = Time.time;
+		// Debug.Log(lastSuccessfulRotationTime);
+	}
+	else{
+		Debug.Log("notValid");
+		leaves[leftLeaf] = leftLeafObject;
+		leaves[topLeaf] = topLeafObject;
+		leaves[rightLeaf] = rightLeafObject;
+		leaves[botLeaf] = botLeafObject;
+		leftLeafScript.startFakeRotate(vector);
+		rightLeafScript.startFakeRotate(vector);
+		topLeafScript.startFakeRotate(vector);
+		botLeafScript.startFakeRotate(vector);
+	}
+
+
 }
+
+
+
 
 // function rotateLeaf(leaf:GameObject, vector:Vector3, angles:float){
 // 	leaf.transform.RotateAround(vector, Vector3(0,0,1), -angles);
@@ -353,18 +427,6 @@ function getTopLeafFromCenter(index:int):int{
 function getBotLeafFromCenter(index:int):int{
 	return getTopLeafFromCenter(index)+COLS*2+1;
 }
-
-// function rotateLeaves(){
-// 	if(userRotation>0){
-// 		for(var i=0; i<userRotateLeaves.Length; i++){
-// 			if(userRotation < USER_ROTATE_SPEED) rotateLeaf(userRotateLeaves[i],userRotateCenter,userRotation);
-// 			else rotateLeaf(userRotateLeaves[i],userRotateCenter,USER_ROTATE_SPEED);
-// 		}
-
-// 		userRotation -= USER_ROTATE_SPEED;
-// 	}
-// 	else inUserRotation = false;
-// }
 
 function getFlipingLeavesFromRow(index:int):Array{
 	return getFlippingLeavesFromArray(getLeavesFromRow(index));
@@ -393,29 +455,6 @@ function getFlippingLeavesFromArray(array:Array):Array{
 	}
 
 	if(result.length < 3) return new Array();
-	// var maxColor:int; var maxColorIndex:int;
-	// for(var i:int=0; i<colors.length;i++){
-	// 	colors[i] = 0;
-	// }
-
-	// for(i=0; i<array.length;i++){
-	// 	var object:GameObject = array[i];
-	// 	var script = object.GetComponent(LeafScript);
-	// 	colors[script.color]++;
-	// }
-
-	// maxColor = Mathf.Max(colors[0],colors[1],colors[2]);
-	// if(maxColor<3) return result;
-
-	// for(i=0; i<colors.length; i++){
-	// 	if(maxColor==colors[i]) maxColorIndex = i;
-	// }
-
-	// for(i=0; i<array.length;i++){
-	// 	object = array[i];
-	// 	script = object.GetComponent(LeafScript);
-	// 	if(script.color == maxColorIndex) result.Push(object);
-	// }
 
 	return result;
 }
@@ -438,32 +477,76 @@ function getBotRowNumFromCenterNum(index:int):int{
 }
 
 function handleEventsAfterRotatingCenter(centerIndex:int){
-	var leftCol:int = getLeftColNumFromCenterNum(centerIndex);
-	var rightCol:int = getRightColNumFromCenterNum(centerIndex);
-	var topRow:int = getTopRowNumFromCenterNum(centerIndex);
-	var botRow:int = getBotRowNumFromCenterNum(centerIndex);
-
-	var leftCombo = getFlipingLeavesFromCol(leftCol);
-	var rightCombo = getFlipingLeavesFromCol(rightCol);
-	var topCombo = getFlipingLeavesFromRow(topRow);
-	var botCombo = getFlipingLeavesFromRow(botRow);
-
-	do {shuffleColorsAtArray(leftCombo);} while(!isColSparseAt(leftCol));
-	do {shuffleColorsAtArray(rightCombo);} while(!isColSparseAt(rightCol));
-	do {shuffleColorsAtArray(topCombo);} while(!isRowSparseAt(topRow));
-	do {shuffleColorsAtArray(botCombo);} while(!isRowSparseAt(botRow));
-
-	triggerMatchAnimationAtArray(leftCombo);
-	triggerMatchAnimationAtArray(rightCombo);
-	triggerMatchAnimationAtArray(topCombo);
-	triggerMatchAnimationAtArray(botCombo);
-
-	flipLeavesAtArray(leftCombo);
-	flipLeavesAtArray(rightCombo);
-	flipLeavesAtArray(topCombo);
-	flipLeavesAtArray(botCombo);
-
+	shuffleAndFlipLeftCol(centerIndex);
+	shuffleAndFlipRightCol(centerIndex);
+	shuffleAndFlipTopRow(centerIndex);
+	shuffleAndFlipBotRow(centerIndex);
 }
+
+function shuffleAndFlipLeftCol(index:int){
+	var leftCol:int = getLeftColNumFromCenterNum(index);
+	var leftCombo = getFlipingLeavesFromCol(leftCol);
+	do {shuffleColorsAtArray(leftCombo);} while(!isColSparseAt(leftCol));
+	triggerMatchAnimationAtArray(leftCombo);
+	flipLeavesAtArray(leftCombo);
+}
+
+function shuffleAndFlipRightCol(index:int){
+	var rightCol:int = getRightColNumFromCenterNum(index);
+	var rightCombo = getFlipingLeavesFromCol(rightCol);
+	do {shuffleColorsAtArray(rightCombo);} while(!isColSparseAt(rightCol));
+	triggerMatchAnimationAtArray(rightCombo);
+	flipLeavesAtArray(rightCombo);
+}
+
+function shuffleAndFlipTopRow(index:int){
+	var topRow:int = getTopRowNumFromCenterNum(index);
+	var topCombo = getFlipingLeavesFromRow(topRow);
+	do {shuffleColorsAtArray(topCombo);} while(!isRowSparseAt(topRow));
+	triggerMatchAnimationAtArray(topCombo);
+	flipLeavesAtArray(topCombo);
+}
+
+function shuffleAndFlipBotRow(index:int){
+	var botRow:int = getBotRowNumFromCenterNum(index);
+	var botCombo = getFlipingLeavesFromRow(botRow);
+	do {shuffleColorsAtArray(botCombo);} while(!isRowSparseAt(botRow));
+	triggerMatchAnimationAtArray(botCombo);
+	flipLeavesAtArray(botCombo);
+}
+
+function isRotationValid(index:int):boolean{
+	return isComboInLeftCol(index)||isComboInRightCol(index)||isComboInTopRow(index)||isComboInBotRow(index);
+}
+
+function isComboInLeftCol(index:int):boolean{
+	var leftCol:int = getLeftColNumFromCenterNum(index);
+	var leftCombo = getFlipingLeavesFromCol(leftCol);
+	Debug.Log("isComboInLeftCol :"+leftCombo.length);
+	return leftCombo.length>0;
+}
+
+function isComboInRightCol(index:int):boolean{
+	var rightCol:int = getRightColNumFromCenterNum(index);
+	var rightCombo = getFlipingLeavesFromCol(rightCol);
+	Debug.Log("isComboInRightCol :"+rightCombo.length);
+	return rightCombo.length>0;
+}
+
+function isComboInTopRow(index:int):boolean{
+	var topRow:int = getTopRowNumFromCenterNum(index);
+	var topCombo = getFlipingLeavesFromRow(topRow);
+	Debug.Log("isComboInTopRow :"+topCombo.length);
+	return topCombo.length>0;
+}
+
+function isComboInBotRow(index:int):boolean{
+	var botRow:int = getBotRowNumFromCenterNum(index);
+	var botCombo = getFlipingLeavesFromRow(botRow);
+	Debug.Log("isComboInBotRow :"+botCombo.length);
+	return botCombo.length>0;
+}
+
 
 function flipLeavesAtArray(array:Array){
 	for(var i:int=0; i<array.length; i++){
@@ -501,6 +584,96 @@ function setShrinkCurve(){
 	ac.SetCurve("", Transform, "localScale.x", curve);
 	ac.SetCurve("", Transform, "localScale.y", curve);
 }
+
+function isDeckLock():boolean{
+	for(var i:int=0; i<CENTER_NUM; i++){
+		// Debug.Log(i);
+		var leftCol:int = getLeftColNumFromCenterNum(i);
+		var rightCol:int = getRightColNumFromCenterNum(i);
+		var topRow:int = getTopRowNumFromCenterNum(i);
+		var botRow:int = getBotRowNumFromCenterNum(i);
+
+		var leftLeaf = getLeftLeafFromCenter(i);
+		var rightLeaf = getRightLeafFromCenter(i);
+		var topLeaf = getTopLeafFromCenter(i);
+		var botLeaf = getBotLeafFromCenter(i);
+
+		var leftLeafObject:GameObject = leaves[leftLeaf];
+		var rightLeafObject:GameObject = leaves[rightLeaf];
+		var topLeafObject:GameObject = leaves[topLeaf];
+		var botLeafObject:GameObject = leaves[botLeaf];
+
+		leaves[leftLeaf] = botLeafObject;
+		leaves[topLeaf] = leftLeafObject;
+		leaves[rightLeaf] = topLeafObject;
+		leaves[botLeaf] = rightLeafObject;
+
+		var leftCombo = getFlipingLeavesFromCol(leftCol);
+		var rightCombo = getFlipingLeavesFromCol(rightCol);
+		var topCombo = getFlipingLeavesFromRow(topRow);
+		var botCombo = getFlipingLeavesFromRow(botRow);
+
+		leaves[leftLeaf] = leftLeafObject;
+		leaves[topLeaf] = topLeafObject;
+		leaves[rightLeaf] = rightLeafObject;
+		leaves[botLeaf] = botLeafObject;
+
+
+		if(leftCombo.length>0 || rightCombo.length>0 || topCombo.length>0 || botCombo.length>0){
+			Debug.Log("turn "+i);
+			// var colorForHint = -1;
+			if(leftCombo.length>0) colorForHint = getColorFromCombo(leftCombo);
+			else if(rightCombo.length>0) colorForHint = getColorFromCombo(rightCombo);
+			else if(topCombo.length>0) colorForHint = getColorFromCombo(topCombo);
+			else colorForHint = getColorFromCombo(botCombo);
+			return false;
+		}
+	}	
+
+	return true;
+}
+
+
+function handleDecklock(){
+	var bool:boolean = isDeckLock();
+	Debug.Log(bool);
+	if(bool){
+		do{shuffleAllLeaves();} while(isDeckLock());
+		flipAllLeaves();
+	}
+}
+
+function flipAllLeaves(){
+	for(var i:int; i<leaves.length;i++){
+		(leaves[i] as GameObject).GetComponent(LeafScript).flip();
+	}
+}
+
+function isHintNeeded():boolean{
+	return Time.time- lastSuccessfulRotationTime >=hintTime;
+}
+
+function handleHint(){
+	if(isHintNeeded()){
+		lastSuccessfulRotationTime = Time.time;
+		highlightColor(colorForHint);
+		Debug.Log(colorForHint);
+	}
+}
+
+function highlightColor(color:int){
+	for(var i:int=0;i<leaves.length;i++){
+		var script = (leaves[i] as GameObject).GetComponent(LeafScript);
+		if(script.color==color) script.highLight();
+	}
+}
+
+function getColorFromCombo(array:Array):int{
+	return (array[0] as GameObject).GetComponent(LeafScript).color;
+}
+
+
+
 
 
 

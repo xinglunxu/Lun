@@ -6,7 +6,7 @@ var degreeToTurn:float;
 var FLIP_SPEED:float;
 var orientation:Vector3;
 var colorChanged:boolean;
-var colorDict:Hashtable;
+// var colorDict:Hashtable;
 var userRotation:float;
 var center:Vector3;
 var sceneScript:SceneScript;
@@ -29,19 +29,25 @@ var SCALE_TARGET_AMOUNT;
 var ORIGINAL_X:float;
 var ORIGINAL_Y:float;
 var ORIGINAL_SCALE:float;
+var fakeRotateAmount:float;
+var fakeRotateBackwardAmount:float;
+var FAKE_ROTATE_AMOUNT:float;
+var HIGHLIGHT_AMOUNT:float;
+var MATCH_AMOUNT:float;
 // var touchDown:boolean;
 
 function Start () {
 	FLIP_SPEED = 200*Time.deltaTime;
 	USER_ROTATE_SPEED = 100*Time.deltaTime;
-	colorDict = new Hashtable();
-	var red = new Color(1,0,0,1);
-	var blue = new Color(0,0,1,1);
-	var yellow = new Color(1,0.92,0.016,1);
-	var green = new Color(0,1,0,1);
-	colorDict.Add(0, yellow);
-	colorDict.Add(1, red);
-	colorDict.Add(2, green);
+	// colorDict = new Hashtable();
+	// var red = new Color(1,0,0,1);
+	// var blue = new Color(0,0,1,1);
+	// var yellow = new Color(1,0.92,0.016,1);
+	// var green = new Color(0,1,0,1);
+	// var purple = new Color(204.0/255, 0.0, 204.0/255);
+	// colorDict.Add(0, yellow);
+	// colorDict.Add(1, red);
+	// colorDict.Add(2, green);
 	sceneScript = Camera.main.GetComponent(SceneScript); 
 	// SHRINT_RATE = 0.8*Time.deltaTime;
 	// ENLARGE_RATE = 1.25*Time.deltaTime;
@@ -57,15 +63,22 @@ function Start () {
 	// isTilting = false;
 	TILT_TARGET_AMOUNT = 10;
 	SCALE_TARGET_AMOUNT = 0.05;
+	MATCH_AMOUNT = 0.05;
+	HIGHLIGHT_AMOUNT = 0.1;
 	ORIGINAL_X = transform.position.x;
 	ORIGINAL_Y = transform.position.y;
 	ORIGINAL_SCALE = transform.localScale.x;
+	fakeRotateAmount = 0;
+	fakeRotateBackwardAmount = 0;
+	FAKE_ROTATE_AMOUNT = 40;
 	// touchDown = false;
 }
 
 function Update () {
 	if(!sceneScript.isTilting && !sceneScript.isScaling) flipping();
 	keepRotate(center);
+	fakeRotating(center);
+	fakeRotatingBackward(center);
 	if(!sceneScript.inUserRotation){
 		shrink();
 		enlarge();
@@ -89,9 +102,11 @@ function flipping(){
 		degreeToTurn -= FLIP_SPEED;
 		if(!colorChanged && degreeToTurn<=90) {
 			colorChanged = true;
-			GetComponent(SpriteRenderer).color = colorDict[color]; 
+			GetComponent(SpriteRenderer).color = sceneScript.colorDict[color]; 
 		}
-		if(degreeToTurn<=0) sceneScript.inFlip = false;
+		if(degreeToTurn<=0){
+			sceneScript.inFlip = false;
+		}
 	}
 }
 
@@ -154,11 +169,15 @@ function tiltingBack(){
 }
 
 function triggerMatchAnimation(){
+	SCALE_TARGET_AMOUNT = MATCH_AMOUNT;
 	sceneScript.isScaling = true;
-	// sceneScript.isTilting = true;
 	totalScaleAmount = SCALE_TARGET_AMOUNT;
-	// totalTiltAmount = TILT_TARGET_AMOUNT;
-	// Debug.Log(totalScaleAmount);
+}
+
+function highLight(){
+	SCALE_TARGET_AMOUNT = HIGHLIGHT_AMOUNT;
+	sceneScript.isScaling = true;
+	totalScaleAmount = SCALE_TARGET_AMOUNT;
 }
 
 // function touchDowning(bool:boolean){
@@ -185,9 +204,29 @@ function tilt(tiltAmount:float){
 // 	GetComponent(SpriteRenderer).sprite = sprite;
 // }
 
+function startFakeRotate(vector:Vector3){
+	sceneScript.inUserRotation = true;
+	fakeRotateAmount = FAKE_ROTATE_AMOUNT;
+	center = vector;
+}
 
-function changeSize(){
 
+function fakeRotating(center:Vector3){
+	if(fakeRotateAmount>0){
+		if(fakeRotateAmount<USER_ROTATE_SPEED) rotate(center, fakeRotateAmount);
+		else rotate(center, USER_ROTATE_SPEED);
+		fakeRotateAmount -= USER_ROTATE_SPEED;
+		if(fakeRotateAmount<=0) fakeRotateBackwardAmount = FAKE_ROTATE_AMOUNT;
+	}
+}
+
+function fakeRotatingBackward(center:Vector3){
+	if(fakeRotateBackwardAmount >0){
+		if(fakeRotateBackwardAmount<USER_ROTATE_SPEED) rotate(center, -fakeRotateBackwardAmount);
+		else rotate(center, -USER_ROTATE_SPEED);
+		fakeRotateBackwardAmount -= USER_ROTATE_SPEED;
+		if(fakeRotateBackwardAmount<=0) sceneScript.inUserRotation = false;
+	}
 }
 
 
