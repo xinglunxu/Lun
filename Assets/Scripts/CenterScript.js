@@ -16,7 +16,7 @@ var anim:Animator;
 function Start () {
 	ORIGINAL_COLOR = new Color(28.0/255, 150.0/255, 210.0/255);
 	HOLDDOWN_COLOR = new Color(0.0/255, 0.0/255, 0.0/255);
-	if(number==0)Debug.Log(ORIGINAL_COLOR);
+	// if(number==0)Debug.Log(ORIGINAL_COLOR);
 	changeColor(ORIGINAL_COLOR);
 	// testVariable = 0;
 	// ORIGINAL_SCALE = transform.localScale.x;
@@ -34,26 +34,6 @@ function Update () {
 
 function touchDowning(bool:boolean){
 	anim.SetBool("touchDown", bool);
-	// var newSprite:Sprite;
-	// if(bool){
-		// newSprite = Resources.Load("Objects/Circle");
-		// changeSprite(circleSprite);
-		// changeColor(HOLDDOWN_COLOR);
-		// changeLayer(1);
-		// touchDown = true;
-		// anim.SetBool("touchDown",true);
-		// scale(ORIGINAL_SCALE*2);
-	// }
-	// else{
-		// newSprite = Resources.Load("Objects/Square");
-		// Debug.Log("Mouse Released");
-		// changeSprite(squareSprite);
-		// changeColor(ORIGINAL_COLOR);
-		// changeLayer(0);
-		// touchDown = false;
-		// anim.SetBool("touchDown", false);
-		// scale(ORIGINAL_SCALE);
-	// }
 }
 
 function changeSprite(sprite:Sprite){

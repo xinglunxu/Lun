@@ -33,8 +33,18 @@ var needCheckDeadlock:boolean;
 var lastSuccessfulRotationTime:float;
 var hintTime:float;
 var colorForHint:int;
+var scoreCirclePrefab:GameObject;
+var UIStartingPosition:float;
+var EMPTY_SPACE:float;
+var SCORE_CIRCLE_SCALE:float;
+var SCORE_CIRCLE_NUM:int;
+var hintArray:Array;
+var scores:int;
+var scoreBoard:Array;
 
 function Start () {
+	scoreBoard = new Array();
+	scores = 0;
 	hintTime = 7;
 	colorForHint = -1;
 	lastSuccessfulRotationTime = Time.time;
@@ -54,9 +64,12 @@ function Start () {
 	ROWS = 5;
 	COLS = 4;
 	CENTER_NUM = ROWS*COLS;
+
+	SCORE_CIRCLE_NUM = 3;
 	
 	centerPrefab = Resources.Load("Objects/CenterPrefab");
 	leafPrefab = Resources.Load("Objects/leafPrefab");
+	scoreCirclePrefab = Resources.Load("Objects/ScoreCircle");
 
 	SCREEN_HEIGHT = Camera.main.orthographicSize * 2;
 	SCREEN_WIDTH = SCREEN_HEIGHT * Screen.width / Screen.height;
@@ -76,6 +89,19 @@ function Start () {
 	isScaling = false;
 	isTilting = false;
 
+	UIStartingPosition = VERTICAL_ADJUST + ROWS*CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x+LEAF_WIDTH;
+	// Debug.Log(UIStartingPosition);
+	EMPTY_SPACE = SCREEN_HEIGHT - UIStartingPosition;
+	if(EMPTY_SPACE>=CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x){
+		SCORE_CIRCLE_SCALE = CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x/scoreCirclePrefab.GetComponent(Renderer).bounds.size.x;
+	}
+	else{
+		SCORE_CIRCLE_SCALE = EMPTY_SPACE/scoreCirclePrefab.GetComponent(Renderer).bounds.size.x;
+	}
+
+	// Debug.Log(SCORE_CIRCLE_SCALE*scoreCirclePrefab.GetComponent(Renderer).bounds.size.x);
+	// Debug.Log(CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x);
+
 	initiateCenters();
 	initiateLeafs();
 
@@ -90,12 +116,8 @@ function Start () {
 	setShrinkCurve();
 
 	needCheckDeadlock = false;
-	// Debug.Log(CENTER_SCALE);
-	
-	// var testScript = (leaves[0] as GameObject).GetComponent(LeafScript);
-	// testScript.triggerMatchAnimation();
-	// debugArray(getLeavesFromCol(0));
-	// Debug.Log(lastSuccessfulRotationTime);
+
+	initiateScoreBoard();
 }
 
 
@@ -109,6 +131,28 @@ function Update () {
 	handleHint();
 	// isHintNeeded();
 	// rotateLeaves();
+}
+
+function initiateScoreBoard(){
+	var startingX = (SCREEN_WIDTH-SCORE_CIRCLE_SCALE*3*scoreCirclePrefab.GetComponent(Renderer).bounds.size.x)/2+scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE/2- SCREEN_WIDTH/2 ;
+	var startingPosition = new Vector3(startingX, SCREEN_HEIGHT/2 - EMPTY_SPACE/2, 0);
+	// Debug.Log(startingPosition);
+	var object1 = createScoreCircle(startingPosition, new Color(1,0,0,1));
+	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
+	var object2 = createScoreCircle(startingPosition, new Color(1,0.92,0.016,1));
+	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
+	var object3 = createScoreCircle(startingPosition, new Color(0,1,0,1));
+	scoreBoard.Push(object1);
+	scoreBoard.Push(object2);
+	scoreBoard.Push(object3);
+}
+
+function createScoreCircle(vector:Vector3, color:Color):GameObject{
+	var object = Instantiate(scoreCirclePrefab, vector, Quaternion.identity) as GameObject;
+	var originalScale = object.transform.localScale.x;
+	object.transform.localScale = Vector3(SCORE_CIRCLE_SCALE*originalScale,SCORE_CIRCLE_SCALE*originalScale,0);
+	object.GetComponent(SpriteRenderer).color = color;
+	return object;
 }
 
 
@@ -125,7 +169,8 @@ function initiateCenters(){
 		for(j=0; j<COLS; j++){
 			// Debug.Log(number);
 			var object = Instantiate(centerPrefab, tempPosition, Quaternion.identity) as GameObject;
-			object.transform.localScale = Vector3(CENTER_SCALE,CENTER_SCALE,CENTER_SCALE);
+			var originalScale = object.transform.localScale.x;
+			object.transform.localScale = Vector3(CENTER_SCALE*originalScale,CENTER_SCALE*originalScale,0);
 			var script = object.GetComponent(CenterScript);
 			script.number = number;
 			// script.ORIGINAL_SCALE = CENTER_SCALE;
@@ -356,7 +401,7 @@ function handleRotatation(index:int, vector:Vector3){
 	var topLeaf = getTopLeafFromCenter(index);
 	var botLeaf = getBotLeafFromCenter(index);
 
-	Debug.Log(leftLeaf);
+	// Debug.Log(leftLeaf);
 	var leftLeafObject:GameObject = leaves[leftLeaf];
 	var rightLeafObject:GameObject = leaves[rightLeaf];
 	var topLeafObject:GameObject = leaves[topLeaf];
@@ -373,7 +418,7 @@ function handleRotatation(index:int, vector:Vector3){
 	var botLeafScript = botLeafObject.GetComponent(LeafScript);
 
 	if(isRotationValid(index)){
-		Debug.Log("valid");
+		// Debug.Log("valid");
 
 		leftLeafScript.startRotate(vector);
 		rightLeafScript.startRotate(vector);
@@ -477,11 +522,45 @@ function getBotRowNumFromCenterNum(index:int):int{
 }
 
 function handleEventsAfterRotatingCenter(centerIndex:int){
+	addScores(getComboNum(centerIndex));
+	Debug.Log(scores);
+
+	shrinkEnlargeFlipScoreBoard();
+
 	shuffleAndFlipLeftCol(centerIndex);
 	shuffleAndFlipRightCol(centerIndex);
 	shuffleAndFlipTopRow(centerIndex);
 	shuffleAndFlipBotRow(centerIndex);
 }
+
+function shrinkEnlargeFlipScoreBoard(){
+	for(var i:int=0; i<scoreBoard.length;i++){
+		var object:GameObject = scoreBoard[i];
+		var script = object.GetComponent(ScoreCircleScript);
+		script.triggerMatchAnimation();
+		script.flip();
+	}
+}
+
+function getComboNum(index:int):int{
+	var leftCol:int = getLeftColNumFromCenterNum(index);
+	var leftCombo = getFlipingLeavesFromCol(leftCol);
+	var rightCol:int = getRightColNumFromCenterNum(index);
+	var rightCombo = getFlipingLeavesFromCol(rightCol);
+	var topRow:int = getTopRowNumFromCenterNum(index);
+	var topCombo = getFlipingLeavesFromRow(topRow);
+	var botRow:int = getBotRowNumFromCenterNum(index);
+	var botCombo = getFlipingLeavesFromRow(botRow);
+
+	return leftCombo.length+rightCombo.length+topCombo.length+botCombo.length;
+}
+
+function addScores(comboScore:int){
+	scores += comboScore;
+	if(scores<0) scores = 0;
+	if(scores>999) scores = 999;
+}
+
 
 function shuffleAndFlipLeftCol(index:int){
 	var leftCol:int = getLeftColNumFromCenterNum(index);
@@ -522,28 +601,28 @@ function isRotationValid(index:int):boolean{
 function isComboInLeftCol(index:int):boolean{
 	var leftCol:int = getLeftColNumFromCenterNum(index);
 	var leftCombo = getFlipingLeavesFromCol(leftCol);
-	Debug.Log("isComboInLeftCol :"+leftCombo.length);
+	// Debug.Log("isComboInLeftCol :"+leftCombo.length);
 	return leftCombo.length>0;
 }
 
 function isComboInRightCol(index:int):boolean{
 	var rightCol:int = getRightColNumFromCenterNum(index);
 	var rightCombo = getFlipingLeavesFromCol(rightCol);
-	Debug.Log("isComboInRightCol :"+rightCombo.length);
+	// Debug.Log("isComboInRightCol :"+rightCombo.length);
 	return rightCombo.length>0;
 }
 
 function isComboInTopRow(index:int):boolean{
 	var topRow:int = getTopRowNumFromCenterNum(index);
 	var topCombo = getFlipingLeavesFromRow(topRow);
-	Debug.Log("isComboInTopRow :"+topCombo.length);
+	// Debug.Log("isComboInTopRow :"+topCombo.length);
 	return topCombo.length>0;
 }
 
 function isComboInBotRow(index:int):boolean{
 	var botRow:int = getBotRowNumFromCenterNum(index);
 	var botCombo = getFlipingLeavesFromRow(botRow);
-	Debug.Log("isComboInBotRow :"+botCombo.length);
+	// Debug.Log("isComboInBotRow :"+botCombo.length);
 	return botCombo.length>0;
 }
 
@@ -620,12 +699,12 @@ function isDeckLock():boolean{
 
 
 		if(leftCombo.length>0 || rightCombo.length>0 || topCombo.length>0 || botCombo.length>0){
-			Debug.Log("turn "+i);
+			// Debug.Log("turn "+i);
 			// var colorForHint = -1;
-			if(leftCombo.length>0) colorForHint = getColorFromCombo(leftCombo);
-			else if(rightCombo.length>0) colorForHint = getColorFromCombo(rightCombo);
-			else if(topCombo.length>0) colorForHint = getColorFromCombo(topCombo);
-			else colorForHint = getColorFromCombo(botCombo);
+			if(leftCombo.length>0) hintArray = leftCombo;
+			else if(rightCombo.length>0) hintArray = rightCombo;
+			else if(topCombo.length>0) hintArray = topCombo;
+			else botCombo = botCombo;
 			return false;
 		}
 	}	
@@ -636,7 +715,7 @@ function isDeckLock():boolean{
 
 function handleDecklock(){
 	var bool:boolean = isDeckLock();
-	Debug.Log(bool);
+	// Debug.Log(bool);
 	if(bool){
 		do{shuffleAllLeaves();} while(isDeckLock());
 		flipAllLeaves();
@@ -656,8 +735,9 @@ function isHintNeeded():boolean{
 function handleHint(){
 	if(isHintNeeded()){
 		lastSuccessfulRotationTime = Time.time;
-		highlightColor(colorForHint);
-		Debug.Log(colorForHint);
+		// Debug.Log(hintArray);
+		highlightArray(hintArray);
+		// Debug.Log(colorForHint);
 	}
 }
 
@@ -665,6 +745,13 @@ function highlightColor(color:int){
 	for(var i:int=0;i<leaves.length;i++){
 		var script = (leaves[i] as GameObject).GetComponent(LeafScript);
 		if(script.color==color) script.highLight();
+	}
+}
+
+function highlightArray(array:Array){
+	for(var i:int=0; i<array.length;i++){
+		var script = (array[i] as GameObject).GetComponent(LeafScript);
+		script.highLight();
 	}
 }
 
