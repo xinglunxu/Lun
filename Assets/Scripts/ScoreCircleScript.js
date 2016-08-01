@@ -9,8 +9,15 @@ var SCALE_SPEED:float;
 var SCALE_TARGET_AMOUNT:float;
 var MATCH_AMOUNT:float;
 var flippingDirection:Vector3;
+var CANVAS_CHILD:int;
+var TEXT_CHILD:int;
+var position:int;
+var textChanged:boolean;
+var textObject:UnityEngine.UI.Text;
 
 function Start () {
+	CANVAS_CHILD = 0;
+	TEXT_CHILD = 0;
 	sceneScript = Camera.main.GetComponent(SceneScript);
 	FLIP_SPEED = 200*Time.deltaTime;
 	SCALE_SPEED = 0.15*Time.deltaTime*3;
@@ -20,6 +27,7 @@ function Start () {
 	degreeToTurn = 0;
 	totalScaleAmount = 0;
 	totalEnlargeAmount = 0;
+	textChanged = true;
 }
 
 function Update () {
@@ -35,16 +43,17 @@ function flipping(){
 		if(degreeToTurn<FLIP_SPEED) transform.Rotate(flippingDirection, degreeToTurn,Space.World);
 		else transform.Rotate(flippingDirection, FLIP_SPEED, Space.World);
 		degreeToTurn -= FLIP_SPEED;
-		// if(!colorChanged && degreeToTurn<=90) {
-		// 	colorChanged = true;
-		// 	GetComponent(SpriteRenderer).color = sceneScript.colorDict[color]; 
-		// }
+		if(!textChanged && degreeToTurn<=90) {
+			textChanged = true;
+			transform.Rotate(flippingDirection, 180 ,Space.World);
+			updateText(); 
+		}
 	}
 }
 
 function flip(){
 	// sceneScript.inFlip = true;
-	// colorChanged = false;
+	textChanged = false;
 	degreeToTurn = 180;
 }
 
@@ -75,6 +84,18 @@ function triggerMatchAnimation(){
 	SCALE_TARGET_AMOUNT = MATCH_AMOUNT;
 	// sceneScript.isScaling = true;
 	totalScaleAmount = SCALE_TARGET_AMOUNT;
+}
+
+function updateText(){
+	// var textObject:UnityEngine.UI.Text = transform.GetChild(CANVAS_CHILD).GetChild(TEXT_CHILD).gameObject;
+	// Debug.Log(textObject);
+	var newNum = sceneScript.scores;
+	for(var i:int=0; i<position;i++){
+		newNum /= 10;
+	}	
+	newNum = newNum%10;
+
+	textObject.text = newNum + "";
 }
 
 

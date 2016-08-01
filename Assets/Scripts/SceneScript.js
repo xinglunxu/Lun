@@ -118,6 +118,8 @@ function Start () {
 	needCheckDeadlock = false;
 
 	initiateScoreBoard();
+
+	// Debug.Log((scoreBoard[0] as GameObject).transform.GetChild(0).GetChild(0));
 }
 
 
@@ -137,21 +139,23 @@ function initiateScoreBoard(){
 	var startingX = (SCREEN_WIDTH-SCORE_CIRCLE_SCALE*3*scoreCirclePrefab.GetComponent(Renderer).bounds.size.x)/2+scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE/2- SCREEN_WIDTH/2 ;
 	var startingPosition = new Vector3(startingX, SCREEN_HEIGHT/2 - EMPTY_SPACE/2, 0);
 	// Debug.Log(startingPosition);
-	var object1 = createScoreCircle(startingPosition, new Color(1,0,0,1));
+	var object1 = createScoreCircle(startingPosition, new Color(1,0,0,1),2);
 	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
-	var object2 = createScoreCircle(startingPosition, new Color(1,0.92,0.016,1));
+	var object2 = createScoreCircle(startingPosition, new Color(1,0.92,0.016,1),1);
 	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
-	var object3 = createScoreCircle(startingPosition, new Color(0,1,0,1));
+	var object3 = createScoreCircle(startingPosition, new Color(0,1,0,1),0);
 	scoreBoard.Push(object1);
 	scoreBoard.Push(object2);
 	scoreBoard.Push(object3);
 }
 
-function createScoreCircle(vector:Vector3, color:Color):GameObject{
+function createScoreCircle(vector:Vector3, color:Color, position:int):GameObject{
 	var object = Instantiate(scoreCirclePrefab, vector, Quaternion.identity) as GameObject;
 	var originalScale = object.transform.localScale.x;
+	var script = object.GetComponent(ScoreCircleScript);
 	object.transform.localScale = Vector3(SCORE_CIRCLE_SCALE*originalScale,SCORE_CIRCLE_SCALE*originalScale,0);
 	object.GetComponent(SpriteRenderer).color = color;
+	script.position = position;
 	return object;
 }
 
@@ -436,7 +440,7 @@ function handleRotatation(index:int, vector:Vector3){
 		// Debug.Log(lastSuccessfulRotationTime);
 	}
 	else{
-		Debug.Log("notValid");
+		// Debug.Log("notValid");
 		leaves[leftLeaf] = leftLeafObject;
 		leaves[topLeaf] = topLeafObject;
 		leaves[rightLeaf] = rightLeafObject;
@@ -704,7 +708,7 @@ function isDeckLock():boolean{
 			if(leftCombo.length>0) hintArray = leftCombo;
 			else if(rightCombo.length>0) hintArray = rightCombo;
 			else if(topCombo.length>0) hintArray = topCombo;
-			else botCombo = botCombo;
+			else hintArray = botCombo;
 			return false;
 		}
 	}	
