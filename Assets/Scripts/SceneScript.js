@@ -41,8 +41,14 @@ var SCORE_CIRCLE_NUM:int;
 var hintArray:Array;
 var scores:int;
 var scoreBoard:Array;
+var TIME_STAMP_LENGTH:float;
+var TIME_STAMP_SCALE:float;
+var TIME_STAMP_NUM:int;
+var timeStamps:Array;
+var accuTime:int;
 
 function Start () {
+	accuTime = 0;
 	scoreBoard = new Array();
 	scores = 0;
 	hintTime = 7;
@@ -89,6 +95,14 @@ function Start () {
 	isScaling = false;
 	isTilting = false;
 
+	TIME_STAMP_LENGTH = SCREEN_WIDTH/9.5;
+
+	if(TIME_STAMP_LENGTH>VERTICAL_ADJUST) TIME_STAMP_LENGTH = VERTICAL_ADJUST;
+
+	TIME_STAMP_SCALE = TIME_STAMP_LENGTH/scoreCirclePrefab.GetComponent(Renderer).bounds.size.x;
+	TIME_STAMP_NUM = 6;
+	timeStamps = new Array();
+
 	UIStartingPosition = VERTICAL_ADJUST + ROWS*CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x+LEAF_WIDTH;
 	// Debug.Log(UIStartingPosition);
 	EMPTY_SPACE = SCREEN_HEIGHT - UIStartingPosition;
@@ -118,6 +132,8 @@ function Start () {
 	needCheckDeadlock = false;
 
 	initiateScoreBoard();
+	initiateTimeStamps();
+
 
 	// Debug.Log((scoreBoard[0] as GameObject).transform.GetChild(0).GetChild(0));
 }
@@ -131,6 +147,11 @@ function Update () {
 		needCheckDeadlock = false;
 	}
 	handleHint();
+
+	if(isOneSecPass()){
+		subtractOneSec();
+		updateAccumTime();
+	}
 	// isHintNeeded();
 	// rotateLeaves();
 }
@@ -762,6 +783,56 @@ function highlightArray(array:Array){
 function getColorFromCombo(array:Array):int{
 	return (array[0] as GameObject).GetComponent(LeafScript).color;
 }
+
+function initiateTimeStamps(){
+	var startingX = (SCREEN_WIDTH-8.5*TIME_STAMP_LENGTH)/2+TIME_STAMP_LENGTH/2;
+	var startingPosition = new Vector3(-SCREEN_WIDTH/2+startingX, -SCREEN_HEIGHT/2+VERTICAL_ADJUST/2, 0);
+	for(var i:int=0; i<TIME_STAMP_NUM; i++){
+		var object = createTimeStamp(startingPosition, new Color(1,0,0,1), TIME_STAMP_SCALE);
+		timeStamps.Push(object);
+		startingPosition += Vector3(TIME_STAMP_LENGTH*1.5 ,0,0);
+	}
+
+	(timeStamps[2] as GameObject).GetComponent(SpriteRenderer).color = new Color(1,0.92,0.016,1);
+	(timeStamps[3] as GameObject).GetComponent(SpriteRenderer).color = new Color(1,0.92,0.016,1);
+	(timeStamps[4] as GameObject).GetComponent(SpriteRenderer).color = new Color(0,1,0,1);
+	(timeStamps[5] as GameObject).GetComponent(SpriteRenderer).color = new Color(0,1,0,1);
+}
+
+function createTimeStamp(vector:Vector3, color:Color, scale:float):GameObject{
+	var object = Instantiate(scoreCirclePrefab, vector, Quaternion.identity) as GameObject;
+	object.GetComponent(SpriteRenderer).color = color;
+	object.transform.localScale *= scale;
+	object.GetComponent(ScoreCircleScript).textObject.text = "15";
+	return object;
+}
+
+function isOneSecPass():boolean{
+	if(Time.time - accuTime >=1) return true;
+}
+
+function updateAccumTime(){
+	accuTime = Time.time;
+}
+
+function subtractOneSec(){
+	for(var i:int=timeStamps.length-1; i>=0; i--){
+		var object:GameObject = timeStamps[i] as GameObject;
+		var script = object.GetComponent(ScoreCircleScript);
+		if(script.number!=0){
+			script.number--;
+			script.textObject.text = script.number + "";
+			if(script.number==0){
+				script.textObject.text = "";
+				script.timeUp();
+			}
+			break;
+		} 
+	}
+
+}
+
+
 
 
 

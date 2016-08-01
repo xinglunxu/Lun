@@ -14,6 +14,9 @@ var TEXT_CHILD:int;
 var position:int;
 var textChanged:boolean;
 var textObject:UnityEngine.UI.Text;
+var number:int;
+var TIME_UP_SCALE_AMOUNT:float;
+var totalScaleAmountForTime:float;
 
 function Start () {
 	CANVAS_CHILD = 0;
@@ -28,6 +31,9 @@ function Start () {
 	totalScaleAmount = 0;
 	totalEnlargeAmount = 0;
 	textChanged = true;
+	number = 15;
+	TIME_UP_SCALE_AMOUNT = 0.3;
+	totalScaleAmountForTime = 0;
 }
 
 function Update () {
@@ -36,6 +42,7 @@ function Update () {
 		shrink();
 		enlarge();
 	}
+	shrinkForTime();
 }
 
 function flipping(){
@@ -96,6 +103,20 @@ function updateText(){
 	newNum = newNum%10;
 
 	textObject.text = newNum + "";
+}
+
+function timeUp(){
+	totalScaleAmountForTime = TIME_UP_SCALE_AMOUNT;
+}
+
+function shrinkForTime(){
+	if(totalScaleAmountForTime > 0){
+		if(totalScaleAmountForTime < SCALE_SPEED) scale(-totalScaleAmountForTime);
+		else scale(-SCALE_SPEED);
+		totalScaleAmountForTime -= SCALE_SPEED;
+		// if(totalScaleAmount<=0) totalEnlargeAmount = SCALE_TARGET_AMOUNT;
+	}
+	// if(number==0) Debug.Log("tt in shrink: "+totalScaleAmount);
 }
 
 
