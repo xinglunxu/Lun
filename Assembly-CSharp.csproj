@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HideOrShowScript.cs" />
+     <Compile Include="Assets\IdleLeafScript.cs" />
+     <Compile Include="Assets\PopOutTextScript.cs" />
      <Compile Include="Assets\enLargeBehavior.cs" />
      <Compile Include="Assets\shrinkScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

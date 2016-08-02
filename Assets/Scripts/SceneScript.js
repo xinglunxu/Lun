@@ -46,8 +46,22 @@ var TIME_STAMP_SCALE:float;
 var TIME_STAMP_NUM:int;
 var timeStamps:Array;
 var accuTime:int;
+var canvas:Canvas;
+var addScoreText:UnityEngine.UI.Text;
+var isScoreAdded:boolean;
+var scoreToAdded:int;
+var gameStartTime:float;
+var centers:Array;
+var isGameOverHandled:boolean;
+var GAME_TIME:float;
 
 function Start () {
+	// isGameOverHandled = false;
+	Application.targetFrameRate = 300;
+	GAME_TIME = 10000;
+	centers = new Array();
+	scoreToAdded = 0;
+	isScoreAdded = false;
 	accuTime = 0;
 	scoreBoard = new Array();
 	scores = 0;
@@ -134,23 +148,37 @@ function Start () {
 	initiateScoreBoard();
 	initiateTimeStamps();
 
-
+	startGame();
 	// Debug.Log((scoreBoard[0] as GameObject).transform.GetChild(0).GetChild(0));
 }
 
 
 function Update () {
-	// Debug.Log("mouse up");
-	listenForClickOnCenters();
-	if(needCheckDeadlock==true && !inFlip){
-		handleDecklock();
-		needCheckDeadlock = false;
-	}
-	handleHint();
+	if(isScoreAdded && !inUserRotation && !isScaling){
+			bingo(scoreToAdded);
+			isScoreAdded = false;
+		}
 
 	if(isOneSecPass()){
-		subtractOneSec();
-		updateAccumTime();
+			subtractOneSec();
+			updateAccumTime();
+		}
+
+	if(isGameOver()){
+		if(!isGameOverHandled && !inUserRotation && !isScaling && !inFlip){
+			handleGameOver();
+			isGameOverHandled = true;
+		}
+	}
+	else{
+		listenForClickOnCenters();
+		handleHint();
+
+		if(needCheckDeadlock==true && !inFlip){
+			handleDecklock();
+			needCheckDeadlock = false;
+		}
+
 	}
 	// isHintNeeded();
 	// rotateLeaves();
@@ -201,6 +229,7 @@ function initiateCenters(){
 			// script.ORIGINAL_SCALE = CENTER_SCALE;
 			tempPosition += Vector3(2*CENTER_HALF_LENGTH,0,0);
 			number++;
+			centers.Push(object);
 		}
 
 		startingPosition += new Vector3(0,-2*CENTER_HALF_LENGTH,0);
@@ -220,6 +249,7 @@ function initiateLeafs(){
 	var i:int; var j:int;
 	var colorSum = 0; var rand:int=0;
  	var color; var temp:int; var number = 0;
+ 	// Debug.Log("initiateLeafs here");
 	for(i=0; i<2*ROWS+1; i++){
 		if(i%2==0){
 			tempPosition = startingEvenPosition;
@@ -232,6 +262,7 @@ function initiateLeafs(){
 				script.color = rand;
 				script.number = number;
 				script.orientation = Vector3(1,0,0);
+				script.ORIGINAL_SCALE = LEAF_SCALE;
 				// Debug.Log(colorDict[rand]);
 				object.GetComponent(SpriteRenderer).color = colorDict[rand];
 				leaves.Push(object);
@@ -251,6 +282,7 @@ function initiateLeafs(){
 				script = object.GetComponent(LeafScript);
 				script.color = rand;
 				script.number = number;
+				script.ORIGINAL_SCALE = LEAF_SCALE;
 				script.orientation = Vector3(0,1,0);
 				object.GetComponent(SpriteRenderer).color = colorDict[rand];
 				leaves.Push(object);
@@ -421,6 +453,7 @@ function handleRotatation(index:int, vector:Vector3){
 	// inUserRotation = true;
 	// var testScript = (leaves[0] as GameObject).GetComponent(LeafScript);
 	// testScript.triggerMatchAnimation();
+	resetAllLeaves();
 	var leftLeaf = getLeftLeafFromCenter(index);
 	var rightLeaf = getRightLeafFromCenter(index);
 	var topLeaf = getTopLeafFromCenter(index);
@@ -547,8 +580,13 @@ function getBotRowNumFromCenterNum(index:int):int{
 }
 
 function handleEventsAfterRotatingCenter(centerIndex:int){
-	addScores(getComboNum(centerIndex));
-	Debug.Log(scores);
+	var addedScore = getComboNum(centerIndex);
+	addScores(addedScore);
+	scoreToAdded = addedScore;
+	isScoreAdded = true;
+	// bingo(addedScore);
+
+	// Debug.Log(scores);
 
 	shrinkEnlargeFlipScoreBoard();
 
@@ -829,12 +867,52 @@ function subtractOneSec(){
 			break;
 		} 
 	}
+}
+
+function bingo(score:int){
+	addScoreText.text = "+"+score;
+	addScoreText.GetComponent(Animator).SetBool("score", true);
+	canvas.GetComponent(Animator).SetBool("score", true);
+}
+
+function resetAllLeaves(){
+	for(var i:int=0; i<leaves.length; i++){
+		(leaves[i] as GameObject).GetComponent(LeafScript).reset();
+	}
+}
+
+function isGameOver():boolean{
+	return Time.time - gameStartTime > GAME_TIME;
+}
+
+function handleGameOver(){
+	resetAllLeaves();
+	toggleAllCenterColliders();
+	toggleAllLeaves();
 
 }
 
+function startGame(){
+	isGameOverHandled = false;
+	gameStartTime = Time.time;
+}
 
+function toggleCollider(centerObject:GameObject){
+	var bc = centerObject.GetComponent(BoxCollider);
+	bc.enabled = !bc.enabled;
+}
 
+function toggleAllCenterColliders(){
+	for(var i:int=0; i<centers.length; i++){
+		toggleCollider(centers[i] as GameObject);
+	}
+}
 
+function toggleAllLeaves(){
+	for(var i:int=0; i<leaves.length; i++){
+		(leaves[i] as GameObject).GetComponent(LeafScript).toggleLeaf();
+	}
+}
 
 
 

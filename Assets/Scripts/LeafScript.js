@@ -34,25 +34,16 @@ var fakeRotateBackwardAmount:float;
 var FAKE_ROTATE_AMOUNT:float;
 var HIGHLIGHT_AMOUNT:float;
 var MATCH_AMOUNT:float;
+var anim:Animator;
+var curveValue:float;
 // var touchDown:boolean;
 
 function Start () {
 	FLIP_SPEED = 200*Time.deltaTime;
 	USER_ROTATE_SPEED = 100*Time.deltaTime;
-	// colorDict = new Hashtable();
-	// var red = new Color(1,0,0,1);
-	// var blue = new Color(0,0,1,1);
-	// var yellow = new Color(1,0.92,0.016,1);
-	// var green = new Color(0,1,0,1);
-	// var purple = new Color(204.0/255, 0.0, 204.0/255);
-	// colorDict.Add(0, yellow);
-	// colorDict.Add(1, red);
-	// colorDict.Add(2, green);
+
 	sceneScript = Camera.main.GetComponent(SceneScript); 
-	// SHRINT_RATE = 0.8*Time.deltaTime;
-	// ENLARGE_RATE = 1.25*Time.deltaTime;
-	// ORIGIN_SCALE = transform.localScale.x;
-	// TARGET_SCALE = 1;
+
 	SCALE_SPEED = 0.15*Time.deltaTime;
 	userRotation = 0;
 	degreeToTurn = 0;
@@ -75,6 +66,7 @@ function Start () {
 }
 
 function Update () {
+	applyCurveValue();
 	if(!sceneScript.isTilting && !sceneScript.isScaling) flipping();
 	keepRotate(center);
 	fakeRotating(center);
@@ -90,6 +82,7 @@ function Update () {
 
 
 function flip(){
+	// Debug.Log("flip called");
 	sceneScript.inFlip = true;
 	colorChanged = false;
 	degreeToTurn = 180;
@@ -97,6 +90,7 @@ function flip(){
 
 function flipping(){
 	if(!sceneScript.inUserRotation && degreeToTurn>0){
+		// Debug.Log(orientation);
 		if(degreeToTurn<FLIP_SPEED) transform.Rotate(orientation, degreeToTurn,Space.World);
 		else transform.Rotate(orientation, FLIP_SPEED, Space.World);
 		degreeToTurn -= FLIP_SPEED;
@@ -169,6 +163,7 @@ function tiltingBack(){
 }
 
 function triggerMatchAnimation(){
+	// Debug.Log("triggerMatchAnimation called");
 	SCALE_TARGET_AMOUNT = MATCH_AMOUNT;
 	sceneScript.isScaling = true;
 	totalScaleAmount = SCALE_TARGET_AMOUNT;
@@ -176,8 +171,16 @@ function triggerMatchAnimation(){
 
 function highLight(){
 	SCALE_TARGET_AMOUNT = HIGHLIGHT_AMOUNT;
-	sceneScript.isScaling = true;
+	// sceneScript.isScaling = true;
 	totalScaleAmount = SCALE_TARGET_AMOUNT;
+}
+
+function reset(){
+	// Debug.Log("reset called");
+	totalScaleAmount = 0;
+	totalEnlargeAmount = 0;
+
+	transform.localScale = Vector3(ORIGINAL_SCALE, ORIGINAL_SCALE, ORIGINAL_SCALE);
 }
 
 // function touchDowning(bool:boolean){
@@ -229,6 +232,16 @@ function fakeRotatingBackward(center:Vector3){
 	}
 }
 
+function toggleLeaf(){
+	anim.SetBool("toggle", true);
+}
+
+function applyCurveValue(){
+	if(curveValue!=0){
+		if(orientation.x==1) transform.eulerAngles = new Vector3( curveValue , transform.eulerAngles.y, transform.eulerAngles.z);
+		else transform.eulerAngles = new Vector3(transform.eulerAngles.x, curveValue, transform.eulerAngles.z);
+	}
+}
 
 // function approach(vector:Vector3){
 // 	transform.position -= (transform.position-vector)*0.2;
