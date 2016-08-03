@@ -238,8 +238,12 @@ function toggleLeaf(){
 
 function applyCurveValue(){
 	if(curveValue!=0){
-		if(orientation.x==1) transform.eulerAngles = new Vector3( curveValue , transform.eulerAngles.y, transform.eulerAngles.z);
-		else transform.eulerAngles = new Vector3(transform.eulerAngles.x, curveValue, transform.eulerAngles.z);
+		if(orientation.x==1) {
+			transform.eulerAngles = new Vector3( curveValue , 0, 90);
+		}
+		else {
+			transform.eulerAngles = new Vector3(0, curveValue, 0);
+		}
 	}
 }
 

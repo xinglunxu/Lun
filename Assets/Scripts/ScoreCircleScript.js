@@ -37,12 +37,13 @@ function Start () {
 }
 
 function Update () {
+	// applyCurveValue();
 	if(!sceneScript.isTilting && !sceneScript.isScaling) flipping();
 	if(!sceneScript.inUserRotation){
 		shrink();
 		enlarge();
 	}
-	shrinkForTime();
+	// shrinkForTime();
 }
 
 function flipping(){
@@ -55,6 +56,7 @@ function flipping(){
 			transform.Rotate(flippingDirection, 180 ,Space.World);
 			updateText(); 
 		}
+		if(degreeToTurn<=0) sceneScript.scoreBoardInRotation = false;
 	}
 }
 
@@ -97,6 +99,10 @@ function updateText(){
 	// var textObject:UnityEngine.UI.Text = transform.GetChild(CANVAS_CHILD).GetChild(TEXT_CHILD).gameObject;
 	// Debug.Log(textObject);
 	var newNum = sceneScript.scores;
+	updateTextWithValue(newNum);
+}
+
+function updateTextWithValue(newNum:int){
 	for(var i:int=0; i<position;i++){
 		newNum /= 10;
 	}	
@@ -105,19 +111,24 @@ function updateText(){
 	textObject.text = newNum + "";
 }
 
-function timeUp(){
-	totalScaleAmountForTime = TIME_UP_SCALE_AMOUNT;
-}
+// function timeUp(){
+// 	totalScaleAmountForTime = TIME_UP_SCALE_AMOUNT;
+// }
 
-function shrinkForTime(){
-	if(totalScaleAmountForTime > 0){
-		if(totalScaleAmountForTime < SCALE_SPEED) scale(-totalScaleAmountForTime);
-		else scale(-SCALE_SPEED);
-		totalScaleAmountForTime -= SCALE_SPEED;
-		// if(totalScaleAmount<=0) totalEnlargeAmount = SCALE_TARGET_AMOUNT;
-	}
-	// if(number==0) Debug.Log("tt in shrink: "+totalScaleAmount);
-}
+// function shrinkForTime(){
+// 	if(totalScaleAmountForTime > 0){
+// 		if(totalScaleAmountForTime < SCALE_SPEED) scale(-totalScaleAmountForTime);
+// 		else scale(-SCALE_SPEED);
+// 		totalScaleAmountForTime -= SCALE_SPEED;
+// 		// if(totalScaleAmount<=0) totalEnlargeAmount = SCALE_TARGET_AMOUNT;
+// 	}
+// 	// if(number==0) Debug.Log("tt in shrink: "+totalScaleAmount);
+// }
+
+// function applyCurveValue(){
+// 	transform.localScale = new Vector3(ORIGINAL_SCALE-curveValue*SHRINK_AMOUNT, ORIGINAL_SCALE-curveValue*SHRINK_AMOUNT, ORIGINAL_SCALE-curveValue*SHRINK_AMOUNT);
+// }
+
 
 
 

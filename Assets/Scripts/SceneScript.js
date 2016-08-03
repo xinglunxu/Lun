@@ -54,11 +54,25 @@ var gameStartTime:float;
 var centers:Array;
 var isGameOverHandled:boolean;
 var GAME_TIME:float;
+var leavesAreOpen:boolean;
+var collidersEnable:boolean;
+var startButtonAnim:Animator;
+var pauseButtonAnim:Animator;
+var resumeButtonAnim:Animator;
+var restartButtonAnim:Animator;
+var timeStampPrefab:GameObject;
+var highestScoreText:UnityEngine.UI.Text;
+var isPause:boolean;
+var scoreBoardInRotation:boolean;
+
 
 function Start () {
-	// isGameOverHandled = false;
-	Application.targetFrameRate = 300;
-	GAME_TIME = 10000;
+	scoreBoardInRotation = false;
+	isPause = false;
+	isGameOverHandled = true;
+	collidersEnable = true;
+	leavesAreOpen = false;
+	Application.targetFrameRate = 60;
 	centers = new Array();
 	scoreToAdded = 0;
 	isScoreAdded = false;
@@ -90,6 +104,7 @@ function Start () {
 	centerPrefab = Resources.Load("Objects/CenterPrefab");
 	leafPrefab = Resources.Load("Objects/leafPrefab");
 	scoreCirclePrefab = Resources.Load("Objects/ScoreCircle");
+	timeStampPrefab = Resources.Load("Objects/TimeStampPrefab");
 
 	SCREEN_HEIGHT = Camera.main.orthographicSize * 2;
 	SCREEN_WIDTH = SCREEN_HEIGHT * Screen.width / Screen.height;
@@ -148,21 +163,28 @@ function Start () {
 	initiateScoreBoard();
 	initiateTimeStamps();
 
-	startGame();
+	disableAllColliders();
+	showHighestScoreOnScoreBoard();
+	showPlayButton();
+	// hidePauseButton();
+
+	// startGame();
 	// Debug.Log((scoreBoard[0] as GameObject).transform.GetChild(0).GetChild(0));
 }
 
 
 function Update () {
 	if(isScoreAdded && !inUserRotation && !isScaling){
-			bingo(scoreToAdded);
+			if(scoreToAdded>=0) bingo(scoreToAdded);
+			else penalty(scoreToAdded);
+			// bingo(scoreToAdded);
 			isScoreAdded = false;
-		}
+	}
 
-	if(isOneSecPass()){
+	if(isOneSecPass() && !isPause){
 			subtractOneSec();
 			updateAccumTime();
-		}
+	}
 
 	if(isGameOver()){
 		if(!isGameOverHandled && !inUserRotation && !isScaling && !inFlip){
@@ -262,6 +284,7 @@ function initiateLeafs(){
 				script.color = rand;
 				script.number = number;
 				script.orientation = Vector3(1,0,0);
+				// object.transform.Rotate(90,0,0);
 				script.ORIGINAL_SCALE = LEAF_SCALE;
 				// Debug.Log(colorDict[rand]);
 				object.GetComponent(SpriteRenderer).color = colorDict[rand];
@@ -279,6 +302,7 @@ function initiateLeafs(){
 				object = Instantiate(leafPrefab, tempPosition, Quaternion.identity) as GameObject;
 				object.transform.localScale = Vector3(LEAF_SCALE, LEAF_SCALE, LEAF_SCALE);
 				rand = Random.Range(0,totalColorNum-0.0001);
+				// object.transform.Rotate(0,90,0);
 				script = object.GetComponent(LeafScript);
 				script.color = rand;
 				script.number = number;
@@ -437,10 +461,10 @@ function listenForClickOnCenters(){
 	if(Input.GetMouseButtonUp(0)){
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(Physics.Raycast(ray,hit)){
-			lastTouchCenter.GetComponent(CenterScript).touchDowning(false);
+			if(lastTouchCenter!=null) lastTouchCenter.GetComponent(CenterScript).touchDowning(false);
 			object = hit.transform.gameObject;
 			script = object.GetComponent(CenterScript);
-			if(!inUserRotation && !inFlip && !isScaling && !isTilting && !needCheckDeadlock){
+			if(!inUserRotation && !inFlip && !isScaling && !isTilting && !needCheckDeadlock && !scoreBoardInRotation){
 				handleRotatation(script.number, object.transform.position);
 				// handleEventsAfterRotatingCenter(script.number);
 			}
@@ -503,12 +527,18 @@ function handleRotatation(index:int, vector:Vector3){
 		rightLeafScript.startFakeRotate(vector);
 		topLeafScript.startFakeRotate(vector);
 		botLeafScript.startFakeRotate(vector);
+		startPenalty();
 	}
 
 
 }
 
-
+function startPenalty(){
+	scoreToAdded = -2;
+	isScoreAdded = true;
+	addScores(scoreToAdded);
+	shrinkEnlargeFlipScoreBoard();
+}
 
 
 // function rotateLeaf(leaf:GameObject, vector:Vector3, angles:float){
@@ -597,6 +627,7 @@ function handleEventsAfterRotatingCenter(centerIndex:int){
 }
 
 function shrinkEnlargeFlipScoreBoard(){
+	scoreBoardInRotation = true;
 	for(var i:int=0; i<scoreBoard.length;i++){
 		var object:GameObject = scoreBoard[i];
 		var script = object.GetComponent(ScoreCircleScript);
@@ -838,10 +869,12 @@ function initiateTimeStamps(){
 }
 
 function createTimeStamp(vector:Vector3, color:Color, scale:float):GameObject{
-	var object = Instantiate(scoreCirclePrefab, vector, Quaternion.identity) as GameObject;
+	var object = Instantiate(timeStampPrefab, vector, Quaternion.identity) as GameObject;
+	var script = object.GetComponent(TimeStampScript);
 	object.GetComponent(SpriteRenderer).color = color;
 	object.transform.localScale *= scale;
-	object.GetComponent(ScoreCircleScript).textObject.text = "15";
+	script.ORIGINAL_SCALE = object.transform.localScale.x;
+	script.SHRINK_AMOUNT = script.ORIGINAL_SCALE/2;
 	return object;
 }
 
@@ -856,13 +889,13 @@ function updateAccumTime(){
 function subtractOneSec(){
 	for(var i:int=timeStamps.length-1; i>=0; i--){
 		var object:GameObject = timeStamps[i] as GameObject;
-		var script = object.GetComponent(ScoreCircleScript);
+		var script = object.GetComponent(TimeStampScript);
 		if(script.number!=0){
 			script.number--;
 			script.textObject.text = script.number + "";
 			if(script.number==0){
 				script.textObject.text = "";
-				script.timeUp();
+				script.hide();
 			}
 			break;
 		} 
@@ -875,6 +908,12 @@ function bingo(score:int){
 	canvas.GetComponent(Animator).SetBool("score", true);
 }
 
+function penalty(score:int){
+	addScoreText.text = score+"";
+	addScoreText.GetComponent(Animator).SetBool("score", true);
+	canvas.GetComponent(Animator).SetBool("score", true);
+}
+
 function resetAllLeaves(){
 	for(var i:int=0; i<leaves.length; i++){
 		(leaves[i] as GameObject).GetComponent(LeafScript).reset();
@@ -882,20 +921,138 @@ function resetAllLeaves(){
 }
 
 function isGameOver():boolean{
-	return Time.time - gameStartTime > GAME_TIME;
+	return (timeStamps[0] as GameObject).GetComponent(TimeStampScript).number==0;
 }
 
 function handleGameOver(){
+	updateHighestScore();
 	resetAllLeaves();
-	toggleAllCenterColliders();
-	toggleAllLeaves();
+	foldAllLeaves();
+	disableAllColliders();
+	yield WaitForSeconds(0.5);
+	showPlayButton();
+	showHighestScore();
+	hidePauseButton();
+}
 
+
+function pauseGame(){
+	foldAllLeaves();
+	disableAllColliders();
+	isPause = true;
+	hidePauseButton();
+	showRestartButton();
+	showResumeButton();
+}
+
+function resumeGame(){
+	yield WaitForSeconds(0.2);
+	openAllLeaves();
+	enableAllColliders();
+	isPause = false;
+	showPauseButton();
+	hideRestartButton();
+	hideResumeButton();
+}
+
+function _resumeGame(){
+	resumeGame();
+}
+
+function updateHighestScore(){
+	if(scores > PlayerPrefs.GetInt("HighestScore")){
+		PlayerPrefs.SetInt("HighestScore", scores);
+	}
 }
 
 function startGame(){
+	yield WaitForSeconds(0.2);
 	isGameOverHandled = false;
 	gameStartTime = Time.time;
+	openAllLeaves();
+	enableAllColliders();
+	hidePlayButton();
+	showAllTimeStamps();
+	resetTime();
+	resetScore();
+	shrinkEnlargeFlipScoreBoard();
+	hideHighestScore();
+	showPauseButton();
 }
+
+function restartGame(){
+	yield WaitForSeconds(0.2);
+	isGameOverHandled = false;
+	isPause = false;
+	gameStartTime = Time.time;
+	openAllLeaves();
+	enableAllColliders();
+
+	//handle buttons
+	hideResumeButton();
+	hideRestartButton();
+	showPauseButton();
+
+	resetTime();
+	showAllTimeStamps();
+	resetScore();
+	shrinkEnlargeFlipScoreBoard();
+
+}
+
+function _restartGame(){
+	restartGame();
+}
+
+function showHighestScore(){
+	highestScoreText.text = "Highest Score: "+PlayerPrefs.GetInt("HighestScore");
+}
+
+function hideHighestScore(){
+	highestScoreText.text = "";
+}
+
+function _startGame(){
+	startGame();
+}
+
+function hidePlayButton(){
+	startButtonAnim.SetBool("hide", true);
+}
+
+function showPlayButton(){
+	startButtonAnim.SetBool("hide", false);
+}
+
+function foldAllLeaves(){
+	if(leavesAreOpen){
+		toggleAllLeaves();
+		leavesAreOpen = false;
+	}
+}
+
+function openAllLeaves(){
+	if(!leavesAreOpen){
+		toggleAllLeaves();
+		leavesAreOpen = true;
+	}
+}
+
+function enableAllColliders(){
+	if(!collidersEnable){
+		toggleAllCenterColliders();
+		collidersEnable = true;
+	}
+}
+
+function disableAllColliders(){
+	if(collidersEnable){
+		toggleAllCenterColliders();
+		collidersEnable = false;
+	}
+}
+
+
 
 function toggleCollider(centerObject:GameObject){
 	var bc = centerObject.GetComponent(BoxCollider);
@@ -913,6 +1070,79 @@ function toggleAllLeaves(){
 		(leaves[i] as GameObject).GetComponent(LeafScript).toggleLeaf();
 	}
 }
+
+function showAllTimeStamps(){
+	for(var i:int=0; i<timeStamps.length; i++){
+		(timeStamps[i] as GameObject).GetComponent(TimeStampScript).show();
+	}
+}
+
+function hideAllTimeStamps(){
+	for(var i:int=0; i<timeStamps.length; i++){
+		(timeStamps[i] as GameObject).GetComponent(TimeStampScript).hide();
+	}
+}
+
+function resetTime(){
+	setTimeForTimeStamps();
+	gameStartTime = Time.time;
+	accuTime = Time.time;
+}
+
+function setTimeForTimeStamps(){
+	for(var i:int=0; i<timeStamps.length; i++){
+		var object = timeStamps[i] as GameObject;
+		var script = object.GetComponent(TimeStampScript);
+		script.number = 15;
+		script.textObject.text = script.number+"";
+	}
+}
+
+function resetScore(){
+	for(var i:int=0; i<scoreBoard.length; i++){
+		var object = scoreBoard[i] as GameObject;
+		var script = object.GetComponent(ScoreCircleScript);
+		scores = 0;
+		// script.textObject.text = "0";
+	}
+}
+
+function showHighestScoreOnScoreBoard(){
+	scores = PlayerPrefs.GetInt("HighestScore");
+	// Debug.Log(PlayerPrefs.GetInt("HighestScore"));
+	for(var i:int=0; i<scoreBoard.length; i++){
+		var object = scoreBoard[i] as GameObject;
+		var script = object.GetComponent(ScoreCircleScript);
+		script.updateTextWithValue(scores);
+	}
+}
+
+function hidePauseButton(){
+	Debug.Log("hidePauseButton called");
+	pauseButtonAnim.SetBool("hide", true);
+}
+
+function showPauseButton(){
+	pauseButtonAnim.SetBool("hide", false);
+}
+
+function showRestartButton(){
+	restartButtonAnim.SetBool("hide", false);
+}
+
+function hideRestartButton(){
+	restartButtonAnim.SetBool("hide", true);
+}
+
+function showResumeButton(){
+	resumeButtonAnim.SetBool("hide", false);
+}
+
+function hideResumeButton(){
+	resumeButtonAnim.SetBool("hide", true);
+}
+
+
 
 
 
