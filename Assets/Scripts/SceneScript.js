@@ -68,7 +68,7 @@ var STAMP_INITTIME:int;
 
 
 function Start () {
-	STAMP_INITTIME = 15;
+	STAMP_INITTIME = 99;
 	scoreBoardInRotation = false;
 	isPause = false;
 	isGameOverHandled = true;
