@@ -56,17 +56,19 @@ var isGameOverHandled:boolean;
 var GAME_TIME:float;
 var leavesAreOpen:boolean;
 var collidersEnable:boolean;
-var startButtonAnim:Animator;
-var pauseButtonAnim:Animator;
-var resumeButtonAnim:Animator;
-var restartButtonAnim:Animator;
+var startButton:UnityEngine.UI.Button;
+var pauseButton:UnityEngine.UI.Button;
+var resumeButton:UnityEngine.UI.Button;
+var restartButton:UnityEngine.UI.Button;
 var timeStampPrefab:GameObject;
 var highestScoreText:UnityEngine.UI.Text;
 var isPause:boolean;
 var scoreBoardInRotation:boolean;
+var STAMP_INITTIME:int;
 
 
 function Start () {
+	STAMP_INITTIME = 15;
 	scoreBoardInRotation = false;
 	isPause = false;
 	isGameOverHandled = true;
@@ -937,12 +939,12 @@ function handleGameOver(){
 
 
 function pauseGame(){
-	foldAllLeaves();
-	disableAllColliders();
-	isPause = true;
 	hidePauseButton();
 	showRestartButton();
 	showResumeButton();
+	foldAllLeaves();
+	disableAllColliders();
+	isPause = true;
 }
 
 function resumeGame(){
@@ -966,32 +968,35 @@ function updateHighestScore(){
 }
 
 function startGame(){
+	hidePlayButton();
+	showPauseButton();
+
 	yield WaitForSeconds(0.2);
+
 	isGameOverHandled = false;
 	gameStartTime = Time.time;
 	openAllLeaves();
 	enableAllColliders();
-	hidePlayButton();
 	showAllTimeStamps();
 	resetTime();
 	resetScore();
 	shrinkEnlargeFlipScoreBoard();
 	hideHighestScore();
-	showPauseButton();
 }
 
 function restartGame(){
+	//handle buttons
+	hideResumeButton();
+	hideRestartButton();
+	showPauseButton();
+
 	yield WaitForSeconds(0.2);
+
 	isGameOverHandled = false;
 	isPause = false;
 	gameStartTime = Time.time;
 	openAllLeaves();
 	enableAllColliders();
-
-	//handle buttons
-	hideResumeButton();
-	hideRestartButton();
-	showPauseButton();
 
 	resetTime();
 	showAllTimeStamps();
@@ -1014,14 +1019,6 @@ function hideHighestScore(){
 
 function _startGame(){
 	startGame();
-}
-
-function hidePlayButton(){
-	startButtonAnim.SetBool("hide", true);
-}
-
-function showPlayButton(){
-	startButtonAnim.SetBool("hide", false);
 }
 
 function foldAllLeaves(){
@@ -1093,7 +1090,7 @@ function setTimeForTimeStamps(){
 	for(var i:int=0; i<timeStamps.length; i++){
 		var object = timeStamps[i] as GameObject;
 		var script = object.GetComponent(TimeStampScript);
-		script.number = 15;
+		script.number = STAMP_INITTIME;
 		script.textObject.text = script.number+"";
 	}
 }
@@ -1118,28 +1115,65 @@ function showHighestScoreOnScoreBoard(){
 }
 
 function hidePauseButton(){
-	Debug.Log("hidePauseButton called");
-	pauseButtonAnim.SetBool("hide", true);
+	hideButton(pauseButton);
+	disableButton(pauseButton);
+	// disableButton(pauseButtonAnim);
 }
 
 function showPauseButton(){
-	pauseButtonAnim.SetBool("hide", false);
+	showButton(pauseButton);
+	enableButton(pauseButton);
+	// enableButton(pauseButtonAnim);
 }
 
 function showRestartButton(){
-	restartButtonAnim.SetBool("hide", false);
+	showButton(restartButton);
+	enableButton(restartButton);
 }
 
 function hideRestartButton(){
-	restartButtonAnim.SetBool("hide", true);
+	hideButton(restartButton);
+	disableButton(restartButton);
 }
 
 function showResumeButton(){
-	resumeButtonAnim.SetBool("hide", false);
+	showButton(resumeButton);
+	enableButton(resumeButton);
 }
 
 function hideResumeButton(){
-	resumeButtonAnim.SetBool("hide", true);
+	hideButton(resumeButton);
+	disableButton(resumeButton);
+}
+
+function hidePlayButton(){
+	hideButton(startButton);
+	disableButton(startButton);
+	// disableButton(startButtonAnim);
+}
+
+function showPlayButton(){
+	showButton(startButton);
+	enableButton(startButton);
+	// enableButton(startButtonAnim);
+}
+
+function hideButton(button:UnityEngine.UI.Button){
+	button.GetComponent(Animator).SetBool("hide", true);
+}
+
+function showButton(button:UnityEngine.UI.Button){
+	button.GetComponent(Animator).SetBool("hide", false);
+}
+
+function disableButton(button:UnityEngine.UI.Button){
+	// (anim.gameObject as UnityEngine.UI.Button).interactable = false;
+	button.interactable = false;
+}
+
+function enableButton(button:UnityEngine.UI.Button){
+	// (anim.gameObject as UnityEngine.UI.Button).interactable = true;
+	button.interactable = true;
 }
 
 
