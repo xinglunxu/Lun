@@ -10979,6 +10979,7 @@ extern "C" void RingScript_Update_m634129592 ();
 extern "C" void RingScript_Main_m1733349672 ();
 extern "C" void SceneScript__ctor_m579483231 ();
 extern "C" void SceneScript_Start_m3821588319 ();
+extern "C" void SceneScript_adjustButtons_m3872949263 ();
 extern "C" void SceneScript_Update_m2510973070 ();
 extern "C" void SceneScript_initiateScoreBoard_m2183097234 ();
 extern "C" void SceneScript_createScoreCircle_m2870725248 ();
@@ -11085,11 +11086,16 @@ extern "C" void SceneScript_hideButton_m1437297220 ();
 extern "C" void SceneScript_showButton_m669313641 ();
 extern "C" void SceneScript_disableButton_m1934242214 ();
 extern "C" void SceneScript_enableButton_m642072227 ();
-extern "C" void SceneScript_setLowerButtonPosition_m2862219390 ();
+extern "C" void SceneScript_setLowerButtonPosition_m1284691683 ();
 extern "C" void SceneScript_setTutorialPosition_m1790247814 ();
+extern "C" void SceneScript_setHighestScorePosition_m3088273782 ();
 extern "C" void SceneScript_setTutorialScale_m513465775 ();
 extern "C" void SceneScript_hideTutorial_m1892219301 ();
 extern "C" void SceneScript_showTutorial_m59001248 ();
+extern "C" void SceneScript_scaleStartButton_m1139336431 ();
+extern "C" void SceneScript_scaleHighestScore_m1552076373 ();
+extern "C" void SceneScript_scaleButton_m24001385 ();
+extern "C" void SceneScript_scaleAddedScoreText_m370869766 ();
 extern "C" void SceneScript_Main_m765471358 ();
 extern "C" void U24handleGameOverU2453__ctor_m256039187 ();
 extern "C" void U24handleGameOverU2453_GetEnumerator_m2414612360 ();
@@ -11130,7 +11136,7 @@ extern "C" void TimeStampScript_applyCurveValue_m3316695491 ();
 extern "C" void TimeStampScript_hide_m1366300689 ();
 extern "C" void TimeStampScript_show_m1680642828 ();
 extern "C" void TimeStampScript_Main_m586083048 ();
-extern const Il2CppMethodPointer g_MethodPointers[11119] = 
+extern const Il2CppMethodPointer g_MethodPointers[11125] = 
 {
 	Locale_GetText_m2389348044,
 	Locale_GetText_m2218462520,
@@ -22100,6 +22106,7 @@ extern const Il2CppMethodPointer g_MethodPointers[11119] =
 	RingScript_Main_m1733349672,
 	SceneScript__ctor_m579483231,
 	SceneScript_Start_m3821588319,
+	SceneScript_adjustButtons_m3872949263,
 	SceneScript_Update_m2510973070,
 	SceneScript_initiateScoreBoard_m2183097234,
 	SceneScript_createScoreCircle_m2870725248,
@@ -22206,11 +22213,16 @@ extern const Il2CppMethodPointer g_MethodPointers[11119] =
 	SceneScript_showButton_m669313641,
 	SceneScript_disableButton_m1934242214,
 	SceneScript_enableButton_m642072227,
-	SceneScript_setLowerButtonPosition_m2862219390,
+	SceneScript_setLowerButtonPosition_m1284691683,
 	SceneScript_setTutorialPosition_m1790247814,
+	SceneScript_setHighestScorePosition_m3088273782,
 	SceneScript_setTutorialScale_m513465775,
 	SceneScript_hideTutorial_m1892219301,
 	SceneScript_showTutorial_m59001248,
+	SceneScript_scaleStartButton_m1139336431,
+	SceneScript_scaleHighestScore_m1552076373,
+	SceneScript_scaleButton_m24001385,
+	SceneScript_scaleAddedScoreText_m370869766,
 	SceneScript_Main_m765471358,
 	U24handleGameOverU2453__ctor_m256039187,
 	U24handleGameOverU2453_GetEnumerator_m2414612360,

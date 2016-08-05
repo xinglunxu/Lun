@@ -47,7 +47,6 @@ var TIME_STAMP_NUM:int;
 var timeStamps:Array;
 var accuTime:int;
 var canvas:Canvas;
-var addScoreText:UnityEngine.UI.Text;
 var isScoreAdded:boolean;
 var scoreToAdded:int;
 var gameStartTime:float;
@@ -56,19 +55,22 @@ var isGameOverHandled:boolean;
 var GAME_TIME:float;
 var leavesAreOpen:boolean;
 var collidersEnable:boolean;
-var startButton:UnityEngine.UI.Button;
-var pauseButton:UnityEngine.UI.Button;
-var resumeButton:UnityEngine.UI.Button;
-var restartButton:UnityEngine.UI.Button;
 var timeStampPrefab:GameObject;
-var highestScoreText:UnityEngine.UI.Text;
 var isPause:boolean;
 var scoreBoardInRotation:boolean;
 var STAMP_INITTIME:int;
 var canvasScaler:UnityEngine.UI.CanvasScaler;
 var UIScaleFactorX:float;
 var UIScaleFactorY:float;
+
 var tutorial:UnityEngine.UI.Text;
+var addScoreText:UnityEngine.UI.Text;
+var highestScoreText:UnityEngine.UI.Text;
+
+var startButton:UnityEngine.UI.Button;
+var pauseButton:UnityEngine.UI.Button;
+var resumeButton:UnityEngine.UI.Button;
+var restartButton:UnityEngine.UI.Button;
 
 
 function Start () {
@@ -176,17 +178,31 @@ function Start () {
 
 	UIScaleFactorX = Screen.width / SCREEN_WIDTH;
 	UIScaleFactorY = Screen.height / SCREEN_HEIGHT;
-	setLowerButtonPosition(startButton);
-	setLowerButtonPosition(resumeButton);
-	setLowerButtonPosition(restartButton);
-	setTutorialPosition();
-	setTutorialScale();
+	adjustButtons();
+	// Debug.Log(SCREEN_HEIGHT);
+	// Debug.Log(SCREEN_WIDTH);
 	// hidePauseButton();
 
 	// startGame();
 	// Debug.Log((scoreBoard[0] as GameObject).transform.GetChild(0).GetChild(0));
 }
 
+
+function adjustButtons(){
+	setLowerButtonPosition(startButton,0);
+	setLowerButtonPosition(resumeButton, -CENTER_HALF_LENGTH*1.5);
+	setLowerButtonPosition(restartButton, CENTER_HALF_LENGTH*1.5);
+	setTutorialPosition();
+	setTutorialScale();
+	setHighestScorePosition();
+
+	scaleAddedScoreText();
+	scaleHighestScore();
+	scaleStartButton();
+	scaleButton(pauseButton,1);
+	scaleButton(resumeButton,2);
+	scaleButton(restartButton,2);
+}
 
 function Update () {
 	if(isScoreAdded && !inUserRotation && !isScaling){
@@ -1206,11 +1222,12 @@ function enableButton(button:UnityEngine.UI.Button){
 }
 
 
-function setLowerButtonPosition(button:UnityEngine.UI.Button){
+function setLowerButtonPosition(button:UnityEngine.UI.Button, xPosition:float){
 	var yAdjust:float = VERTICAL_ADJUST+LEAF_WIDTH/2 + 2*CENTER_HALF_LENGTH;
 	var yAdjustUI:float = yAdjust * UIScaleFactorY;
+	var xPositionUI:float = xPosition * UIScaleFactorX;
 	// Debug.Log(UIScaleFactorY);
-	button.transform.position = new Vector3(button.transform.position.x, yAdjustUI, button.transform.position.z);
+	button.transform.position = new Vector3(button.transform.position.x+xPositionUI, yAdjustUI, button.transform.position.z);
 }
 
 function setTutorialPosition(){
@@ -1219,6 +1236,13 @@ function setTutorialPosition(){
 	// Debug.Log(yAdjustUI);
 	tutorial.transform.position = new Vector3(tutorial.transform.position.x, yAdjustUI, tutorial.transform.position.z);
 }	
+
+function setHighestScorePosition(){
+	var yAdjust:float = VERTICAL_ADJUST + 3*2*CENTER_HALF_LENGTH + LEAF_WIDTH/2;
+	var yAdjustUI:float = yAdjust * UIScaleFactorY;
+	// Debug.Log(yAdjustUI);
+	highestScoreText.transform.position = new Vector3(highestScoreText.transform.position.x, yAdjustUI, highestScoreText.transform.position.z);
+}
 
 function setTutorialScale(){
 	var newWidth = 4*2*CENTER_HALF_LENGTH*UIScaleFactorX;
@@ -1237,6 +1261,59 @@ function hideTutorial(){
 
 function showTutorial(){
 	tutorial.enabled = true;
+}
+
+function scaleStartButton(){
+	var rect = startButton.GetComponent(RectTransform).rect;
+	// var originalWidth = rect.width;
+	// var originalHeight = rect.height;
+
+	var newHeight = (2/3.0)*2*CENTER_HALF_LENGTH*UIScaleFactorY;
+	var newWidth = 2*2*CENTER_HALF_LENGTH*UIScaleFactorX;
+
+	startButton.GetComponent(RectTransform).sizeDelta = new Vector2(newWidth, newHeight);
+}
+
+function scaleHighestScore(){
+	var rect = highestScoreText.GetComponent(RectTransform).rect;
+	// var originalWidth = rect.width;
+	// var originalHeight = rect.height;
+
+	var newHeight = (2/3.0)*2*CENTER_HALF_LENGTH*UIScaleFactorY;
+	var newWidth = 3*2*CENTER_HALF_LENGTH*UIScaleFactorX;
+
+	highestScoreText.GetComponent(RectTransform).sizeDelta = new Vector2(newWidth, newHeight);
+}
+
+function scaleButton(button:UnityEngine.UI.Button, scale:float){
+	var rect = button.GetComponent(RectTransform).rect;
+	// var originalWidth = rect.width;
+	// var originalHeight = rect.height;
+
+	var newHeight = scale*CENTER_HALF_LENGTH*UIScaleFactorY;
+	var newWidth = scale*CENTER_HALF_LENGTH*UIScaleFactorX;
+
+	button.GetComponent(RectTransform).sizeDelta = new Vector2(newWidth, newHeight);
+}
+
+function scaleAddedScoreText(){
+	var newHeight = 1.5*CENTER_HALF_LENGTH*UIScaleFactorY;
+	var newWidth = 3*CENTER_HALF_LENGTH*UIScaleFactorX;
+	var rect = addScoreText.GetComponent(RectTransform).rect;
+
+	var originalWidth = rect.width;
+	var originalHeight = rect.height;
+
+	var widthScale = newWidth / originalWidth;
+	var heightScale = newHeight / originalHeight;
+
+	// Debug.Log(widthScale);
+	// Debug.Log(heightScale);
+
+	Debug.Log((centers[0] as GameObject).GetComponent(Renderer).bounds.size);
+
+	// addScoreText.GetComponent(RectTransform).sizeDelta = new Vector2(newWidth, newHeight);
+	addScoreText.GetComponent(RectTransform).localScale = new Vector3(addScoreText.GetComponent(RectTransform).localScale.x*widthScale, addScoreText.GetComponent(RectTransform).localScale.y*heightScale, addScoreText.GetComponent(RectTransform).localScale.z);
 }
 
 

@@ -20,12 +20,12 @@ struct Hashtable_t3875263730;
 struct GameObjectU5BU5D_t3499186955;
 // UnityEngine.Canvas
 struct Canvas_t3534013893;
+// UnityEngine.UI.CanvasScaler
+struct CanvasScaler_t872225289;
 // UnityEngine.UI.Text
 struct Text_t3286458198;
 // UnityEngine.UI.Button
 struct Button_t990034267;
-// UnityEngine.UI.CanvasScaler
-struct CanvasScaler_t872225289;
 
 #include "UnityEngine_UnityEngine_MonoBehaviour3012272455.h"
 #include "UnityEngine_UnityEngine_Vector33525329789.h"
@@ -130,50 +130,50 @@ public:
 	int32_t ___accuTime_45;
 	// UnityEngine.Canvas SceneScript::canvas
 	Canvas_t3534013893 * ___canvas_46;
-	// UnityEngine.UI.Text SceneScript::addScoreText
-	Text_t3286458198 * ___addScoreText_47;
 	// System.Boolean SceneScript::isScoreAdded
-	bool ___isScoreAdded_48;
+	bool ___isScoreAdded_47;
 	// System.Int32 SceneScript::scoreToAdded
-	int32_t ___scoreToAdded_49;
+	int32_t ___scoreToAdded_48;
 	// System.Single SceneScript::gameStartTime
-	float ___gameStartTime_50;
+	float ___gameStartTime_49;
 	// UnityScript.Lang.Array SceneScript::centers
-	Array_t1209885965 * ___centers_51;
+	Array_t1209885965 * ___centers_50;
 	// System.Boolean SceneScript::isGameOverHandled
-	bool ___isGameOverHandled_52;
+	bool ___isGameOverHandled_51;
 	// System.Single SceneScript::GAME_TIME
-	float ___GAME_TIME_53;
+	float ___GAME_TIME_52;
 	// System.Boolean SceneScript::leavesAreOpen
-	bool ___leavesAreOpen_54;
+	bool ___leavesAreOpen_53;
 	// System.Boolean SceneScript::collidersEnable
-	bool ___collidersEnable_55;
-	// UnityEngine.UI.Button SceneScript::startButton
-	Button_t990034267 * ___startButton_56;
-	// UnityEngine.UI.Button SceneScript::pauseButton
-	Button_t990034267 * ___pauseButton_57;
-	// UnityEngine.UI.Button SceneScript::resumeButton
-	Button_t990034267 * ___resumeButton_58;
-	// UnityEngine.UI.Button SceneScript::restartButton
-	Button_t990034267 * ___restartButton_59;
+	bool ___collidersEnable_54;
 	// UnityEngine.GameObject SceneScript::timeStampPrefab
-	GameObject_t4012695102 * ___timeStampPrefab_60;
-	// UnityEngine.UI.Text SceneScript::highestScoreText
-	Text_t3286458198 * ___highestScoreText_61;
+	GameObject_t4012695102 * ___timeStampPrefab_55;
 	// System.Boolean SceneScript::isPause
-	bool ___isPause_62;
+	bool ___isPause_56;
 	// System.Boolean SceneScript::scoreBoardInRotation
-	bool ___scoreBoardInRotation_63;
+	bool ___scoreBoardInRotation_57;
 	// System.Int32 SceneScript::STAMP_INITTIME
-	int32_t ___STAMP_INITTIME_64;
+	int32_t ___STAMP_INITTIME_58;
 	// UnityEngine.UI.CanvasScaler SceneScript::canvasScaler
-	CanvasScaler_t872225289 * ___canvasScaler_65;
+	CanvasScaler_t872225289 * ___canvasScaler_59;
 	// System.Single SceneScript::UIScaleFactorX
-	float ___UIScaleFactorX_66;
+	float ___UIScaleFactorX_60;
 	// System.Single SceneScript::UIScaleFactorY
-	float ___UIScaleFactorY_67;
+	float ___UIScaleFactorY_61;
 	// UnityEngine.UI.Text SceneScript::tutorial
-	Text_t3286458198 * ___tutorial_68;
+	Text_t3286458198 * ___tutorial_62;
+	// UnityEngine.UI.Text SceneScript::addScoreText
+	Text_t3286458198 * ___addScoreText_63;
+	// UnityEngine.UI.Text SceneScript::highestScoreText
+	Text_t3286458198 * ___highestScoreText_64;
+	// UnityEngine.UI.Button SceneScript::startButton
+	Button_t990034267 * ___startButton_65;
+	// UnityEngine.UI.Button SceneScript::pauseButton
+	Button_t990034267 * ___pauseButton_66;
+	// UnityEngine.UI.Button SceneScript::resumeButton
+	Button_t990034267 * ___resumeButton_67;
+	// UnityEngine.UI.Button SceneScript::restartButton
+	Button_t990034267 * ___restartButton_68;
 
 public:
 	inline static int32_t get_offset_of_ROWS_2() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___ROWS_2)); }
@@ -547,190 +547,190 @@ public:
 		Il2CppCodeGenWriteBarrier(&___canvas_46, value);
 	}
 
-	inline static int32_t get_offset_of_addScoreText_47() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___addScoreText_47)); }
-	inline Text_t3286458198 * get_addScoreText_47() const { return ___addScoreText_47; }
-	inline Text_t3286458198 ** get_address_of_addScoreText_47() { return &___addScoreText_47; }
-	inline void set_addScoreText_47(Text_t3286458198 * value)
+	inline static int32_t get_offset_of_isScoreAdded_47() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isScoreAdded_47)); }
+	inline bool get_isScoreAdded_47() const { return ___isScoreAdded_47; }
+	inline bool* get_address_of_isScoreAdded_47() { return &___isScoreAdded_47; }
+	inline void set_isScoreAdded_47(bool value)
 	{
-		___addScoreText_47 = value;
-		Il2CppCodeGenWriteBarrier(&___addScoreText_47, value);
+		___isScoreAdded_47 = value;
 	}
 
-	inline static int32_t get_offset_of_isScoreAdded_48() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isScoreAdded_48)); }
-	inline bool get_isScoreAdded_48() const { return ___isScoreAdded_48; }
-	inline bool* get_address_of_isScoreAdded_48() { return &___isScoreAdded_48; }
-	inline void set_isScoreAdded_48(bool value)
+	inline static int32_t get_offset_of_scoreToAdded_48() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___scoreToAdded_48)); }
+	inline int32_t get_scoreToAdded_48() const { return ___scoreToAdded_48; }
+	inline int32_t* get_address_of_scoreToAdded_48() { return &___scoreToAdded_48; }
+	inline void set_scoreToAdded_48(int32_t value)
 	{
-		___isScoreAdded_48 = value;
+		___scoreToAdded_48 = value;
 	}
 
-	inline static int32_t get_offset_of_scoreToAdded_49() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___scoreToAdded_49)); }
-	inline int32_t get_scoreToAdded_49() const { return ___scoreToAdded_49; }
-	inline int32_t* get_address_of_scoreToAdded_49() { return &___scoreToAdded_49; }
-	inline void set_scoreToAdded_49(int32_t value)
+	inline static int32_t get_offset_of_gameStartTime_49() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___gameStartTime_49)); }
+	inline float get_gameStartTime_49() const { return ___gameStartTime_49; }
+	inline float* get_address_of_gameStartTime_49() { return &___gameStartTime_49; }
+	inline void set_gameStartTime_49(float value)
 	{
-		___scoreToAdded_49 = value;
+		___gameStartTime_49 = value;
 	}
 
-	inline static int32_t get_offset_of_gameStartTime_50() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___gameStartTime_50)); }
-	inline float get_gameStartTime_50() const { return ___gameStartTime_50; }
-	inline float* get_address_of_gameStartTime_50() { return &___gameStartTime_50; }
-	inline void set_gameStartTime_50(float value)
+	inline static int32_t get_offset_of_centers_50() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___centers_50)); }
+	inline Array_t1209885965 * get_centers_50() const { return ___centers_50; }
+	inline Array_t1209885965 ** get_address_of_centers_50() { return &___centers_50; }
+	inline void set_centers_50(Array_t1209885965 * value)
 	{
-		___gameStartTime_50 = value;
+		___centers_50 = value;
+		Il2CppCodeGenWriteBarrier(&___centers_50, value);
 	}
 
-	inline static int32_t get_offset_of_centers_51() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___centers_51)); }
-	inline Array_t1209885965 * get_centers_51() const { return ___centers_51; }
-	inline Array_t1209885965 ** get_address_of_centers_51() { return &___centers_51; }
-	inline void set_centers_51(Array_t1209885965 * value)
+	inline static int32_t get_offset_of_isGameOverHandled_51() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isGameOverHandled_51)); }
+	inline bool get_isGameOverHandled_51() const { return ___isGameOverHandled_51; }
+	inline bool* get_address_of_isGameOverHandled_51() { return &___isGameOverHandled_51; }
+	inline void set_isGameOverHandled_51(bool value)
 	{
-		___centers_51 = value;
-		Il2CppCodeGenWriteBarrier(&___centers_51, value);
+		___isGameOverHandled_51 = value;
 	}
 
-	inline static int32_t get_offset_of_isGameOverHandled_52() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isGameOverHandled_52)); }
-	inline bool get_isGameOverHandled_52() const { return ___isGameOverHandled_52; }
-	inline bool* get_address_of_isGameOverHandled_52() { return &___isGameOverHandled_52; }
-	inline void set_isGameOverHandled_52(bool value)
+	inline static int32_t get_offset_of_GAME_TIME_52() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___GAME_TIME_52)); }
+	inline float get_GAME_TIME_52() const { return ___GAME_TIME_52; }
+	inline float* get_address_of_GAME_TIME_52() { return &___GAME_TIME_52; }
+	inline void set_GAME_TIME_52(float value)
 	{
-		___isGameOverHandled_52 = value;
+		___GAME_TIME_52 = value;
 	}
 
-	inline static int32_t get_offset_of_GAME_TIME_53() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___GAME_TIME_53)); }
-	inline float get_GAME_TIME_53() const { return ___GAME_TIME_53; }
-	inline float* get_address_of_GAME_TIME_53() { return &___GAME_TIME_53; }
-	inline void set_GAME_TIME_53(float value)
+	inline static int32_t get_offset_of_leavesAreOpen_53() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___leavesAreOpen_53)); }
+	inline bool get_leavesAreOpen_53() const { return ___leavesAreOpen_53; }
+	inline bool* get_address_of_leavesAreOpen_53() { return &___leavesAreOpen_53; }
+	inline void set_leavesAreOpen_53(bool value)
 	{
-		___GAME_TIME_53 = value;
+		___leavesAreOpen_53 = value;
 	}
 
-	inline static int32_t get_offset_of_leavesAreOpen_54() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___leavesAreOpen_54)); }
-	inline bool get_leavesAreOpen_54() const { return ___leavesAreOpen_54; }
-	inline bool* get_address_of_leavesAreOpen_54() { return &___leavesAreOpen_54; }
-	inline void set_leavesAreOpen_54(bool value)
+	inline static int32_t get_offset_of_collidersEnable_54() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___collidersEnable_54)); }
+	inline bool get_collidersEnable_54() const { return ___collidersEnable_54; }
+	inline bool* get_address_of_collidersEnable_54() { return &___collidersEnable_54; }
+	inline void set_collidersEnable_54(bool value)
 	{
-		___leavesAreOpen_54 = value;
+		___collidersEnable_54 = value;
 	}
 
-	inline static int32_t get_offset_of_collidersEnable_55() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___collidersEnable_55)); }
-	inline bool get_collidersEnable_55() const { return ___collidersEnable_55; }
-	inline bool* get_address_of_collidersEnable_55() { return &___collidersEnable_55; }
-	inline void set_collidersEnable_55(bool value)
+	inline static int32_t get_offset_of_timeStampPrefab_55() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___timeStampPrefab_55)); }
+	inline GameObject_t4012695102 * get_timeStampPrefab_55() const { return ___timeStampPrefab_55; }
+	inline GameObject_t4012695102 ** get_address_of_timeStampPrefab_55() { return &___timeStampPrefab_55; }
+	inline void set_timeStampPrefab_55(GameObject_t4012695102 * value)
 	{
-		___collidersEnable_55 = value;
+		___timeStampPrefab_55 = value;
+		Il2CppCodeGenWriteBarrier(&___timeStampPrefab_55, value);
 	}
 
-	inline static int32_t get_offset_of_startButton_56() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___startButton_56)); }
-	inline Button_t990034267 * get_startButton_56() const { return ___startButton_56; }
-	inline Button_t990034267 ** get_address_of_startButton_56() { return &___startButton_56; }
-	inline void set_startButton_56(Button_t990034267 * value)
+	inline static int32_t get_offset_of_isPause_56() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isPause_56)); }
+	inline bool get_isPause_56() const { return ___isPause_56; }
+	inline bool* get_address_of_isPause_56() { return &___isPause_56; }
+	inline void set_isPause_56(bool value)
 	{
-		___startButton_56 = value;
-		Il2CppCodeGenWriteBarrier(&___startButton_56, value);
+		___isPause_56 = value;
 	}
 
-	inline static int32_t get_offset_of_pauseButton_57() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___pauseButton_57)); }
-	inline Button_t990034267 * get_pauseButton_57() const { return ___pauseButton_57; }
-	inline Button_t990034267 ** get_address_of_pauseButton_57() { return &___pauseButton_57; }
-	inline void set_pauseButton_57(Button_t990034267 * value)
+	inline static int32_t get_offset_of_scoreBoardInRotation_57() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___scoreBoardInRotation_57)); }
+	inline bool get_scoreBoardInRotation_57() const { return ___scoreBoardInRotation_57; }
+	inline bool* get_address_of_scoreBoardInRotation_57() { return &___scoreBoardInRotation_57; }
+	inline void set_scoreBoardInRotation_57(bool value)
 	{
-		___pauseButton_57 = value;
-		Il2CppCodeGenWriteBarrier(&___pauseButton_57, value);
+		___scoreBoardInRotation_57 = value;
 	}
 
-	inline static int32_t get_offset_of_resumeButton_58() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___resumeButton_58)); }
-	inline Button_t990034267 * get_resumeButton_58() const { return ___resumeButton_58; }
-	inline Button_t990034267 ** get_address_of_resumeButton_58() { return &___resumeButton_58; }
-	inline void set_resumeButton_58(Button_t990034267 * value)
+	inline static int32_t get_offset_of_STAMP_INITTIME_58() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___STAMP_INITTIME_58)); }
+	inline int32_t get_STAMP_INITTIME_58() const { return ___STAMP_INITTIME_58; }
+	inline int32_t* get_address_of_STAMP_INITTIME_58() { return &___STAMP_INITTIME_58; }
+	inline void set_STAMP_INITTIME_58(int32_t value)
 	{
-		___resumeButton_58 = value;
-		Il2CppCodeGenWriteBarrier(&___resumeButton_58, value);
+		___STAMP_INITTIME_58 = value;
 	}
 
-	inline static int32_t get_offset_of_restartButton_59() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___restartButton_59)); }
-	inline Button_t990034267 * get_restartButton_59() const { return ___restartButton_59; }
-	inline Button_t990034267 ** get_address_of_restartButton_59() { return &___restartButton_59; }
-	inline void set_restartButton_59(Button_t990034267 * value)
+	inline static int32_t get_offset_of_canvasScaler_59() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___canvasScaler_59)); }
+	inline CanvasScaler_t872225289 * get_canvasScaler_59() const { return ___canvasScaler_59; }
+	inline CanvasScaler_t872225289 ** get_address_of_canvasScaler_59() { return &___canvasScaler_59; }
+	inline void set_canvasScaler_59(CanvasScaler_t872225289 * value)
 	{
-		___restartButton_59 = value;
-		Il2CppCodeGenWriteBarrier(&___restartButton_59, value);
+		___canvasScaler_59 = value;
+		Il2CppCodeGenWriteBarrier(&___canvasScaler_59, value);
 	}
 
-	inline static int32_t get_offset_of_timeStampPrefab_60() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___timeStampPrefab_60)); }
-	inline GameObject_t4012695102 * get_timeStampPrefab_60() const { return ___timeStampPrefab_60; }
-	inline GameObject_t4012695102 ** get_address_of_timeStampPrefab_60() { return &___timeStampPrefab_60; }
-	inline void set_timeStampPrefab_60(GameObject_t4012695102 * value)
+	inline static int32_t get_offset_of_UIScaleFactorX_60() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___UIScaleFactorX_60)); }
+	inline float get_UIScaleFactorX_60() const { return ___UIScaleFactorX_60; }
+	inline float* get_address_of_UIScaleFactorX_60() { return &___UIScaleFactorX_60; }
+	inline void set_UIScaleFactorX_60(float value)
 	{
-		___timeStampPrefab_60 = value;
-		Il2CppCodeGenWriteBarrier(&___timeStampPrefab_60, value);
+		___UIScaleFactorX_60 = value;
 	}
 
-	inline static int32_t get_offset_of_highestScoreText_61() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___highestScoreText_61)); }
-	inline Text_t3286458198 * get_highestScoreText_61() const { return ___highestScoreText_61; }
-	inline Text_t3286458198 ** get_address_of_highestScoreText_61() { return &___highestScoreText_61; }
-	inline void set_highestScoreText_61(Text_t3286458198 * value)
+	inline static int32_t get_offset_of_UIScaleFactorY_61() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___UIScaleFactorY_61)); }
+	inline float get_UIScaleFactorY_61() const { return ___UIScaleFactorY_61; }
+	inline float* get_address_of_UIScaleFactorY_61() { return &___UIScaleFactorY_61; }
+	inline void set_UIScaleFactorY_61(float value)
 	{
-		___highestScoreText_61 = value;
-		Il2CppCodeGenWriteBarrier(&___highestScoreText_61, value);
+		___UIScaleFactorY_61 = value;
 	}
 
-	inline static int32_t get_offset_of_isPause_62() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___isPause_62)); }
-	inline bool get_isPause_62() const { return ___isPause_62; }
-	inline bool* get_address_of_isPause_62() { return &___isPause_62; }
-	inline void set_isPause_62(bool value)
+	inline static int32_t get_offset_of_tutorial_62() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___tutorial_62)); }
+	inline Text_t3286458198 * get_tutorial_62() const { return ___tutorial_62; }
+	inline Text_t3286458198 ** get_address_of_tutorial_62() { return &___tutorial_62; }
+	inline void set_tutorial_62(Text_t3286458198 * value)
 	{
-		___isPause_62 = value;
+		___tutorial_62 = value;
+		Il2CppCodeGenWriteBarrier(&___tutorial_62, value);
 	}
 
-	inline static int32_t get_offset_of_scoreBoardInRotation_63() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___scoreBoardInRotation_63)); }
-	inline bool get_scoreBoardInRotation_63() const { return ___scoreBoardInRotation_63; }
-	inline bool* get_address_of_scoreBoardInRotation_63() { return &___scoreBoardInRotation_63; }
-	inline void set_scoreBoardInRotation_63(bool value)
+	inline static int32_t get_offset_of_addScoreText_63() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___addScoreText_63)); }
+	inline Text_t3286458198 * get_addScoreText_63() const { return ___addScoreText_63; }
+	inline Text_t3286458198 ** get_address_of_addScoreText_63() { return &___addScoreText_63; }
+	inline void set_addScoreText_63(Text_t3286458198 * value)
 	{
-		___scoreBoardInRotation_63 = value;
+		___addScoreText_63 = value;
+		Il2CppCodeGenWriteBarrier(&___addScoreText_63, value);
 	}
 
-	inline static int32_t get_offset_of_STAMP_INITTIME_64() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___STAMP_INITTIME_64)); }
-	inline int32_t get_STAMP_INITTIME_64() const { return ___STAMP_INITTIME_64; }
-	inline int32_t* get_address_of_STAMP_INITTIME_64() { return &___STAMP_INITTIME_64; }
-	inline void set_STAMP_INITTIME_64(int32_t value)
+	inline static int32_t get_offset_of_highestScoreText_64() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___highestScoreText_64)); }
+	inline Text_t3286458198 * get_highestScoreText_64() const { return ___highestScoreText_64; }
+	inline Text_t3286458198 ** get_address_of_highestScoreText_64() { return &___highestScoreText_64; }
+	inline void set_highestScoreText_64(Text_t3286458198 * value)
 	{
-		___STAMP_INITTIME_64 = value;
+		___highestScoreText_64 = value;
+		Il2CppCodeGenWriteBarrier(&___highestScoreText_64, value);
 	}
 
-	inline static int32_t get_offset_of_canvasScaler_65() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___canvasScaler_65)); }
-	inline CanvasScaler_t872225289 * get_canvasScaler_65() const { return ___canvasScaler_65; }
-	inline CanvasScaler_t872225289 ** get_address_of_canvasScaler_65() { return &___canvasScaler_65; }
-	inline void set_canvasScaler_65(CanvasScaler_t872225289 * value)
+	inline static int32_t get_offset_of_startButton_65() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___startButton_65)); }
+	inline Button_t990034267 * get_startButton_65() const { return ___startButton_65; }
+	inline Button_t990034267 ** get_address_of_startButton_65() { return &___startButton_65; }
+	inline void set_startButton_65(Button_t990034267 * value)
 	{
-		___canvasScaler_65 = value;
-		Il2CppCodeGenWriteBarrier(&___canvasScaler_65, value);
+		___startButton_65 = value;
+		Il2CppCodeGenWriteBarrier(&___startButton_65, value);
 	}
 
-	inline static int32_t get_offset_of_UIScaleFactorX_66() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___UIScaleFactorX_66)); }
-	inline float get_UIScaleFactorX_66() const { return ___UIScaleFactorX_66; }
-	inline float* get_address_of_UIScaleFactorX_66() { return &___UIScaleFactorX_66; }
-	inline void set_UIScaleFactorX_66(float value)
+	inline static int32_t get_offset_of_pauseButton_66() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___pauseButton_66)); }
+	inline Button_t990034267 * get_pauseButton_66() const { return ___pauseButton_66; }
+	inline Button_t990034267 ** get_address_of_pauseButton_66() { return &___pauseButton_66; }
+	inline void set_pauseButton_66(Button_t990034267 * value)
 	{
-		___UIScaleFactorX_66 = value;
+		___pauseButton_66 = value;
+		Il2CppCodeGenWriteBarrier(&___pauseButton_66, value);
 	}
 
-	inline static int32_t get_offset_of_UIScaleFactorY_67() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___UIScaleFactorY_67)); }
-	inline float get_UIScaleFactorY_67() const { return ___UIScaleFactorY_67; }
-	inline float* get_address_of_UIScaleFactorY_67() { return &___UIScaleFactorY_67; }
-	inline void set_UIScaleFactorY_67(float value)
+	inline static int32_t get_offset_of_resumeButton_67() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___resumeButton_67)); }
+	inline Button_t990034267 * get_resumeButton_67() const { return ___resumeButton_67; }
+	inline Button_t990034267 ** get_address_of_resumeButton_67() { return &___resumeButton_67; }
+	inline void set_resumeButton_67(Button_t990034267 * value)
 	{
-		___UIScaleFactorY_67 = value;
+		___resumeButton_67 = value;
+		Il2CppCodeGenWriteBarrier(&___resumeButton_67, value);
 	}
 
-	inline static int32_t get_offset_of_tutorial_68() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___tutorial_68)); }
-	inline Text_t3286458198 * get_tutorial_68() const { return ___tutorial_68; }
-	inline Text_t3286458198 ** get_address_of_tutorial_68() { return &___tutorial_68; }
-	inline void set_tutorial_68(Text_t3286458198 * value)
+	inline static int32_t get_offset_of_restartButton_68() { return static_cast<int32_t>(offsetof(SceneScript_t1382933591, ___restartButton_68)); }
+	inline Button_t990034267 * get_restartButton_68() const { return ___restartButton_68; }
+	inline Button_t990034267 ** get_address_of_restartButton_68() { return &___restartButton_68; }
+	inline void set_restartButton_68(Button_t990034267 * value)
 	{
-		___tutorial_68 = value;
-		Il2CppCodeGenWriteBarrier(&___tutorial_68, value);
+		___restartButton_68 = value;
+		Il2CppCodeGenWriteBarrier(&___restartButton_68, value);
 	}
 };
 

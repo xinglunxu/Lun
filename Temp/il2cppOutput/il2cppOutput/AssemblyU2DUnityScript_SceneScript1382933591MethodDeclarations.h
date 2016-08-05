@@ -34,6 +34,8 @@ struct Button_t990034267;
 extern "C"  void SceneScript__ctor_m579483231 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::Start()
 extern "C"  void SceneScript_Start_m3821588319 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::adjustButtons()
+extern "C"  void SceneScript_adjustButtons_m3872949263 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::Update()
 extern "C"  void SceneScript_Update_m2510973070 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::initiateScoreBoard()
@@ -246,15 +248,25 @@ extern "C"  void SceneScript_showButton_m669313641 (SceneScript_t1382933591 * __
 extern "C"  void SceneScript_disableButton_m1934242214 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::enableButton(UnityEngine.UI.Button)
 extern "C"  void SceneScript_enableButton_m642072227 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button)
-extern "C"  void SceneScript_setLowerButtonPosition_m2862219390 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button,System.Single)
+extern "C"  void SceneScript_setLowerButtonPosition_m1284691683 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, float ___xPosition1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::setTutorialPosition()
 extern "C"  void SceneScript_setTutorialPosition_m1790247814 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setHighestScorePosition()
+extern "C"  void SceneScript_setHighestScorePosition_m3088273782 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::setTutorialScale()
 extern "C"  void SceneScript_setTutorialScale_m513465775 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::hideTutorial()
 extern "C"  void SceneScript_hideTutorial_m1892219301 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::showTutorial()
 extern "C"  void SceneScript_showTutorial_m59001248 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::scaleStartButton()
+extern "C"  void SceneScript_scaleStartButton_m1139336431 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::scaleHighestScore()
+extern "C"  void SceneScript_scaleHighestScore_m1552076373 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::scaleButton(UnityEngine.UI.Button,System.Single)
+extern "C"  void SceneScript_scaleButton_m24001385 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, float ___scale1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::scaleAddedScoreText()
+extern "C"  void SceneScript_scaleAddedScoreText_m370869766 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::Main()
 extern "C"  void SceneScript_Main_m765471358 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
