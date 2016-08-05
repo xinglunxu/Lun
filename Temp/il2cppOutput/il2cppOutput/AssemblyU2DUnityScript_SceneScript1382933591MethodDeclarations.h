@@ -18,12 +18,17 @@ struct SceneScript_t1382933591;
 struct GameObject_t4012695102;
 // UnityScript.Lang.Array
 struct Array_t1209885965;
+// System.Collections.IEnumerator
+struct IEnumerator_t287207039;
+// UnityEngine.UI.Button
+struct Button_t990034267;
 
 #include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_Vector33525329789.h"
 #include "UnityEngine_UnityEngine_Color1588175760.h"
 #include "UnityScript_Lang_UnityScript_Lang_Array1209885965.h"
 #include "UnityEngine_UnityEngine_GameObject4012695102.h"
+#include "UnityEngine_UI_UnityEngine_UI_Button990034267.h"
 
 // System.Void SceneScript::.ctor()
 extern "C"  void SceneScript__ctor_m579483231 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
@@ -71,6 +76,8 @@ extern "C"  void SceneScript_debugArray_m445982980 (SceneScript_t1382933591 * __
 extern "C"  void SceneScript_listenForClickOnCenters_m1121997750 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::handleRotatation(System.Int32,UnityEngine.Vector3)
 extern "C"  void SceneScript_handleRotatation_m1411963324 (SceneScript_t1382933591 * __this, int32_t ___index0, Vector3_t3525329789  ___vector1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::startPenalty()
+extern "C"  void SceneScript_startPenalty_m2430403308 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32)
 extern "C"  int32_t SceneScript_getLeftLeafFromCenter_m1774922240 (SceneScript_t1382933591 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 SceneScript::getRightLeafFromCenter(System.Int32)
@@ -157,19 +164,97 @@ extern "C"  void SceneScript_updateAccumTime_m1681234906 (SceneScript_t138293359
 extern "C"  void SceneScript_subtractOneSec_m1268727396 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::bingo(System.Int32)
 extern "C"  void SceneScript_bingo_m1140923229 (SceneScript_t1382933591 * __this, int32_t ___score0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::penalty(System.Int32)
+extern "C"  void SceneScript_penalty_m3266286391 (SceneScript_t1382933591 * __this, int32_t ___score0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::resetAllLeaves()
 extern "C"  void SceneScript_resetAllLeaves_m553690995 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean SceneScript::isGameOver()
 extern "C"  bool SceneScript_isGameOver_m3244978135 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SceneScript::handleGameOver()
-extern "C"  void SceneScript_handleGameOver_m3697655955 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void SceneScript::startGame()
-extern "C"  void SceneScript_startGame_m4274572305 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator SceneScript::handleGameOver()
+extern "C"  Il2CppObject * SceneScript_handleGameOver_m767146817 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator SceneScript::pauseGame()
+extern "C"  Il2CppObject * SceneScript_pauseGame_m2309832503 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::_pauseGame()
+extern "C"  void SceneScript__pauseGame_m1203863342 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator SceneScript::resumeGame()
+extern "C"  Il2CppObject * SceneScript_resumeGame_m2481487762 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::_resumeGame()
+extern "C"  void SceneScript__resumeGame_m2556182139 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::updateHighestScore()
+extern "C"  void SceneScript_updateHighestScore_m934944220 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::shuffleAndApplyNewColorAtLeaves()
+extern "C"  void SceneScript_shuffleAndApplyNewColorAtLeaves_m3662186399 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator SceneScript::startGame()
+extern "C"  Il2CppObject * SceneScript_startGame_m2249350307 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator SceneScript::restartGame()
+extern "C"  Il2CppObject * SceneScript_restartGame_m1737354512 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::_restartGame()
+extern "C"  void SceneScript__restartGame_m4052880199 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showHighestScore()
+extern "C"  void SceneScript_showHighestScore_m3407887888 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideHighestScore()
+extern "C"  void SceneScript_hideHighestScore_m2798871445 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::_startGame()
+extern "C"  void SceneScript__startGame_m1143381146 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::foldAllLeaves()
+extern "C"  void SceneScript_foldAllLeaves_m1988880185 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::openAllLeaves()
+extern "C"  void SceneScript_openAllLeaves_m1216066896 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::enableAllColliders()
+extern "C"  void SceneScript_enableAllColliders_m595027750 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::disableAllColliders()
+extern "C"  void SceneScript_disableAllColliders_m3754503811 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::toggleCollider(UnityEngine.GameObject)
 extern "C"  void SceneScript_toggleCollider_m33023749 (SceneScript_t1382933591 * __this, GameObject_t4012695102 * ___centerObject0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::toggleAllCenterColliders()
 extern "C"  void SceneScript_toggleAllCenterColliders_m1517480546 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::toggleAllLeaves()
 extern "C"  void SceneScript_toggleAllLeaves_m2957262598 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showAllTimeStamps()
+extern "C"  void SceneScript_showAllTimeStamps_m757894174 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideAllTimeStamps()
+extern "C"  void SceneScript_hideAllTimeStamps_m3353220921 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::resetTime()
+extern "C"  void SceneScript_resetTime_m1452718937 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setTimeForTimeStamps()
+extern "C"  void SceneScript_setTimeForTimeStamps_m858730236 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::resetScore()
+extern "C"  void SceneScript_resetScore_m1027628456 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showHighestScoreOnScoreBoard()
+extern "C"  void SceneScript_showHighestScoreOnScoreBoard_m3632362915 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hidePauseButton()
+extern "C"  void SceneScript_hidePauseButton_m3606918467 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showPauseButton()
+extern "C"  void SceneScript_showPauseButton_m717070184 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showRestartButton()
+extern "C"  void SceneScript_showRestartButton_m2978251457 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideRestartButton()
+extern "C"  void SceneScript_hideRestartButton_m1278610908 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showResumeButton()
+extern "C"  void SceneScript_showResumeButton_m807208769 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideResumeButton()
+extern "C"  void SceneScript_hideResumeButton_m198192326 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hidePlayButton()
+extern "C"  void SceneScript_hidePlayButton_m3530142285 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showPlayButton()
+extern "C"  void SceneScript_showPlayButton_m2744184712 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_hideButton_m1437297220 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_showButton_m669313641 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::disableButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_disableButton_m1934242214 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::enableButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_enableButton_m642072227 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button)
+extern "C"  void SceneScript_setLowerButtonPosition_m2862219390 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setTutorialPosition()
+extern "C"  void SceneScript_setTutorialPosition_m1790247814 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::setTutorialScale()
+extern "C"  void SceneScript_setTutorialScale_m513465775 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::hideTutorial()
+extern "C"  void SceneScript_hideTutorial_m1892219301 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SceneScript::showTutorial()
+extern "C"  void SceneScript_showTutorial_m59001248 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SceneScript::Main()
 extern "C"  void SceneScript_Main_m765471358 (SceneScript_t1382933591 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

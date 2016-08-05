@@ -8596,6 +8596,11 @@ extern "C" void Plane__ctor_m2201046863 ();
 extern "C" void Plane_get_normal_m3534129213 ();
 extern "C" void Plane_get_distance_m2612484153 ();
 extern "C" void Plane_Raycast_m2829769106 ();
+extern "C" void PlayerPrefs_TrySetInt_m2066630347 ();
+extern "C" void PlayerPrefs_SetInt_m3485171996 ();
+extern "C" void PlayerPrefs_GetInt_m3632746280 ();
+extern "C" void PlayerPrefs_GetInt_m1334009359 ();
+extern "C" void PlayerPrefsException__ctor_m3661687413 ();
 extern "C" void PropertyAttribute__ctor_m1741701746 ();
 extern "C" void QualitySettings_get_activeColorSpace_m2993616266 ();
 extern "C" void Quaternion__ctor_m1100844011 ();
@@ -8606,11 +8611,8 @@ extern "C" void Quaternion_INTERNAL_CALL_AngleAxis_m1562314763 ();
 extern "C" void Quaternion_Inverse_m3542515566 ();
 extern "C" void Quaternion_INTERNAL_CALL_Inverse_m4175627710 ();
 extern "C" void Quaternion_ToString_m1793285860 ();
-extern "C" void Quaternion_get_eulerAngles_m997303795 ();
 extern "C" void Quaternion_Euler_m1204688217 ();
 extern "C" void Quaternion_Euler_m1940911101 ();
-extern "C" void Quaternion_Internal_ToEulerRad_m1608666215 ();
-extern "C" void Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351 ();
 extern "C" void Quaternion_Internal_FromEulerRad_m3681319598 ();
 extern "C" void Quaternion_INTERNAL_CALL_Internal_FromEulerRad_m1312441940 ();
 extern "C" void Quaternion_GetHashCode_m3823258238 ();
@@ -9098,7 +9100,6 @@ extern "C" void Transform_get_localPosition_m668140784 ();
 extern "C" void Transform_set_localPosition_m3504330903 ();
 extern "C" void Transform_INTERNAL_get_localPosition_m2703574131 ();
 extern "C" void Transform_INTERNAL_set_localPosition_m221305727 ();
-extern "C" void Transform_get_eulerAngles_m1058084741 ();
 extern "C" void Transform_set_eulerAngles_m1704681314 ();
 extern "C" void Transform_get_right_m2070836824 ();
 extern "C" void Transform_get_up_m297874561 ();
@@ -10693,6 +10694,8 @@ extern "C" void Array_OnValidate_m3275003399 ();
 extern "C" void Array_EnsureCapacity_m1275247809 ();
 extern "C" void enLargeBehavior__ctor_m2576250727 ();
 extern "C" void enLargeBehavior_OnStateEnter_m326619335 ();
+extern "C" void HideButtonIdleScript__ctor_m2400826344 ();
+extern "C" void HideButtonIdleScript_OnStateEnter_m1405837448 ();
 extern "C" void HideOrShowScript__ctor_m2522918478 ();
 extern "C" void HideOrShowScript_OnStateEnter_m1325942382 ();
 extern "C" void IdleLeafScript__ctor_m2297096286 ();
@@ -10966,6 +10969,10 @@ extern "C" void LeafScript_fakeRotatingBackward_m1064824748 ();
 extern "C" void LeafScript_toggleLeaf_m3536400783 ();
 extern "C" void LeafScript_applyCurveValue_m2341588501 ();
 extern "C" void LeafScript_Main_m3136970198 ();
+extern "C" void PlayButtonScript__ctor_m1272380191 ();
+extern "C" void PlayButtonScript_Start_m219517983 ();
+extern "C" void PlayButtonScript_Update_m2515942350 ();
+extern "C" void PlayButtonScript_Main_m2034748862 ();
 extern "C" void RingScript__ctor_m518939893 ();
 extern "C" void RingScript_Start_m3761044981 ();
 extern "C" void RingScript_Update_m634129592 ();
@@ -10993,6 +11000,7 @@ extern "C" void SceneScript_applyNewColorAtAllLeaves_m4093110622 ();
 extern "C" void SceneScript_debugArray_m445982980 ();
 extern "C" void SceneScript_listenForClickOnCenters_m1121997750 ();
 extern "C" void SceneScript_handleRotatation_m1411963324 ();
+extern "C" void SceneScript_startPenalty_m2430403308 ();
 extern "C" void SceneScript_getLeftLeafFromCenter_m1774922240 ();
 extern "C" void SceneScript_getRightLeafFromCenter_m1080276097 ();
 extern "C" void SceneScript_getTopLeafFromCenter_m2244346298 ();
@@ -11036,14 +11044,73 @@ extern "C" void SceneScript_isOneSecPass_m2856194349 ();
 extern "C" void SceneScript_updateAccumTime_m1681234906 ();
 extern "C" void SceneScript_subtractOneSec_m1268727396 ();
 extern "C" void SceneScript_bingo_m1140923229 ();
+extern "C" void SceneScript_penalty_m3266286391 ();
 extern "C" void SceneScript_resetAllLeaves_m553690995 ();
 extern "C" void SceneScript_isGameOver_m3244978135 ();
-extern "C" void SceneScript_handleGameOver_m3697655955 ();
-extern "C" void SceneScript_startGame_m4274572305 ();
+extern "C" void SceneScript_handleGameOver_m767146817 ();
+extern "C" void SceneScript_pauseGame_m2309832503 ();
+extern "C" void SceneScript__pauseGame_m1203863342 ();
+extern "C" void SceneScript_resumeGame_m2481487762 ();
+extern "C" void SceneScript__resumeGame_m2556182139 ();
+extern "C" void SceneScript_updateHighestScore_m934944220 ();
+extern "C" void SceneScript_shuffleAndApplyNewColorAtLeaves_m3662186399 ();
+extern "C" void SceneScript_startGame_m2249350307 ();
+extern "C" void SceneScript_restartGame_m1737354512 ();
+extern "C" void SceneScript__restartGame_m4052880199 ();
+extern "C" void SceneScript_showHighestScore_m3407887888 ();
+extern "C" void SceneScript_hideHighestScore_m2798871445 ();
+extern "C" void SceneScript__startGame_m1143381146 ();
+extern "C" void SceneScript_foldAllLeaves_m1988880185 ();
+extern "C" void SceneScript_openAllLeaves_m1216066896 ();
+extern "C" void SceneScript_enableAllColliders_m595027750 ();
+extern "C" void SceneScript_disableAllColliders_m3754503811 ();
 extern "C" void SceneScript_toggleCollider_m33023749 ();
 extern "C" void SceneScript_toggleAllCenterColliders_m1517480546 ();
 extern "C" void SceneScript_toggleAllLeaves_m2957262598 ();
+extern "C" void SceneScript_showAllTimeStamps_m757894174 ();
+extern "C" void SceneScript_hideAllTimeStamps_m3353220921 ();
+extern "C" void SceneScript_resetTime_m1452718937 ();
+extern "C" void SceneScript_setTimeForTimeStamps_m858730236 ();
+extern "C" void SceneScript_resetScore_m1027628456 ();
+extern "C" void SceneScript_showHighestScoreOnScoreBoard_m3632362915 ();
+extern "C" void SceneScript_hidePauseButton_m3606918467 ();
+extern "C" void SceneScript_showPauseButton_m717070184 ();
+extern "C" void SceneScript_showRestartButton_m2978251457 ();
+extern "C" void SceneScript_hideRestartButton_m1278610908 ();
+extern "C" void SceneScript_showResumeButton_m807208769 ();
+extern "C" void SceneScript_hideResumeButton_m198192326 ();
+extern "C" void SceneScript_hidePlayButton_m3530142285 ();
+extern "C" void SceneScript_showPlayButton_m2744184712 ();
+extern "C" void SceneScript_hideButton_m1437297220 ();
+extern "C" void SceneScript_showButton_m669313641 ();
+extern "C" void SceneScript_disableButton_m1934242214 ();
+extern "C" void SceneScript_enableButton_m642072227 ();
+extern "C" void SceneScript_setLowerButtonPosition_m2862219390 ();
+extern "C" void SceneScript_setTutorialPosition_m1790247814 ();
+extern "C" void SceneScript_setTutorialScale_m513465775 ();
+extern "C" void SceneScript_hideTutorial_m1892219301 ();
+extern "C" void SceneScript_showTutorial_m59001248 ();
 extern "C" void SceneScript_Main_m765471358 ();
+extern "C" void U24handleGameOverU2453__ctor_m256039187 ();
+extern "C" void U24handleGameOverU2453_GetEnumerator_m2414612360 ();
+extern "C" void U24__ctor_m4056469416 ();
+extern "C" void U24_MoveNext_m781841235 ();
+extern "C" void U24pauseGameU2456__ctor_m4149488334 ();
+extern "C" void U24pauseGameU2456_GetEnumerator_m1824728861 ();
+extern "C" void U24__ctor_m449617571 ();
+extern "C" void U24_MoveNext_m4063080082 ();
+extern "C" void U24restartGameU2465__ctor_m321271283 ();
+extern "C" void U24restartGameU2465_GetEnumerator_m3389655064 ();
+extern "C" void U24__ctor_m2320004232 ();
+extern "C" void U24_MoveNext_m1708781815 ();
+extern "C" void U24resumeGameU2459__ctor_m727680744 ();
+extern "C" void U24resumeGameU2459_GetEnumerator_m4120600019 ();
+extern "C" void U24__ctor_m2037472317 ();
+extern "C" void U24_MoveNext_m1919456232 ();
+extern "C" void U24startGameU2462__ctor_m1455410557 ();
+extern "C" void U24startGameU2462_GetEnumerator_m3326024398 ();
+extern "C" void U24__ctor_m1306153362 ();
+extern "C" void U24_MoveNext_m687390849 ();
 extern "C" void ScoreCircleScript__ctor_m3642089449 ();
 extern "C" void ScoreCircleScript_Start_m2589227241 ();
 extern "C" void ScoreCircleScript_Update_m2962485316 ();
@@ -11054,10 +11121,16 @@ extern "C" void ScoreCircleScript_enlarge_m2105943897 ();
 extern "C" void ScoreCircleScript_scale_m1263609178 ();
 extern "C" void ScoreCircleScript_triggerMatchAnimation_m416122494 ();
 extern "C" void ScoreCircleScript_updateText_m2913590449 ();
-extern "C" void ScoreCircleScript_timeUp_m3792883171 ();
-extern "C" void ScoreCircleScript_shrinkForTime_m2939784404 ();
+extern "C" void ScoreCircleScript_updateTextWithValue_m1577028621 ();
 extern "C" void ScoreCircleScript_Main_m1972643764 ();
-extern const Il2CppMethodPointer g_MethodPointers[11046] = 
+extern "C" void TimeStampScript__ctor_m3608380213 ();
+extern "C" void TimeStampScript_Start_m2555518005 ();
+extern "C" void TimeStampScript_Update_m1917499000 ();
+extern "C" void TimeStampScript_applyCurveValue_m3316695491 ();
+extern "C" void TimeStampScript_hide_m1366300689 ();
+extern "C" void TimeStampScript_show_m1680642828 ();
+extern "C" void TimeStampScript_Main_m586083048 ();
+extern const Il2CppMethodPointer g_MethodPointers[11119] = 
 {
 	Locale_GetText_m2389348044,
 	Locale_GetText_m2218462520,
@@ -19644,6 +19717,11 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	Plane_get_normal_m3534129213,
 	Plane_get_distance_m2612484153,
 	Plane_Raycast_m2829769106,
+	PlayerPrefs_TrySetInt_m2066630347,
+	PlayerPrefs_SetInt_m3485171996,
+	PlayerPrefs_GetInt_m3632746280,
+	PlayerPrefs_GetInt_m1334009359,
+	PlayerPrefsException__ctor_m3661687413,
 	PropertyAttribute__ctor_m1741701746,
 	QualitySettings_get_activeColorSpace_m2993616266,
 	Quaternion__ctor_m1100844011,
@@ -19654,11 +19732,8 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	Quaternion_Inverse_m3542515566,
 	Quaternion_INTERNAL_CALL_Inverse_m4175627710,
 	Quaternion_ToString_m1793285860,
-	Quaternion_get_eulerAngles_m997303795,
 	Quaternion_Euler_m1204688217,
 	Quaternion_Euler_m1940911101,
-	Quaternion_Internal_ToEulerRad_m1608666215,
-	Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351,
 	Quaternion_Internal_FromEulerRad_m3681319598,
 	Quaternion_INTERNAL_CALL_Internal_FromEulerRad_m1312441940,
 	Quaternion_GetHashCode_m3823258238,
@@ -20146,7 +20221,6 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	Transform_set_localPosition_m3504330903,
 	Transform_INTERNAL_get_localPosition_m2703574131,
 	Transform_INTERNAL_set_localPosition_m221305727,
-	Transform_get_eulerAngles_m1058084741,
 	Transform_set_eulerAngles_m1704681314,
 	Transform_get_right_m2070836824,
 	Transform_get_up_m297874561,
@@ -21741,6 +21815,8 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	Array_EnsureCapacity_m1275247809,
 	enLargeBehavior__ctor_m2576250727,
 	enLargeBehavior_OnStateEnter_m326619335,
+	HideButtonIdleScript__ctor_m2400826344,
+	HideButtonIdleScript_OnStateEnter_m1405837448,
 	HideOrShowScript__ctor_m2522918478,
 	HideOrShowScript_OnStateEnter_m1325942382,
 	IdleLeafScript__ctor_m2297096286,
@@ -22014,6 +22090,10 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	LeafScript_toggleLeaf_m3536400783,
 	LeafScript_applyCurveValue_m2341588501,
 	LeafScript_Main_m3136970198,
+	PlayButtonScript__ctor_m1272380191,
+	PlayButtonScript_Start_m219517983,
+	PlayButtonScript_Update_m2515942350,
+	PlayButtonScript_Main_m2034748862,
 	RingScript__ctor_m518939893,
 	RingScript_Start_m3761044981,
 	RingScript_Update_m634129592,
@@ -22041,6 +22121,7 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	SceneScript_debugArray_m445982980,
 	SceneScript_listenForClickOnCenters_m1121997750,
 	SceneScript_handleRotatation_m1411963324,
+	SceneScript_startPenalty_m2430403308,
 	SceneScript_getLeftLeafFromCenter_m1774922240,
 	SceneScript_getRightLeafFromCenter_m1080276097,
 	SceneScript_getTopLeafFromCenter_m2244346298,
@@ -22084,14 +22165,73 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	SceneScript_updateAccumTime_m1681234906,
 	SceneScript_subtractOneSec_m1268727396,
 	SceneScript_bingo_m1140923229,
+	SceneScript_penalty_m3266286391,
 	SceneScript_resetAllLeaves_m553690995,
 	SceneScript_isGameOver_m3244978135,
-	SceneScript_handleGameOver_m3697655955,
-	SceneScript_startGame_m4274572305,
+	SceneScript_handleGameOver_m767146817,
+	SceneScript_pauseGame_m2309832503,
+	SceneScript__pauseGame_m1203863342,
+	SceneScript_resumeGame_m2481487762,
+	SceneScript__resumeGame_m2556182139,
+	SceneScript_updateHighestScore_m934944220,
+	SceneScript_shuffleAndApplyNewColorAtLeaves_m3662186399,
+	SceneScript_startGame_m2249350307,
+	SceneScript_restartGame_m1737354512,
+	SceneScript__restartGame_m4052880199,
+	SceneScript_showHighestScore_m3407887888,
+	SceneScript_hideHighestScore_m2798871445,
+	SceneScript__startGame_m1143381146,
+	SceneScript_foldAllLeaves_m1988880185,
+	SceneScript_openAllLeaves_m1216066896,
+	SceneScript_enableAllColliders_m595027750,
+	SceneScript_disableAllColliders_m3754503811,
 	SceneScript_toggleCollider_m33023749,
 	SceneScript_toggleAllCenterColliders_m1517480546,
 	SceneScript_toggleAllLeaves_m2957262598,
+	SceneScript_showAllTimeStamps_m757894174,
+	SceneScript_hideAllTimeStamps_m3353220921,
+	SceneScript_resetTime_m1452718937,
+	SceneScript_setTimeForTimeStamps_m858730236,
+	SceneScript_resetScore_m1027628456,
+	SceneScript_showHighestScoreOnScoreBoard_m3632362915,
+	SceneScript_hidePauseButton_m3606918467,
+	SceneScript_showPauseButton_m717070184,
+	SceneScript_showRestartButton_m2978251457,
+	SceneScript_hideRestartButton_m1278610908,
+	SceneScript_showResumeButton_m807208769,
+	SceneScript_hideResumeButton_m198192326,
+	SceneScript_hidePlayButton_m3530142285,
+	SceneScript_showPlayButton_m2744184712,
+	SceneScript_hideButton_m1437297220,
+	SceneScript_showButton_m669313641,
+	SceneScript_disableButton_m1934242214,
+	SceneScript_enableButton_m642072227,
+	SceneScript_setLowerButtonPosition_m2862219390,
+	SceneScript_setTutorialPosition_m1790247814,
+	SceneScript_setTutorialScale_m513465775,
+	SceneScript_hideTutorial_m1892219301,
+	SceneScript_showTutorial_m59001248,
 	SceneScript_Main_m765471358,
+	U24handleGameOverU2453__ctor_m256039187,
+	U24handleGameOverU2453_GetEnumerator_m2414612360,
+	U24__ctor_m4056469416,
+	U24_MoveNext_m781841235,
+	U24pauseGameU2456__ctor_m4149488334,
+	U24pauseGameU2456_GetEnumerator_m1824728861,
+	U24__ctor_m449617571,
+	U24_MoveNext_m4063080082,
+	U24restartGameU2465__ctor_m321271283,
+	U24restartGameU2465_GetEnumerator_m3389655064,
+	U24__ctor_m2320004232,
+	U24_MoveNext_m1708781815,
+	U24resumeGameU2459__ctor_m727680744,
+	U24resumeGameU2459_GetEnumerator_m4120600019,
+	U24__ctor_m2037472317,
+	U24_MoveNext_m1919456232,
+	U24startGameU2462__ctor_m1455410557,
+	U24startGameU2462_GetEnumerator_m3326024398,
+	U24__ctor_m1306153362,
+	U24_MoveNext_m687390849,
 	ScoreCircleScript__ctor_m3642089449,
 	ScoreCircleScript_Start_m2589227241,
 	ScoreCircleScript_Update_m2962485316,
@@ -22102,7 +22242,13 @@ extern const Il2CppMethodPointer g_MethodPointers[11046] =
 	ScoreCircleScript_scale_m1263609178,
 	ScoreCircleScript_triggerMatchAnimation_m416122494,
 	ScoreCircleScript_updateText_m2913590449,
-	ScoreCircleScript_timeUp_m3792883171,
-	ScoreCircleScript_shrinkForTime_m2939784404,
+	ScoreCircleScript_updateTextWithValue_m1577028621,
 	ScoreCircleScript_Main_m1972643764,
+	TimeStampScript__ctor_m3608380213,
+	TimeStampScript_Start_m2555518005,
+	TimeStampScript_Update_m1917499000,
+	TimeStampScript_applyCurveValue_m3316695491,
+	TimeStampScript_hide_m1366300689,
+	TimeStampScript_show_m1680642828,
+	TimeStampScript_Main_m586083048,
 };

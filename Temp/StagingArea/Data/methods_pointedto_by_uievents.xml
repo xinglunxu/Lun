@@ -1,2 +1,10 @@
 <linker>
+	<assembly fullname="Assembly-UnityScript">
+		<type fullname="SceneScript">
+			<method name="_resumeGame"/>
+			<method name="_startGame"/>
+			<method name="_pauseGame"/>
+			<method name="_restartGame"/>
+		</type>
+	</assembly>
 </linker>

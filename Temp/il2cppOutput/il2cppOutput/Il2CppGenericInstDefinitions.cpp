@@ -904,6 +904,9 @@ extern const Il2CppGenericInst GenInst_Mesh_t1525280346_0_0_0 = { 1, GenInst_Mes
 extern const Il2CppType Material_t1886596500_0_0_0;
 static const Il2CppType* GenInst_Material_t1886596500_0_0_0_Types[] = { &Material_t1886596500_0_0_0 };
 extern const Il2CppGenericInst GenInst_Material_t1886596500_0_0_0 = { 1, GenInst_Material_t1886596500_0_0_0_Types };
+extern const Il2CppType WaitForSeconds_t1291133240_0_0_0;
+static const Il2CppType* GenInst_WaitForSeconds_t1291133240_0_0_0_Types[] = { &WaitForSeconds_t1291133240_0_0_0 };
+extern const Il2CppGenericInst GenInst_WaitForSeconds_t1291133240_0_0_0 = { 1, GenInst_WaitForSeconds_t1291133240_0_0_0_Types };
 extern const Il2CppType IEnumerable_1_t2707313927_gp_0_0_0_0;
 static const Il2CppType* GenInst_IEnumerable_1_t2707313927_gp_0_0_0_0_Types[] = { &IEnumerable_1_t2707313927_gp_0_0_0_0 };
 extern const Il2CppGenericInst GenInst_IEnumerable_1_t2707313927_gp_0_0_0_0 = { 1, GenInst_IEnumerable_1_t2707313927_gp_0_0_0_0_Types };
@@ -1183,6 +1186,12 @@ static const Il2CppType* GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t41952
 extern const Il2CppGenericInst GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0 = { 1, GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0_Types };
 static const Il2CppType* GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0_Boolean_t211005341_0_0_0_Types[] = { &U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0, &Boolean_t211005341_0_0_0 };
 extern const Il2CppGenericInst GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0_Boolean_t211005341_0_0_0 = { 2, GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0_Boolean_t211005341_0_0_0_Types };
+extern const Il2CppType GenericGenerator_1_t4293633067_gp_0_0_0_0;
+static const Il2CppType* GenInst_GenericGenerator_1_t4293633067_gp_0_0_0_0_Types[] = { &GenericGenerator_1_t4293633067_gp_0_0_0_0 };
+extern const Il2CppGenericInst GenInst_GenericGenerator_1_t4293633067_gp_0_0_0_0 = { 1, GenInst_GenericGenerator_1_t4293633067_gp_0_0_0_0_Types };
+extern const Il2CppType GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0;
+static const Il2CppType* GenInst_GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0_Types[] = { &GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0 };
+extern const Il2CppGenericInst GenInst_GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0 = { 1, GenInst_GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0_Types };
 extern const Il2CppType List_1_t3580084621_gp_0_0_0_0;
 static const Il2CppType* GenInst_List_1_t3580084621_gp_0_0_0_0_Types[] = { &List_1_t3580084621_gp_0_0_0_0 };
 extern const Il2CppGenericInst GenInst_List_1_t3580084621_gp_0_0_0_0 = { 1, GenInst_List_1_t3580084621_gp_0_0_0_0_Types };
@@ -1482,7 +1491,7 @@ static const Il2CppType* GenInst_KeyValuePair_2_t3312956448_0_0_0_KeyValuePair_2
 extern const Il2CppGenericInst GenInst_KeyValuePair_2_t3312956448_0_0_0_KeyValuePair_2_t3312956448_0_0_0 = { 2, GenInst_KeyValuePair_2_t3312956448_0_0_0_KeyValuePair_2_t3312956448_0_0_0_Types };
 static const Il2CppType* GenInst_KeyValuePair_2_t3312956448_0_0_0_Il2CppObject_0_0_0_Types[] = { &KeyValuePair_2_t3312956448_0_0_0, &Il2CppObject_0_0_0 };
 extern const Il2CppGenericInst GenInst_KeyValuePair_2_t3312956448_0_0_0_Il2CppObject_0_0_0 = { 2, GenInst_KeyValuePair_2_t3312956448_0_0_0_Il2CppObject_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[511] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[514] = 
 {
 	&GenInst_Il2CppObject_0_0_0,
 	&GenInst_Int32_t2847414787_0_0_0,
@@ -1794,6 +1803,7 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[511] =
 	&GenInst_Texture_t1769722184_0_0_0,
 	&GenInst_Mesh_t1525280346_0_0_0,
 	&GenInst_Material_t1886596500_0_0_0,
+	&GenInst_WaitForSeconds_t1291133240_0_0_0,
 	&GenInst_IEnumerable_1_t2707313927_gp_0_0_0_0,
 	&GenInst_Array_InternalArray__IEnumerable_GetEnumerator_m850548632_gp_0_0_0_0,
 	&GenInst_Array_Sort_m1181603442_gp_0_0_0_0_Array_Sort_m1181603442_gp_0_0_0_0,
@@ -1889,6 +1899,8 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[511] =
 	&GenInst_Enumerable_CreateWhereIterator_m1402094821_gp_0_0_0_0_Boolean_t211005341_0_0_0,
 	&GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0,
 	&GenInst_U3CCreateWhereIteratorU3Ec__Iterator1D_1_t4195261652_gp_0_0_0_0_Boolean_t211005341_0_0_0,
+	&GenInst_GenericGenerator_1_t4293633067_gp_0_0_0_0,
+	&GenInst_GenericGeneratorEnumerator_1_t1829948431_gp_0_0_0_0,
 	&GenInst_List_1_t3580084621_gp_0_0_0_0,
 	&GenInst_U3CGetEnumeratorU3Ec__Iterator6_t490656869_gp_0_0_0_0,
 	&GenInst_List_1_t2088572248_0_0_0,

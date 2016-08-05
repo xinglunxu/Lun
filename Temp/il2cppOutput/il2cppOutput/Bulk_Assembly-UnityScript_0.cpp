@@ -27,14 +27,44 @@ struct InitiateScene_t3935731027;
 struct Array_t1209885965;
 // LeafScript
 struct LeafScript_t136690153;
+// PlayButtonScript
+struct PlayButtonScript_t4170460177;
 // RingScript
 struct RingScript_t2386927419;
 // SceneScript
 struct SceneScript_t1382933591;
 // UnityEngine.GameObject
 struct GameObject_t4012695102;
+// System.Collections.IEnumerator
+struct IEnumerator_t287207039;
+// UnityEngine.UI.Button
+struct Button_t990034267;
+// SceneScript/$handleGameOver$53
+struct U24handleGameOverU2453_t2071569712;
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds>
+struct IEnumerator_1_t2774239688;
+// SceneScript/$handleGameOver$53/$
+struct U24_t36;
+// SceneScript/$pauseGame$56
+struct U24pauseGameU2456_t3867230177;
+// SceneScript/$pauseGame$56/$
+struct U24_t37;
+// SceneScript/$restartGame$65
+struct U24restartGameU2465_t1034105030;
+// SceneScript/$restartGame$65/$
+struct U24_t40;
+// SceneScript/$resumeGame$59
+struct U24resumeGameU2459_t4285886981;
+// SceneScript/$resumeGame$59/$
+struct U24_t38;
+// SceneScript/$startGame$62
+struct U24startGameU2462_t1992282128;
+// SceneScript/$startGame$62/$
+struct U24_t39;
 // ScoreCircleScript
 struct ScoreCircleScript_t2158634317;
+// TimeStampScript
+struct TimeStampScript_t3474365761;
 
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
@@ -111,10 +141,14 @@ struct ScoreCircleScript_t2158634317;
 #include "UnityEngine_UnityEngine_Time1525492538MethodDeclarations.h"
 #include "AssemblyU2DUnityScript_SceneScript1382933591.h"
 #include "UnityEngine_UnityEngine_Space1602970931.h"
+#include "AssemblyU2DUnityScript_PlayButtonScript4170460177.h"
+#include "AssemblyU2DUnityScript_PlayButtonScript4170460177MethodDeclarations.h"
 #include "AssemblyU2DUnityScript_RingScript2386927419MethodDeclarations.h"
 #include "AssemblyU2DUnityScript_SceneScript1382933591MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Application450040189MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Mathf1597001355MethodDeclarations.h"
+#include "UnityEngine_UI_UnityEngine_UI_Button990034267.h"
+#include "UnityEngine_UnityEngine_Coroutine2246592261.h"
 #include "AssemblyU2DUnityScript_ScoreCircleScript2158634317.h"
 #include "AssemblyU2DUnityScript_ScoreCircleScript2158634317MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Keyframe2095052507MethodDeclarations.h"
@@ -124,11 +158,44 @@ struct ScoreCircleScript_t2158634317;
 #include "UnityEngine_UnityEngine_AnimationClip57566497.h"
 #include "UnityEngine_UnityEngine_Keyframe2095052507.h"
 #include "mscorlib_System_String968488902MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_TimeStampScript3474365761.h"
 #include "UnityEngine_UI_UnityEngine_UI_Text3286458198.h"
 #include "UnityEngine_UI_UnityEngine_UI_Text3286458198MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_TimeStampScript3474365761MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Canvas3534013893.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOv2071569712MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOv2071569712.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU243867230177MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU243867230177.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU24285886981MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU24285886981.h"
+#include "UnityEngine_UnityEngine_PlayerPrefs3733964924MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU241992282128MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU241992282128.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU1034105030MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU1034105030.h"
 #include "UnityEngine_UnityEngine_Collider955670625MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_BoxCollider131631884.h"
+#include "UnityEngine_UI_UnityEngine_UI_Selectable3621744255MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_RectTransform3317474837MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_RectTransform3317474837.h"
+#include "UnityEngine_UnityEngine_Rect1525428817.h"
+#include "UnityEngine_UnityEngine_Behaviour3120504042MethodDeclarations.h"
+#include "Boo_Lang_Boo_Lang_GenericGenerator_1_gen2359605680MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOverU2453_36MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOverU2453_36.h"
+#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen1056199668MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_WaitForSeconds1291133240MethodDeclarations.h"
+#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen1056199668.h"
+#include "UnityEngine_UnityEngine_WaitForSeconds1291133240.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU2456_U2436MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU2456_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU2465_U2436MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU2465_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU2459_U2436MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU2459_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU2462_U2436MethodDeclarations.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU2462_U2436.h"
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -3056,19 +3123,11 @@ extern "C"  void LeafScript_toggleLeaf_m3536400783 (LeafScript_t136690153 * __th
 // System.Void LeafScript::applyCurveValue()
 extern "C"  void LeafScript_applyCurveValue_m2341588501 (LeafScript_t136690153 * __this, const MethodInfo* method)
 {
-	Vector3_t3525329789  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	Vector3_t3525329789  V_1;
-	memset(&V_1, 0, sizeof(V_1));
-	Vector3_t3525329789  V_2;
-	memset(&V_2, 0, sizeof(V_2));
-	Vector3_t3525329789  V_3;
-	memset(&V_3, 0, sizeof(V_3));
 	{
 		float L_0 = __this->get_curveValue_29();
 		if ((((float)L_0) == ((float)(((float)((float)0))))))
 		{
-			goto IL_009c;
+			goto IL_0059;
 		}
 	}
 	{
@@ -3076,58 +3135,67 @@ extern "C"  void LeafScript_applyCurveValue_m2341588501 (LeafScript_t136690153 *
 		float L_2 = L_1->get_x_1();
 		if ((!(((float)L_2) == ((float)(((float)((float)1)))))))
 		{
-			goto IL_0060;
+			goto IL_003f;
 		}
 	}
 	{
 		Transform_t284553113 * L_3 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
 		float L_4 = __this->get_curveValue_29();
-		Transform_t284553113 * L_5 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
-		NullCheck(L_5);
-		Vector3_t3525329789  L_6 = Transform_get_eulerAngles_m1058084741(L_5, /*hidden argument*/NULL);
-		V_0 = L_6;
-		float L_7 = (&V_0)->get_y_2();
-		Transform_t284553113 * L_8 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
-		NullCheck(L_8);
-		Vector3_t3525329789  L_9 = Transform_get_eulerAngles_m1058084741(L_8, /*hidden argument*/NULL);
-		V_1 = L_9;
-		float L_10 = (&V_1)->get_z_3();
-		Vector3_t3525329789  L_11;
-		memset(&L_11, 0, sizeof(L_11));
-		Vector3__ctor_m2926210380(&L_11, L_4, L_7, L_10, /*hidden argument*/NULL);
+		Vector3_t3525329789  L_5;
+		memset(&L_5, 0, sizeof(L_5));
+		Vector3__ctor_m2926210380(&L_5, L_4, (((float)((float)0))), (((float)((float)((int32_t)90)))), /*hidden argument*/NULL);
 		NullCheck(L_3);
-		Transform_set_eulerAngles_m1704681314(L_3, L_11, /*hidden argument*/NULL);
-		goto IL_009c;
+		Transform_set_eulerAngles_m1704681314(L_3, L_5, /*hidden argument*/NULL);
+		goto IL_0059;
 	}
 
-IL_0060:
+IL_003f:
 	{
-		Transform_t284553113 * L_12 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
-		Transform_t284553113 * L_13 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
-		NullCheck(L_13);
-		Vector3_t3525329789  L_14 = Transform_get_eulerAngles_m1058084741(L_13, /*hidden argument*/NULL);
-		V_2 = L_14;
-		float L_15 = (&V_2)->get_x_1();
-		float L_16 = __this->get_curveValue_29();
-		Transform_t284553113 * L_17 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
-		NullCheck(L_17);
-		Vector3_t3525329789  L_18 = Transform_get_eulerAngles_m1058084741(L_17, /*hidden argument*/NULL);
-		V_3 = L_18;
-		float L_19 = (&V_3)->get_z_3();
-		Vector3_t3525329789  L_20;
-		memset(&L_20, 0, sizeof(L_20));
-		Vector3__ctor_m2926210380(&L_20, L_15, L_16, L_19, /*hidden argument*/NULL);
-		NullCheck(L_12);
-		Transform_set_eulerAngles_m1704681314(L_12, L_20, /*hidden argument*/NULL);
+		Transform_t284553113 * L_6 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
+		float L_7 = __this->get_curveValue_29();
+		Vector3_t3525329789  L_8;
+		memset(&L_8, 0, sizeof(L_8));
+		Vector3__ctor_m2926210380(&L_8, (((float)((float)0))), L_7, (((float)((float)0))), /*hidden argument*/NULL);
+		NullCheck(L_6);
+		Transform_set_eulerAngles_m1704681314(L_6, L_8, /*hidden argument*/NULL);
 	}
 
-IL_009c:
+IL_0059:
 	{
 		return;
 	}
 }
 // System.Void LeafScript::Main()
 extern "C"  void LeafScript_Main_m3136970198 (LeafScript_t136690153 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void PlayButtonScript::.ctor()
+extern "C"  void PlayButtonScript__ctor_m1272380191 (PlayButtonScript_t4170460177 * __this, const MethodInfo* method)
+{
+	{
+		MonoBehaviour__ctor_m2022291967(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void PlayButtonScript::Start()
+extern "C"  void PlayButtonScript_Start_m219517983 (PlayButtonScript_t4170460177 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void PlayButtonScript::Update()
+extern "C"  void PlayButtonScript_Update_m2515942350 (PlayButtonScript_t4170460177 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void PlayButtonScript::Main()
+extern "C"  void PlayButtonScript_Main_m2034748862 (PlayButtonScript_t4170460177 * __this, const MethodInfo* method)
 {
 	{
 		return;
@@ -3184,6 +3252,7 @@ extern Il2CppClass* GameObjectU5BU5D_t3499186955_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2730224532;
 extern Il2CppCodeGenString* _stringLiteral670257789;
 extern Il2CppCodeGenString* _stringLiteral1690813767;
+extern Il2CppCodeGenString* _stringLiteral176762591;
 extern const uint32_t SceneScript_Start_m3821588319_MetadataUsageId;
 extern "C"  void SceneScript_Start_m3821588319 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
@@ -3240,8 +3309,13 @@ extern "C"  void SceneScript_Start_m3821588319 (SceneScript_t1382933591 * __this
 	Vector3_t3525329789  V_22;
 	memset(&V_22, 0, sizeof(V_22));
 	{
-		Application_set_targetFrameRate_m498658007(NULL /*static, unused*/, ((int32_t)300), /*hidden argument*/NULL);
-		__this->set_GAME_TIME_53((((float)((float)((int32_t)10000)))));
+		__this->set_STAMP_INITTIME_64(((int32_t)15));
+		__this->set_scoreBoardInRotation_63((bool)0);
+		__this->set_isPause_62((bool)0);
+		__this->set_isGameOverHandled_52((bool)1);
+		__this->set_collidersEnable_55((bool)1);
+		__this->set_leavesAreOpen_54((bool)0);
+		Application_set_targetFrameRate_m498658007(NULL /*static, unused*/, ((int32_t)60), /*hidden argument*/NULL);
 		Array_t1209885965 * L_0 = (Array_t1209885965 *)il2cpp_codegen_object_new(Array_t1209885965_il2cpp_TypeInfo_var);
 		Array__ctor_m2243385516(L_0, /*hidden argument*/NULL);
 		__this->set_centers_51(L_0);
@@ -3324,219 +3398,237 @@ extern "C"  void SceneScript_Start_m3821588319 (SceneScript_t1382933591 * __this
 		__this->set_leafPrefab_10(((GameObject_t4012695102 *)CastclassSealed(L_36, GameObject_t4012695102_il2cpp_TypeInfo_var)));
 		Object_t3878351788 * L_37 = Resources_Load_m2187391845(NULL /*static, unused*/, _stringLiteral1690813767, /*hidden argument*/NULL);
 		__this->set_scoreCirclePrefab_33(((GameObject_t4012695102 *)CastclassSealed(L_37, GameObject_t4012695102_il2cpp_TypeInfo_var)));
-		Camera_t3533968274 * L_38 = Camera_get_main_m671815697(NULL /*static, unused*/, /*hidden argument*/NULL);
-		NullCheck(L_38);
-		float L_39 = Camera_get_orthographicSize_m3215515490(L_38, /*hidden argument*/NULL);
-		__this->set_SCREEN_HEIGHT_8(((float)((float)L_39*(float)(((float)((float)2))))));
-		float L_40 = __this->get_SCREEN_HEIGHT_8();
-		int32_t L_41 = Screen_get_width_m3080333084(NULL /*static, unused*/, /*hidden argument*/NULL);
-		int32_t L_42 = Screen_get_height_m1504859443(NULL /*static, unused*/, /*hidden argument*/NULL);
-		__this->set_SCREEN_WIDTH_7(((float)((float)((float)((float)L_40*(float)(((float)((float)L_41)))))/(float)(((float)((float)L_42))))));
-		float L_43 = __this->get_SCREEN_WIDTH_7();
-		__this->set_MARGIN_4(((float)((float)(((float)((float)0)))*(float)L_43)));
+		Object_t3878351788 * L_38 = Resources_Load_m2187391845(NULL /*static, unused*/, _stringLiteral176762591, /*hidden argument*/NULL);
+		__this->set_timeStampPrefab_60(((GameObject_t4012695102 *)CastclassSealed(L_38, GameObject_t4012695102_il2cpp_TypeInfo_var)));
+		Camera_t3533968274 * L_39 = Camera_get_main_m671815697(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_39);
+		float L_40 = Camera_get_orthographicSize_m3215515490(L_39, /*hidden argument*/NULL);
+		__this->set_SCREEN_HEIGHT_8(((float)((float)L_40*(float)(((float)((float)2))))));
+		float L_41 = __this->get_SCREEN_HEIGHT_8();
+		int32_t L_42 = Screen_get_width_m3080333084(NULL /*static, unused*/, /*hidden argument*/NULL);
+		int32_t L_43 = Screen_get_height_m1504859443(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_SCREEN_WIDTH_7(((float)((float)((float)((float)L_41*(float)(((float)((float)L_42)))))/(float)(((float)((float)L_43))))));
 		float L_44 = __this->get_SCREEN_WIDTH_7();
-		float L_45 = __this->get_MARGIN_4();
-		GameObject_t4012695102 * L_46 = __this->get_centerPrefab_9();
+		__this->set_MARGIN_4(((float)((float)(((float)((float)0)))*(float)L_44)));
+		float L_45 = __this->get_SCREEN_WIDTH_7();
+		float L_46 = __this->get_MARGIN_4();
+		GameObject_t4012695102 * L_47 = __this->get_centerPrefab_9();
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_47 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_46);
-		Component_t2126946602 * L_48 = GameObject_GetComponent_m1004814461(L_46, L_47, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_48, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_49 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_48, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_5 = L_49;
-		Vector3_t3525329789  L_50 = Bounds_get_size_m3666348432((&V_5), /*hidden argument*/NULL);
-		V_6 = L_50;
-		float L_51 = (&V_6)->get_x_1();
-		__this->set_CENTER_SCALE_6(((float)((float)((float)((float)L_44-(float)((float)((float)L_45*(float)(((float)((float)2)))))))/(float)((float)((float)(4.5f)*(float)L_51)))));
-		float L_52 = __this->get_CENTER_SCALE_6();
-		GameObject_t4012695102 * L_53 = __this->get_centerPrefab_9();
-		Type_t * L_54 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_53);
-		Component_t2126946602 * L_55 = GameObject_GetComponent_m1004814461(L_53, L_54, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_55, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_56 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_55, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_7 = L_56;
-		Vector3_t3525329789  L_57 = Bounds_get_size_m3666348432((&V_7), /*hidden argument*/NULL);
-		V_8 = L_57;
-		float L_58 = (&V_8)->get_x_1();
-		__this->set_CENTER_HALF_LENGTH_5(((float)((float)((float)((float)L_52*(float)L_58))/(float)(((float)((float)2))))));
+		Type_t * L_48 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_47);
+		Component_t2126946602 * L_49 = GameObject_GetComponent_m1004814461(L_47, L_48, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_49, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_50 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_49, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_5 = L_50;
+		Vector3_t3525329789  L_51 = Bounds_get_size_m3666348432((&V_5), /*hidden argument*/NULL);
+		V_6 = L_51;
+		float L_52 = (&V_6)->get_x_1();
+		__this->set_CENTER_SCALE_6(((float)((float)((float)((float)L_45-(float)((float)((float)L_46*(float)(((float)((float)2)))))))/(float)((float)((float)(4.5f)*(float)L_52)))));
+		float L_53 = __this->get_CENTER_SCALE_6();
+		GameObject_t4012695102 * L_54 = __this->get_centerPrefab_9();
+		Type_t * L_55 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_54);
+		Component_t2126946602 * L_56 = GameObject_GetComponent_m1004814461(L_54, L_55, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_56, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_57 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_56, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_7 = L_57;
+		Vector3_t3525329789  L_58 = Bounds_get_size_m3666348432((&V_7), /*hidden argument*/NULL);
+		V_8 = L_58;
+		float L_59 = (&V_8)->get_x_1();
+		__this->set_CENTER_HALF_LENGTH_5(((float)((float)((float)((float)L_53*(float)L_59))/(float)(((float)((float)2))))));
 		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t1597001355_il2cpp_TypeInfo_var);
-		float L_59 = sqrtf((((float)((float)2))));
-		float L_60 = __this->get_CENTER_HALF_LENGTH_5();
+		float L_60 = sqrtf((((float)((float)2))));
 		float L_61 = __this->get_CENTER_HALF_LENGTH_5();
-		__this->set_LEAF_WIDTH_11(((float)((float)(((float)((float)2)))*(float)((float)((float)((float)((float)L_59*(float)L_60))-(float)L_61)))));
 		float L_62 = __this->get_CENTER_HALF_LENGTH_5();
-		GameObject_t4012695102 * L_63 = __this->get_leafPrefab_10();
-		Type_t * L_64 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_63);
-		Component_t2126946602 * L_65 = GameObject_GetComponent_m1004814461(L_63, L_64, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_65, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_66 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_65, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_9 = L_66;
-		Vector3_t3525329789  L_67 = Bounds_get_size_m3666348432((&V_9), /*hidden argument*/NULL);
-		V_10 = L_67;
-		float L_68 = (&V_10)->get_y_2();
-		__this->set_LEAF_SCALE_13(((float)((float)((float)((float)(((float)((float)2)))*(float)L_62))/(float)L_68)));
-		float L_69 = __this->get_SCREEN_HEIGHT_8();
-		int32_t L_70 = __this->get_ROWS_2();
-		float L_71 = __this->get_CENTER_HALF_LENGTH_5();
-		float L_72 = __this->get_LEAF_WIDTH_11();
-		__this->set_VERTICAL_ADJUST_12(((float)((float)((float)((float)((float)((float)((float)((float)L_69-(float)((float)((float)(((float)((float)((int32_t)((int32_t)L_70*(int32_t)2)))))*(float)L_71))))-(float)L_72))*(float)(((float)((float)1)))))/(float)(((float)((float)3))))));
-		float L_73 = Time_get_deltaTime_m2741110510(NULL /*static, unused*/, /*hidden argument*/NULL);
-		__this->set_USER_ROTATE_SPEED_20(((float)((float)(((float)((float)((int32_t)100))))*(float)L_73)));
+		__this->set_LEAF_WIDTH_11(((float)((float)(((float)((float)2)))*(float)((float)((float)((float)((float)L_60*(float)L_61))-(float)L_62)))));
+		float L_63 = __this->get_CENTER_HALF_LENGTH_5();
+		GameObject_t4012695102 * L_64 = __this->get_leafPrefab_10();
+		Type_t * L_65 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_64);
+		Component_t2126946602 * L_66 = GameObject_GetComponent_m1004814461(L_64, L_65, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_66, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_67 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_66, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_9 = L_67;
+		Vector3_t3525329789  L_68 = Bounds_get_size_m3666348432((&V_9), /*hidden argument*/NULL);
+		V_10 = L_68;
+		float L_69 = (&V_10)->get_y_2();
+		__this->set_LEAF_SCALE_13(((float)((float)((float)((float)(((float)((float)2)))*(float)L_63))/(float)L_69)));
+		float L_70 = __this->get_SCREEN_HEIGHT_8();
+		int32_t L_71 = __this->get_ROWS_2();
+		float L_72 = __this->get_CENTER_HALF_LENGTH_5();
+		float L_73 = __this->get_LEAF_WIDTH_11();
+		__this->set_VERTICAL_ADJUST_12(((float)((float)((float)((float)((float)((float)((float)((float)L_70-(float)((float)((float)(((float)((float)((int32_t)((int32_t)L_71*(int32_t)2)))))*(float)L_72))))-(float)L_73))*(float)(((float)((float)1)))))/(float)(((float)((float)3))))));
+		float L_74 = Time_get_deltaTime_m2741110510(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_USER_ROTATE_SPEED_20(((float)((float)(((float)((float)((int32_t)100))))*(float)L_74)));
 		__this->set_userRotateLeaves_19(((GameObjectU5BU5D_t3499186955*)SZArrayNew(GameObjectU5BU5D_t3499186955_il2cpp_TypeInfo_var, (uint32_t)4)));
 		__this->set_userRotation_18((((float)((float)0))));
 		__this->set_inUserRotation_22((bool)0);
 		__this->set_inFlip_23((bool)0);
 		__this->set_isScaling_24((bool)0);
 		__this->set_isTilting_25((bool)0);
-		float L_74 = __this->get_SCREEN_WIDTH_7();
-		__this->set_TIME_STAMP_LENGTH_41(((float)((float)L_74/(float)(9.5f))));
-		float L_75 = __this->get_TIME_STAMP_LENGTH_41();
-		float L_76 = __this->get_VERTICAL_ADJUST_12();
-		if ((((float)L_75) <= ((float)L_76)))
-		{
-			goto IL_034b;
-		}
-	}
-	{
+		float L_75 = __this->get_SCREEN_WIDTH_7();
+		__this->set_TIME_STAMP_LENGTH_41(((float)((float)L_75/(float)(9.5f))));
+		float L_76 = __this->get_TIME_STAMP_LENGTH_41();
 		float L_77 = __this->get_VERTICAL_ADJUST_12();
-		__this->set_TIME_STAMP_LENGTH_41(L_77);
-	}
-
-IL_034b:
-	{
-		float L_78 = __this->get_TIME_STAMP_LENGTH_41();
-		GameObject_t4012695102 * L_79 = __this->get_scoreCirclePrefab_33();
-		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_80 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_79);
-		Component_t2126946602 * L_81 = GameObject_GetComponent_m1004814461(L_79, L_80, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_81, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_82 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_81, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_11 = L_82;
-		Vector3_t3525329789  L_83 = Bounds_get_size_m3666348432((&V_11), /*hidden argument*/NULL);
-		V_12 = L_83;
-		float L_84 = (&V_12)->get_x_1();
-		__this->set_TIME_STAMP_SCALE_42(((float)((float)L_78/(float)L_84)));
-		__this->set_TIME_STAMP_NUM_43(6);
-		Array_t1209885965 * L_85 = (Array_t1209885965 *)il2cpp_codegen_object_new(Array_t1209885965_il2cpp_TypeInfo_var);
-		Array__ctor_m2243385516(L_85, /*hidden argument*/NULL);
-		__this->set_timeStamps_44(L_85);
-		float L_86 = __this->get_VERTICAL_ADJUST_12();
-		int32_t L_87 = __this->get_ROWS_2();
-		float L_88 = __this->get_CENTER_SCALE_6();
-		GameObject_t4012695102 * L_89 = __this->get_centerPrefab_9();
-		Type_t * L_90 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_89);
-		Component_t2126946602 * L_91 = GameObject_GetComponent_m1004814461(L_89, L_90, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_91, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_92 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_91, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_13 = L_92;
-		Vector3_t3525329789  L_93 = Bounds_get_size_m3666348432((&V_13), /*hidden argument*/NULL);
-		V_14 = L_93;
-		float L_94 = (&V_14)->get_x_1();
-		float L_95 = __this->get_LEAF_WIDTH_11();
-		__this->set_UIStartingPosition_34(((float)((float)((float)((float)L_86+(float)((float)((float)((float)((float)(((float)((float)L_87)))*(float)L_88))*(float)L_94))))+(float)L_95)));
-		float L_96 = __this->get_SCREEN_HEIGHT_8();
-		float L_97 = __this->get_UIStartingPosition_34();
-		__this->set_EMPTY_SPACE_35(((float)((float)L_96-(float)L_97)));
-		float L_98 = __this->get_EMPTY_SPACE_35();
-		float L_99 = __this->get_CENTER_SCALE_6();
-		GameObject_t4012695102 * L_100 = __this->get_centerPrefab_9();
-		Type_t * L_101 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_100);
-		Component_t2126946602 * L_102 = GameObject_GetComponent_m1004814461(L_100, L_101, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_102, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_103 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_102, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_15 = L_103;
-		Vector3_t3525329789  L_104 = Bounds_get_size_m3666348432((&V_15), /*hidden argument*/NULL);
-		V_16 = L_104;
-		float L_105 = (&V_16)->get_x_1();
-		if ((((float)L_98) < ((float)((float)((float)L_99*(float)L_105)))))
+		if ((((float)L_76) <= ((float)L_77)))
 		{
-			goto IL_04ba;
+			goto IL_037c;
 		}
 	}
 	{
-		float L_106 = __this->get_CENTER_SCALE_6();
-		GameObject_t4012695102 * L_107 = __this->get_centerPrefab_9();
-		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_108 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_107);
-		Component_t2126946602 * L_109 = GameObject_GetComponent_m1004814461(L_107, L_108, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_109, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_110 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_109, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_17 = L_110;
-		Vector3_t3525329789  L_111 = Bounds_get_size_m3666348432((&V_17), /*hidden argument*/NULL);
-		V_18 = L_111;
-		float L_112 = (&V_18)->get_x_1();
-		GameObject_t4012695102 * L_113 = __this->get_scoreCirclePrefab_33();
-		Type_t * L_114 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_113);
-		Component_t2126946602 * L_115 = GameObject_GetComponent_m1004814461(L_113, L_114, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_115, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_116 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_115, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_19 = L_116;
-		Vector3_t3525329789  L_117 = Bounds_get_size_m3666348432((&V_19), /*hidden argument*/NULL);
-		V_20 = L_117;
-		float L_118 = (&V_20)->get_x_1();
-		__this->set_SCORE_CIRCLE_SCALE_36(((float)((float)((float)((float)L_106*(float)L_112))/(float)L_118)));
-		goto IL_04f8;
+		float L_78 = __this->get_VERTICAL_ADJUST_12();
+		__this->set_TIME_STAMP_LENGTH_41(L_78);
 	}
 
-IL_04ba:
+IL_037c:
 	{
-		float L_119 = __this->get_EMPTY_SPACE_35();
-		GameObject_t4012695102 * L_120 = __this->get_scoreCirclePrefab_33();
+		float L_79 = __this->get_TIME_STAMP_LENGTH_41();
+		GameObject_t4012695102 * L_80 = __this->get_scoreCirclePrefab_33();
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_121 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_120);
-		Component_t2126946602 * L_122 = GameObject_GetComponent_m1004814461(L_120, L_121, /*hidden argument*/NULL);
-		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_122, Renderer_t1092684080_il2cpp_TypeInfo_var)));
-		Bounds_t3518514978  L_123 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_122, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
-		V_21 = L_123;
-		Vector3_t3525329789  L_124 = Bounds_get_size_m3666348432((&V_21), /*hidden argument*/NULL);
-		V_22 = L_124;
-		float L_125 = (&V_22)->get_x_1();
-		__this->set_SCORE_CIRCLE_SCALE_36(((float)((float)L_119/(float)L_125)));
+		Type_t * L_81 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_80);
+		Component_t2126946602 * L_82 = GameObject_GetComponent_m1004814461(L_80, L_81, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_82, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_83 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_82, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_11 = L_83;
+		Vector3_t3525329789  L_84 = Bounds_get_size_m3666348432((&V_11), /*hidden argument*/NULL);
+		V_12 = L_84;
+		float L_85 = (&V_12)->get_x_1();
+		__this->set_TIME_STAMP_SCALE_42(((float)((float)L_79/(float)L_85)));
+		__this->set_TIME_STAMP_NUM_43(6);
+		Array_t1209885965 * L_86 = (Array_t1209885965 *)il2cpp_codegen_object_new(Array_t1209885965_il2cpp_TypeInfo_var);
+		Array__ctor_m2243385516(L_86, /*hidden argument*/NULL);
+		__this->set_timeStamps_44(L_86);
+		float L_87 = __this->get_VERTICAL_ADJUST_12();
+		int32_t L_88 = __this->get_ROWS_2();
+		float L_89 = __this->get_CENTER_SCALE_6();
+		GameObject_t4012695102 * L_90 = __this->get_centerPrefab_9();
+		Type_t * L_91 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_90);
+		Component_t2126946602 * L_92 = GameObject_GetComponent_m1004814461(L_90, L_91, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_92, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_93 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_92, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_13 = L_93;
+		Vector3_t3525329789  L_94 = Bounds_get_size_m3666348432((&V_13), /*hidden argument*/NULL);
+		V_14 = L_94;
+		float L_95 = (&V_14)->get_x_1();
+		float L_96 = __this->get_LEAF_WIDTH_11();
+		__this->set_UIStartingPosition_34(((float)((float)((float)((float)L_87+(float)((float)((float)((float)((float)(((float)((float)L_88)))*(float)L_89))*(float)L_95))))+(float)L_96)));
+		float L_97 = __this->get_SCREEN_HEIGHT_8();
+		float L_98 = __this->get_UIStartingPosition_34();
+		__this->set_EMPTY_SPACE_35(((float)((float)L_97-(float)L_98)));
+		float L_99 = __this->get_EMPTY_SPACE_35();
+		float L_100 = __this->get_CENTER_SCALE_6();
+		GameObject_t4012695102 * L_101 = __this->get_centerPrefab_9();
+		Type_t * L_102 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_101);
+		Component_t2126946602 * L_103 = GameObject_GetComponent_m1004814461(L_101, L_102, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_103, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_104 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_103, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_15 = L_104;
+		Vector3_t3525329789  L_105 = Bounds_get_size_m3666348432((&V_15), /*hidden argument*/NULL);
+		V_16 = L_105;
+		float L_106 = (&V_16)->get_x_1();
+		if ((((float)L_99) < ((float)((float)((float)L_100*(float)L_106)))))
+		{
+			goto IL_04eb;
+		}
+	}
+	{
+		float L_107 = __this->get_CENTER_SCALE_6();
+		GameObject_t4012695102 * L_108 = __this->get_centerPrefab_9();
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_109 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_108);
+		Component_t2126946602 * L_110 = GameObject_GetComponent_m1004814461(L_108, L_109, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_110, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_111 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_110, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_17 = L_111;
+		Vector3_t3525329789  L_112 = Bounds_get_size_m3666348432((&V_17), /*hidden argument*/NULL);
+		V_18 = L_112;
+		float L_113 = (&V_18)->get_x_1();
+		GameObject_t4012695102 * L_114 = __this->get_scoreCirclePrefab_33();
+		Type_t * L_115 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_114);
+		Component_t2126946602 * L_116 = GameObject_GetComponent_m1004814461(L_114, L_115, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_116, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_117 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_116, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_19 = L_117;
+		Vector3_t3525329789  L_118 = Bounds_get_size_m3666348432((&V_19), /*hidden argument*/NULL);
+		V_20 = L_118;
+		float L_119 = (&V_20)->get_x_1();
+		__this->set_SCORE_CIRCLE_SCALE_36(((float)((float)((float)((float)L_107*(float)L_113))/(float)L_119)));
+		goto IL_0529;
 	}
 
-IL_04f8:
+IL_04eb:
+	{
+		float L_120 = __this->get_EMPTY_SPACE_35();
+		GameObject_t4012695102 * L_121 = __this->get_scoreCirclePrefab_33();
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_122 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Renderer_t1092684080_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_121);
+		Component_t2126946602 * L_123 = GameObject_GetComponent_m1004814461(L_121, L_122, /*hidden argument*/NULL);
+		NullCheck(((Renderer_t1092684080 *)CastclassClass(L_123, Renderer_t1092684080_il2cpp_TypeInfo_var)));
+		Bounds_t3518514978  L_124 = Renderer_get_bounds_m1533373851(((Renderer_t1092684080 *)CastclassClass(L_123, Renderer_t1092684080_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		V_21 = L_124;
+		Vector3_t3525329789  L_125 = Bounds_get_size_m3666348432((&V_21), /*hidden argument*/NULL);
+		V_22 = L_125;
+		float L_126 = (&V_22)->get_x_1();
+		__this->set_SCORE_CIRCLE_SCALE_36(((float)((float)L_120/(float)L_126)));
+	}
+
+IL_0529:
 	{
 		VirtActionInvoker0::Invoke(8 /* System.Void SceneScript::initiateCenters() */, __this);
 		VirtActionInvoker0::Invoke(9 /* System.Void SceneScript::initiateLeafs() */, __this);
-		goto IL_051f;
+		goto IL_0550;
 	}
 
-IL_0509:
+IL_053a:
 	{
 		VirtActionInvoker0::Invoke(21 /* System.Void SceneScript::shuffleAllLeaves() */, __this);
-		bool L_126 = VirtFuncInvoker0< bool >::Invoke(55 /* System.Boolean SceneScript::isDeckLock() */, __this);
-		if (L_126)
+		bool L_127 = VirtFuncInvoker0< bool >::Invoke(56 /* System.Boolean SceneScript::isDeckLock() */, __this);
+		if (L_127)
 		{
-			goto IL_051f;
+			goto IL_0550;
 		}
 	}
 	{
-		goto IL_0524;
+		goto IL_0555;
 	}
 
-IL_051f:
+IL_0550:
 	{
-		goto IL_0509;
+		goto IL_053a;
 	}
 
-IL_0524:
+IL_0555:
 	{
 		VirtActionInvoker0::Invoke(22 /* System.Void SceneScript::applyNewColorAtAllLeaves() */, __this);
-		VirtActionInvoker0::Invoke(52 /* System.Void SceneScript::setIdleCurve() */, __this);
-		VirtActionInvoker0::Invoke(53 /* System.Void SceneScript::setEnlargeCurve() */, __this);
-		VirtActionInvoker0::Invoke(54 /* System.Void SceneScript::setShrinkCurve() */, __this);
+		VirtActionInvoker0::Invoke(53 /* System.Void SceneScript::setIdleCurve() */, __this);
+		VirtActionInvoker0::Invoke(54 /* System.Void SceneScript::setEnlargeCurve() */, __this);
+		VirtActionInvoker0::Invoke(55 /* System.Void SceneScript::setShrinkCurve() */, __this);
 		__this->set_needCheckDeadlock_29((bool)0);
 		VirtActionInvoker0::Invoke(6 /* System.Void SceneScript::initiateScoreBoard() */, __this);
-		VirtActionInvoker0::Invoke(63 /* System.Void SceneScript::initiateTimeStamps() */, __this);
-		VirtActionInvoker0::Invoke(72 /* System.Void SceneScript::startGame() */, __this);
+		VirtActionInvoker0::Invoke(64 /* System.Void SceneScript::initiateTimeStamps() */, __this);
+		VirtActionInvoker0::Invoke(89 /* System.Void SceneScript::disableAllColliders() */, __this);
+		VirtActionInvoker0::Invoke(98 /* System.Void SceneScript::showHighestScoreOnScoreBoard() */, __this);
+		VirtActionInvoker0::Invoke(106 /* System.Void SceneScript::showPlayButton() */, __this);
+		int32_t L_128 = Screen_get_width_m3080333084(NULL /*static, unused*/, /*hidden argument*/NULL);
+		float L_129 = __this->get_SCREEN_WIDTH_7();
+		__this->set_UIScaleFactorX_66(((float)((float)(((float)((float)L_128)))/(float)L_129)));
+		int32_t L_130 = Screen_get_height_m1504859443(NULL /*static, unused*/, /*hidden argument*/NULL);
+		float L_131 = __this->get_SCREEN_HEIGHT_8();
+		__this->set_UIScaleFactorY_67(((float)((float)(((float)((float)L_130)))/(float)L_131)));
+		Button_t990034267 * L_132 = __this->get_startButton_56();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(111 /* System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button) */, __this, L_132);
+		Button_t990034267 * L_133 = __this->get_resumeButton_58();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(111 /* System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button) */, __this, L_133);
+		Button_t990034267 * L_134 = __this->get_restartButton_59();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(111 /* System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button) */, __this, L_134);
+		VirtActionInvoker0::Invoke(112 /* System.Void SceneScript::setTutorialPosition() */, __this);
+		VirtActionInvoker0::Invoke(113 /* System.Void SceneScript::setTutorialScale() */, __this);
 		return;
 	}
 }
@@ -3547,111 +3639,137 @@ extern "C"  void SceneScript_Update_m2510973070 (SceneScript_t1382933591 * __thi
 		bool L_0 = __this->get_isScoreAdded_48();
 		if (!L_0)
 		{
-			goto IL_0034;
+			goto IL_0051;
 		}
 	}
 	{
 		bool L_1 = __this->get_inUserRotation_22();
 		if (L_1)
 		{
-			goto IL_0034;
+			goto IL_0051;
 		}
 	}
 	{
 		bool L_2 = __this->get_isScaling_24();
 		if (L_2)
 		{
-			goto IL_0034;
+			goto IL_0051;
 		}
 	}
 	{
 		int32_t L_3 = __this->get_scoreToAdded_49();
-		VirtActionInvoker1< int32_t >::Invoke(68 /* System.Void SceneScript::bingo(System.Int32) */, __this, L_3);
+		if ((((int32_t)L_3) < ((int32_t)0)))
+		{
+			goto IL_003e;
+		}
+	}
+	{
+		int32_t L_4 = __this->get_scoreToAdded_49();
+		VirtActionInvoker1< int32_t >::Invoke(69 /* System.Void SceneScript::bingo(System.Int32) */, __this, L_4);
+		goto IL_004a;
+	}
+
+IL_003e:
+	{
+		int32_t L_5 = __this->get_scoreToAdded_49();
+		VirtActionInvoker1< int32_t >::Invoke(70 /* System.Void SceneScript::penalty(System.Int32) */, __this, L_5);
+	}
+
+IL_004a:
+	{
 		__this->set_isScoreAdded_48((bool)0);
 	}
 
-IL_0034:
+IL_0051:
 	{
-		bool L_4 = VirtFuncInvoker0< bool >::Invoke(65 /* System.Boolean SceneScript::isOneSecPass() */, __this);
-		if (!L_4)
+		bool L_6 = VirtFuncInvoker0< bool >::Invoke(66 /* System.Boolean SceneScript::isOneSecPass() */, __this);
+		if (!L_6)
 		{
-			goto IL_004b;
+			goto IL_0073;
 		}
 	}
 	{
-		VirtActionInvoker0::Invoke(67 /* System.Void SceneScript::subtractOneSec() */, __this);
-		VirtActionInvoker0::Invoke(66 /* System.Void SceneScript::updateAccumTime() */, __this);
-	}
-
-IL_004b:
-	{
-		bool L_5 = VirtFuncInvoker0< bool >::Invoke(70 /* System.Boolean SceneScript::isGameOver() */, __this);
-		if (!L_5)
-		{
-			goto IL_0094;
-		}
-	}
-	{
-		bool L_6 = __this->get_isGameOverHandled_52();
-		if (L_6)
-		{
-			goto IL_008f;
-		}
-	}
-	{
-		bool L_7 = __this->get_inUserRotation_22();
+		bool L_7 = __this->get_isPause_62();
 		if (L_7)
 		{
-			goto IL_008f;
+			goto IL_0073;
 		}
 	}
 	{
-		bool L_8 = __this->get_isScaling_24();
-		if (L_8)
+		VirtActionInvoker0::Invoke(68 /* System.Void SceneScript::subtractOneSec() */, __this);
+		VirtActionInvoker0::Invoke(67 /* System.Void SceneScript::updateAccumTime() */, __this);
+	}
+
+IL_0073:
+	{
+		bool L_8 = VirtFuncInvoker0< bool >::Invoke(72 /* System.Boolean SceneScript::isGameOver() */, __this);
+		if (!L_8)
 		{
-			goto IL_008f;
+			goto IL_00c3;
 		}
 	}
 	{
-		bool L_9 = __this->get_inFlip_23();
+		bool L_9 = __this->get_isGameOverHandled_52();
 		if (L_9)
 		{
-			goto IL_008f;
+			goto IL_00be;
 		}
 	}
 	{
-		VirtActionInvoker0::Invoke(71 /* System.Void SceneScript::handleGameOver() */, __this);
+		bool L_10 = __this->get_inUserRotation_22();
+		if (L_10)
+		{
+			goto IL_00be;
+		}
+	}
+	{
+		bool L_11 = __this->get_isScaling_24();
+		if (L_11)
+		{
+			goto IL_00be;
+		}
+	}
+	{
+		bool L_12 = __this->get_inFlip_23();
+		if (L_12)
+		{
+			goto IL_00be;
+		}
+	}
+	{
+		Il2CppObject * L_13 = VirtFuncInvoker0< Il2CppObject * >::Invoke(73 /* System.Collections.IEnumerator SceneScript::handleGameOver() */, __this);
+		MonoBehaviour_StartCoroutine_Auto_m1831125106(__this, L_13, /*hidden argument*/NULL);
 		__this->set_isGameOverHandled_52((bool)1);
 	}
 
-IL_008f:
+IL_00be:
 	{
-		goto IL_00c4;
+		goto IL_00f3;
 	}
 
-IL_0094:
+IL_00c3:
 	{
 		VirtActionInvoker0::Invoke(24 /* System.Void SceneScript::listenForClickOnCenters() */, __this);
-		VirtActionInvoker0::Invoke(59 /* System.Void SceneScript::handleHint() */, __this);
-		bool L_10 = __this->get_needCheckDeadlock_29();
-		if ((!(((uint32_t)L_10) == ((uint32_t)1))))
+		VirtActionInvoker0::Invoke(60 /* System.Void SceneScript::handleHint() */, __this);
+		bool L_14 = __this->get_needCheckDeadlock_29();
+		if ((!(((uint32_t)L_14) == ((uint32_t)1))))
 		{
-			goto IL_00c4;
+			goto IL_00f3;
 		}
 	}
 	{
-		bool L_11 = __this->get_inFlip_23();
-		if (L_11)
+		bool L_15 = __this->get_inFlip_23();
+		if (L_15)
 		{
-			goto IL_00c4;
+			goto IL_00f3;
 		}
 	}
 	{
-		VirtActionInvoker0::Invoke(56 /* System.Void SceneScript::handleDecklock() */, __this);
+		VirtActionInvoker0::Invoke(57 /* System.Void SceneScript::handleDecklock() */, __this);
 		__this->set_needCheckDeadlock_29((bool)0);
 	}
 
-IL_00c4:
+IL_00f3:
 	{
 		return;
 	}
@@ -5147,7 +5265,7 @@ IL_00e0:
 		bool L_26 = Input_GetMouseButtonUp_m2588144188(NULL /*static, unused*/, 0, /*hidden argument*/NULL);
 		if (!L_26)
 		{
-			goto IL_0199;
+			goto IL_01b5;
 		}
 	}
 	{
@@ -5161,73 +5279,93 @@ IL_00e0:
 		bool L_31 = Physics_Raycast_m1343340263(NULL /*static, unused*/, L_30, (&V_0), /*hidden argument*/NULL);
 		if (!L_31)
 		{
-			goto IL_0199;
+			goto IL_01b5;
 		}
 	}
 	{
 		GameObject_t4012695102 * L_32 = __this->get_lastTouchCenter_26();
+		bool L_33 = Object_op_Inequality_m1296218211(NULL /*static, unused*/, L_32, (Object_t3878351788 *)NULL, /*hidden argument*/NULL);
+		if (!L_33)
+		{
+			goto IL_0139;
+		}
+	}
+	{
+		GameObject_t4012695102 * L_34 = __this->get_lastTouchCenter_26();
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_33 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(CenterScript_t99715488_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_32);
-		Component_t2126946602 * L_34 = GameObject_GetComponent_m1004814461(L_32, L_33, /*hidden argument*/NULL);
-		NullCheck(((CenterScript_t99715488 *)CastclassClass(L_34, CenterScript_t99715488_il2cpp_TypeInfo_var)));
-		VirtActionInvoker1< bool >::Invoke(6 /* System.Void CenterScript::touchDowning(System.Boolean) */, ((CenterScript_t99715488 *)CastclassClass(L_34, CenterScript_t99715488_il2cpp_TypeInfo_var)), (bool)0);
-		Transform_t284553113 * L_35 = RaycastHit_get_transform_m905149094((&V_0), /*hidden argument*/NULL);
-		NullCheck(L_35);
-		GameObject_t4012695102 * L_36 = Component_get_gameObject_m1170635899(L_35, /*hidden argument*/NULL);
-		V_2 = L_36;
-		GameObject_t4012695102 * L_37 = V_2;
-		Type_t * L_38 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(CenterScript_t99715488_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_37);
-		Component_t2126946602 * L_39 = GameObject_GetComponent_m1004814461(L_37, L_38, /*hidden argument*/NULL);
-		V_3 = ((CenterScript_t99715488 *)CastclassClass(L_39, CenterScript_t99715488_il2cpp_TypeInfo_var));
-		bool L_40 = __this->get_inUserRotation_22();
-		if (L_40)
-		{
-			goto IL_0199;
-		}
-	}
-	{
-		bool L_41 = __this->get_inFlip_23();
-		if (L_41)
-		{
-			goto IL_0199;
-		}
-	}
-	{
-		bool L_42 = __this->get_isScaling_24();
-		if (L_42)
-		{
-			goto IL_0199;
-		}
-	}
-	{
-		bool L_43 = __this->get_isTilting_25();
-		if (L_43)
-		{
-			goto IL_0199;
-		}
-	}
-	{
-		bool L_44 = __this->get_needCheckDeadlock_29();
-		if (L_44)
-		{
-			goto IL_0199;
-		}
-	}
-	{
-		CenterScript_t99715488 * L_45 = V_3;
-		NullCheck(L_45);
-		int32_t L_46 = L_45->get_number_2();
-		GameObject_t4012695102 * L_47 = V_2;
-		NullCheck(L_47);
-		Transform_t284553113 * L_48 = GameObject_get_transform_m1278640159(L_47, /*hidden argument*/NULL);
-		NullCheck(L_48);
-		Vector3_t3525329789  L_49 = Transform_get_position_m2211398607(L_48, /*hidden argument*/NULL);
-		VirtActionInvoker2< int32_t, Vector3_t3525329789  >::Invoke(25 /* System.Void SceneScript::handleRotatation(System.Int32,UnityEngine.Vector3) */, __this, L_46, L_49);
+		Type_t * L_35 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(CenterScript_t99715488_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_34);
+		Component_t2126946602 * L_36 = GameObject_GetComponent_m1004814461(L_34, L_35, /*hidden argument*/NULL);
+		NullCheck(((CenterScript_t99715488 *)CastclassClass(L_36, CenterScript_t99715488_il2cpp_TypeInfo_var)));
+		VirtActionInvoker1< bool >::Invoke(6 /* System.Void CenterScript::touchDowning(System.Boolean) */, ((CenterScript_t99715488 *)CastclassClass(L_36, CenterScript_t99715488_il2cpp_TypeInfo_var)), (bool)0);
 	}
 
-IL_0199:
+IL_0139:
+	{
+		Transform_t284553113 * L_37 = RaycastHit_get_transform_m905149094((&V_0), /*hidden argument*/NULL);
+		NullCheck(L_37);
+		GameObject_t4012695102 * L_38 = Component_get_gameObject_m1170635899(L_37, /*hidden argument*/NULL);
+		V_2 = L_38;
+		GameObject_t4012695102 * L_39 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_40 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(CenterScript_t99715488_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_39);
+		Component_t2126946602 * L_41 = GameObject_GetComponent_m1004814461(L_39, L_40, /*hidden argument*/NULL);
+		V_3 = ((CenterScript_t99715488 *)CastclassClass(L_41, CenterScript_t99715488_il2cpp_TypeInfo_var));
+		bool L_42 = __this->get_inUserRotation_22();
+		if (L_42)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		bool L_43 = __this->get_inFlip_23();
+		if (L_43)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		bool L_44 = __this->get_isScaling_24();
+		if (L_44)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		bool L_45 = __this->get_isTilting_25();
+		if (L_45)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		bool L_46 = __this->get_needCheckDeadlock_29();
+		if (L_46)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		bool L_47 = __this->get_scoreBoardInRotation_63();
+		if (L_47)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		CenterScript_t99715488 * L_48 = V_3;
+		NullCheck(L_48);
+		int32_t L_49 = L_48->get_number_2();
+		GameObject_t4012695102 * L_50 = V_2;
+		NullCheck(L_50);
+		Transform_t284553113 * L_51 = GameObject_get_transform_m1278640159(L_50, /*hidden argument*/NULL);
+		NullCheck(L_51);
+		Vector3_t3525329789  L_52 = Transform_get_position_m2211398607(L_51, /*hidden argument*/NULL);
+		VirtActionInvoker2< int32_t, Vector3_t3525329789  >::Invoke(25 /* System.Void SceneScript::handleRotatation(System.Int32,UnityEngine.Vector3) */, __this, L_49, L_52);
+	}
+
+IL_01b5:
 	{
 		return;
 	}
@@ -5269,18 +5407,18 @@ extern "C"  void SceneScript_handleRotatation_m1411963324 (SceneScript_t13829335
 	Il2CppObject * G_B8_0 = NULL;
 	Il2CppObject * G_B7_0 = NULL;
 	{
-		VirtActionInvoker0::Invoke(69 /* System.Void SceneScript::resetAllLeaves() */, __this);
+		VirtActionInvoker0::Invoke(71 /* System.Void SceneScript::resetAllLeaves() */, __this);
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(26 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(27 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = ___index0;
-		int32_t L_3 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(27 /* System.Int32 SceneScript::getRightLeafFromCenter(System.Int32) */, __this, L_2);
+		int32_t L_3 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(28 /* System.Int32 SceneScript::getRightLeafFromCenter(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		int32_t L_4 = ___index0;
-		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(28 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_4);
+		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(29 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_4);
 		V_2 = L_5;
 		int32_t L_6 = ___index0;
-		int32_t L_7 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(29 /* System.Int32 SceneScript::getBotLeafFromCenter(System.Int32) */, __this, L_6);
+		int32_t L_7 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(30 /* System.Int32 SceneScript::getBotLeafFromCenter(System.Int32) */, __this, L_6);
 		V_3 = L_7;
 		Array_t1209885965 * L_8 = __this->get_leaves_14();
 		int32_t L_9 = V_0;
@@ -5416,7 +5554,7 @@ IL_00d3:
 		Component_t2126946602 * L_55 = GameObject_GetComponent_m1004814461(L_53, L_54, /*hidden argument*/NULL);
 		V_11 = ((LeafScript_t136690153 *)CastclassClass(L_55, LeafScript_t136690153_il2cpp_TypeInfo_var));
 		int32_t L_56 = ___index0;
-		bool L_57 = VirtFuncInvoker1< bool, int32_t >::Invoke(45 /* System.Boolean SceneScript::isRotationValid(System.Int32) */, __this, L_56);
+		bool L_57 = VirtFuncInvoker1< bool, int32_t >::Invoke(46 /* System.Boolean SceneScript::isRotationValid(System.Int32) */, __this, L_56);
 		if (!L_57)
 		{
 			goto IL_0204;
@@ -5464,11 +5602,11 @@ IL_00d3:
 		NullCheck(L_72);
 		L_72->set_orientation_6(L_73);
 		int32_t L_74 = ___index0;
-		VirtActionInvoker1< int32_t >::Invoke(37 /* System.Void SceneScript::handleEventsAfterRotatingCenter(System.Int32) */, __this, L_74);
+		VirtActionInvoker1< int32_t >::Invoke(38 /* System.Void SceneScript::handleEventsAfterRotatingCenter(System.Int32) */, __this, L_74);
 		__this->set_needCheckDeadlock_29((bool)1);
 		float L_75 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
 		__this->set_lastSuccessfulRotationTime_30(L_75);
-		goto IL_025c;
+		goto IL_0262;
 	}
 
 IL_0204:
@@ -5509,10 +5647,23 @@ IL_0204:
 		Vector3_t3525329789  L_95 = ___vector1;
 		NullCheck(L_94);
 		VirtActionInvoker1< Vector3_t3525329789  >::Invoke(20 /* System.Void LeafScript::startFakeRotate(UnityEngine.Vector3) */, L_94, L_95);
+		VirtActionInvoker0::Invoke(26 /* System.Void SceneScript::startPenalty() */, __this);
 	}
 
-IL_025c:
+IL_0262:
 	{
+		return;
+	}
+}
+// System.Void SceneScript::startPenalty()
+extern "C"  void SceneScript_startPenalty_m2430403308 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		__this->set_scoreToAdded_49(((int32_t)-2));
+		__this->set_isScoreAdded_48((bool)1);
+		int32_t L_0 = __this->get_scoreToAdded_49();
+		VirtActionInvoker1< int32_t >::Invoke(41 /* System.Void SceneScript::addScores(System.Int32) */, __this, L_0);
+		VirtActionInvoker0::Invoke(39 /* System.Void SceneScript::shrinkEnlargeFlipScoreBoard() */, __this);
 		return;
 	}
 }
@@ -5534,7 +5685,7 @@ extern "C"  int32_t SceneScript_getRightLeafFromCenter_m1080276097 (SceneScript_
 {
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(26 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(27 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_0);
 		return ((int32_t)((int32_t)L_1+(int32_t)1));
 	}
 }
@@ -5554,7 +5705,7 @@ extern "C"  int32_t SceneScript_getBotLeafFromCenter_m2997321516 (SceneScript_t1
 {
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(28 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(29 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_0);
 		int32_t L_2 = __this->get_COLS_3();
 		return ((int32_t)((int32_t)((int32_t)((int32_t)L_1+(int32_t)((int32_t)((int32_t)L_2*(int32_t)2))))+(int32_t)1));
 	}
@@ -5565,7 +5716,7 @@ extern "C"  Array_t1209885965 * SceneScript_getFlipingLeavesFromRow_m2583174915 
 	{
 		int32_t L_0 = ___index0;
 		Array_t1209885965 * L_1 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(10 /* UnityScript.Lang.Array SceneScript::getLeavesFromRow(System.Int32) */, __this, L_0);
-		Array_t1209885965 * L_2 = VirtFuncInvoker1< Array_t1209885965 *, Array_t1209885965 * >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlippingLeavesFromArray(UnityScript.Lang.Array) */, __this, L_1);
+		Array_t1209885965 * L_2 = VirtFuncInvoker1< Array_t1209885965 *, Array_t1209885965 * >::Invoke(33 /* UnityScript.Lang.Array SceneScript::getFlippingLeavesFromArray(UnityScript.Lang.Array) */, __this, L_1);
 		return L_2;
 	}
 }
@@ -5575,7 +5726,7 @@ extern "C"  Array_t1209885965 * SceneScript_getFlipingLeavesFromCol_m60197929 (S
 	{
 		int32_t L_0 = ___index0;
 		Array_t1209885965 * L_1 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(11 /* UnityScript.Lang.Array SceneScript::getLeavesFromCol(System.Int32) */, __this, L_0);
-		Array_t1209885965 * L_2 = VirtFuncInvoker1< Array_t1209885965 *, Array_t1209885965 * >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlippingLeavesFromArray(UnityScript.Lang.Array) */, __this, L_1);
+		Array_t1209885965 * L_2 = VirtFuncInvoker1< Array_t1209885965 *, Array_t1209885965 * >::Invoke(33 /* UnityScript.Lang.Array SceneScript::getFlippingLeavesFromArray(UnityScript.Lang.Array) */, __this, L_1);
 		return L_2;
 	}
 }
@@ -5751,7 +5902,7 @@ extern "C"  int32_t SceneScript_getRightColNumFromCenterNum_m3003107489 (SceneSc
 {
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(33 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
 		return ((int32_t)((int32_t)L_1+(int32_t)1));
 	}
 }
@@ -5779,22 +5930,22 @@ extern "C"  void SceneScript_handleEventsAfterRotatingCenter_m3128430614 (SceneS
 	int32_t V_0 = 0;
 	{
 		int32_t L_0 = ___centerIndex0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(39 /* System.Int32 SceneScript::getComboNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(40 /* System.Int32 SceneScript::getComboNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		VirtActionInvoker1< int32_t >::Invoke(40 /* System.Void SceneScript::addScores(System.Int32) */, __this, L_2);
+		VirtActionInvoker1< int32_t >::Invoke(41 /* System.Void SceneScript::addScores(System.Int32) */, __this, L_2);
 		int32_t L_3 = V_0;
 		__this->set_scoreToAdded_49(L_3);
 		__this->set_isScoreAdded_48((bool)1);
-		VirtActionInvoker0::Invoke(38 /* System.Void SceneScript::shrinkEnlargeFlipScoreBoard() */, __this);
+		VirtActionInvoker0::Invoke(39 /* System.Void SceneScript::shrinkEnlargeFlipScoreBoard() */, __this);
 		int32_t L_4 = ___centerIndex0;
-		VirtActionInvoker1< int32_t >::Invoke(41 /* System.Void SceneScript::shuffleAndFlipLeftCol(System.Int32) */, __this, L_4);
+		VirtActionInvoker1< int32_t >::Invoke(42 /* System.Void SceneScript::shuffleAndFlipLeftCol(System.Int32) */, __this, L_4);
 		int32_t L_5 = ___centerIndex0;
-		VirtActionInvoker1< int32_t >::Invoke(42 /* System.Void SceneScript::shuffleAndFlipRightCol(System.Int32) */, __this, L_5);
+		VirtActionInvoker1< int32_t >::Invoke(43 /* System.Void SceneScript::shuffleAndFlipRightCol(System.Int32) */, __this, L_5);
 		int32_t L_6 = ___centerIndex0;
-		VirtActionInvoker1< int32_t >::Invoke(43 /* System.Void SceneScript::shuffleAndFlipTopRow(System.Int32) */, __this, L_6);
+		VirtActionInvoker1< int32_t >::Invoke(44 /* System.Void SceneScript::shuffleAndFlipTopRow(System.Int32) */, __this, L_6);
 		int32_t L_7 = ___centerIndex0;
-		VirtActionInvoker1< int32_t >::Invoke(44 /* System.Void SceneScript::shuffleAndFlipBotRow(System.Int32) */, __this, L_7);
+		VirtActionInvoker1< int32_t >::Invoke(45 /* System.Void SceneScript::shuffleAndFlipBotRow(System.Int32) */, __this, L_7);
 		return;
 	}
 }
@@ -5820,11 +5971,12 @@ extern "C"  void SceneScript_shrinkEnlargeFlipScoreBoard_m4108625447 (SceneScrip
 	Il2CppObject * G_B3_0 = NULL;
 	Il2CppObject * G_B2_0 = NULL;
 	{
+		__this->set_scoreBoardInRotation_63((bool)1);
 		V_0 = 0;
-		goto IL_0059;
+		goto IL_0060;
 	}
 
-IL_0007:
+IL_000e:
 	{
 		Array_t1209885965 * L_0 = __this->get_scoreBoard_40();
 		int32_t L_1 = V_0;
@@ -5835,7 +5987,7 @@ IL_0007:
 		if (((GameObject_t4012695102 *)IsInstSealed(L_3, GameObject_t4012695102_il2cpp_TypeInfo_var)))
 		{
 			G_B3_0 = L_3;
-			goto IL_002d;
+			goto IL_0034;
 		}
 	}
 	{
@@ -5846,7 +5998,7 @@ IL_0007:
 		G_B3_0 = L_5;
 	}
 
-IL_002d:
+IL_0034:
 	{
 		V_1 = ((GameObject_t4012695102 *)CastclassSealed(G_B3_0, GameObject_t4012695102_il2cpp_TypeInfo_var));
 		GameObject_t4012695102 * L_6 = V_1;
@@ -5865,7 +6017,7 @@ IL_002d:
 		V_0 = ((int32_t)((int32_t)L_11+(int32_t)1));
 	}
 
-IL_0059:
+IL_0060:
 	{
 		int32_t L_12 = V_0;
 		Array_t1209885965 * L_13 = __this->get_scoreBoard_40();
@@ -5873,7 +6025,7 @@ IL_0059:
 		int32_t L_14 = Array_get_length_m1103403365(L_13, /*hidden argument*/NULL);
 		if ((((int32_t)L_12) < ((int32_t)L_14)))
 		{
-			goto IL_0007;
+			goto IL_000e;
 		}
 	}
 	{
@@ -5893,28 +6045,28 @@ extern "C"  int32_t SceneScript_getComboNum_m4151384084 (SceneScript_t1382933591
 	Array_t1209885965 * V_7 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(33 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		int32_t L_4 = ___index0;
-		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_4);
+		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_4);
 		V_2 = L_5;
 		int32_t L_6 = V_2;
-		Array_t1209885965 * L_7 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_6);
+		Array_t1209885965 * L_7 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_6);
 		V_3 = L_7;
 		int32_t L_8 = ___index0;
-		int32_t L_9 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_8);
+		int32_t L_9 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_8);
 		V_4 = L_9;
 		int32_t L_10 = V_4;
-		Array_t1209885965 * L_11 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_10);
+		Array_t1209885965 * L_11 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_10);
 		V_5 = L_11;
 		int32_t L_12 = ___index0;
-		int32_t L_13 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_12);
+		int32_t L_13 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(37 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_12);
 		V_6 = L_13;
 		int32_t L_14 = V_6;
-		Array_t1209885965 * L_15 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_14);
+		Array_t1209885965 * L_15 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_14);
 		V_7 = L_15;
 		Array_t1209885965 * L_16 = V_1;
 		NullCheck(L_16);
@@ -5972,10 +6124,10 @@ extern "C"  void SceneScript_shuffleAndFlipLeftCol_m3346687164 (SceneScript_t138
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(33 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		goto IL_002d;
 	}
@@ -6003,9 +6155,9 @@ IL_002d:
 IL_0032:
 	{
 		Array_t1209885965 * L_7 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(52 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
 		Array_t1209885965 * L_8 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(50 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
 		return;
 	}
 }
@@ -6016,10 +6168,10 @@ extern "C"  void SceneScript_shuffleAndFlipRightCol_m3073940997 (SceneScript_t13
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		goto IL_002d;
 	}
@@ -6047,9 +6199,9 @@ IL_002d:
 IL_0032:
 	{
 		Array_t1209885965 * L_7 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(52 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
 		Array_t1209885965 * L_8 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(50 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
 		return;
 	}
 }
@@ -6060,10 +6212,10 @@ extern "C"  void SceneScript_shuffleAndFlipTopRow_m903166598 (SceneScript_t13829
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		goto IL_002d;
 	}
@@ -6091,9 +6243,9 @@ IL_002d:
 IL_0032:
 	{
 		Array_t1209885965 * L_7 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(52 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
 		Array_t1209885965 * L_8 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(50 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
 		return;
 	}
 }
@@ -6104,10 +6256,10 @@ extern "C"  void SceneScript_shuffleAndFlipBotRow_m4273713236 (SceneScript_t1382
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(37 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		goto IL_002d;
 	}
@@ -6135,9 +6287,9 @@ IL_002d:
 IL_0032:
 	{
 		Array_t1209885965 * L_7 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(52 /* System.Void SceneScript::triggerMatchAnimationAtArray(UnityScript.Lang.Array) */, __this, L_7);
 		Array_t1209885965 * L_8 = V_1;
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(50 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(51 /* System.Void SceneScript::flipLeavesAtArray(UnityScript.Lang.Array) */, __this, L_8);
 		return;
 	}
 }
@@ -6152,7 +6304,7 @@ extern "C"  bool SceneScript_isRotationValid_m2278480128 (SceneScript_t138293359
 	bool G_B5_0 = false;
 	{
 		int32_t L_0 = ___index0;
-		bool L_1 = VirtFuncInvoker1< bool, int32_t >::Invoke(46 /* System.Boolean SceneScript::isComboInLeftCol(System.Int32) */, __this, L_0);
+		bool L_1 = VirtFuncInvoker1< bool, int32_t >::Invoke(47 /* System.Boolean SceneScript::isComboInLeftCol(System.Int32) */, __this, L_0);
 		bool L_2 = L_1;
 		G_B1_0 = L_2;
 		if (L_2)
@@ -6163,7 +6315,7 @@ extern "C"  bool SceneScript_isRotationValid_m2278480128 (SceneScript_t138293359
 	}
 	{
 		int32_t L_3 = ___index0;
-		bool L_4 = VirtFuncInvoker1< bool, int32_t >::Invoke(47 /* System.Boolean SceneScript::isComboInRightCol(System.Int32) */, __this, L_3);
+		bool L_4 = VirtFuncInvoker1< bool, int32_t >::Invoke(48 /* System.Boolean SceneScript::isComboInRightCol(System.Int32) */, __this, L_3);
 		G_B2_0 = L_4;
 	}
 
@@ -6179,7 +6331,7 @@ IL_0015:
 	}
 	{
 		int32_t L_6 = ___index0;
-		bool L_7 = VirtFuncInvoker1< bool, int32_t >::Invoke(48 /* System.Boolean SceneScript::isComboInTopRow(System.Int32) */, __this, L_6);
+		bool L_7 = VirtFuncInvoker1< bool, int32_t >::Invoke(49 /* System.Boolean SceneScript::isComboInTopRow(System.Int32) */, __this, L_6);
 		G_B4_0 = L_7;
 	}
 
@@ -6195,7 +6347,7 @@ IL_0023:
 	}
 	{
 		int32_t L_9 = ___index0;
-		bool L_10 = VirtFuncInvoker1< bool, int32_t >::Invoke(49 /* System.Boolean SceneScript::isComboInBotRow(System.Int32) */, __this, L_9);
+		bool L_10 = VirtFuncInvoker1< bool, int32_t >::Invoke(50 /* System.Boolean SceneScript::isComboInBotRow(System.Int32) */, __this, L_9);
 		G_B6_0 = L_10;
 	}
 
@@ -6211,10 +6363,10 @@ extern "C"  bool SceneScript_isComboInLeftCol_m1714548712 (SceneScript_t13829335
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(33 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		Array_t1209885965 * L_4 = V_1;
 		NullCheck(L_4);
@@ -6229,10 +6381,10 @@ extern "C"  bool SceneScript_isComboInRightCol_m4017256537 (SceneScript_t1382933
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		Array_t1209885965 * L_4 = V_1;
 		NullCheck(L_4);
@@ -6247,10 +6399,10 @@ extern "C"  bool SceneScript_isComboInTopRow_m296327642 (SceneScript_t1382933591
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		Array_t1209885965 * L_4 = V_1;
 		NullCheck(L_4);
@@ -6265,10 +6417,10 @@ extern "C"  bool SceneScript_isComboInBotRow_m3666874280 (SceneScript_t138293359
 	Array_t1209885965 * V_1 = NULL;
 	{
 		int32_t L_0 = ___index0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(37 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
+		Array_t1209885965 * L_3 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_2);
 		V_1 = L_3;
 		Array_t1209885965 * L_4 = V_1;
 		NullCheck(L_4);
@@ -6662,28 +6814,28 @@ extern "C"  bool SceneScript_isDeckLock_m1589070309 (SceneScript_t1382933591 * _
 IL_0007:
 	{
 		int32_t L_0 = V_0;
-		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(33 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
+		int32_t L_1 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getLeftColNumFromCenterNum(System.Int32) */, __this, L_0);
 		V_1 = L_1;
 		int32_t L_2 = V_0;
-		int32_t L_3 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(34 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_2);
+		int32_t L_3 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getRightColNumFromCenterNum(System.Int32) */, __this, L_2);
 		V_2 = L_3;
 		int32_t L_4 = V_0;
-		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(35 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_4);
+		int32_t L_5 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getTopRowNumFromCenterNum(System.Int32) */, __this, L_4);
 		V_3 = L_5;
 		int32_t L_6 = V_0;
-		int32_t L_7 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(36 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_6);
+		int32_t L_7 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(37 /* System.Int32 SceneScript::getBotRowNumFromCenterNum(System.Int32) */, __this, L_6);
 		V_4 = L_7;
 		int32_t L_8 = V_0;
-		int32_t L_9 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(26 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_8);
+		int32_t L_9 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(27 /* System.Int32 SceneScript::getLeftLeafFromCenter(System.Int32) */, __this, L_8);
 		V_5 = L_9;
 		int32_t L_10 = V_0;
-		int32_t L_11 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(27 /* System.Int32 SceneScript::getRightLeafFromCenter(System.Int32) */, __this, L_10);
+		int32_t L_11 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(28 /* System.Int32 SceneScript::getRightLeafFromCenter(System.Int32) */, __this, L_10);
 		V_6 = L_11;
 		int32_t L_12 = V_0;
-		int32_t L_13 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(28 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_12);
+		int32_t L_13 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(29 /* System.Int32 SceneScript::getTopLeafFromCenter(System.Int32) */, __this, L_12);
 		V_7 = L_13;
 		int32_t L_14 = V_0;
-		int32_t L_15 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(29 /* System.Int32 SceneScript::getBotLeafFromCenter(System.Int32) */, __this, L_14);
+		int32_t L_15 = VirtFuncInvoker1< int32_t, int32_t >::Invoke(30 /* System.Int32 SceneScript::getBotLeafFromCenter(System.Int32) */, __this, L_14);
 		V_8 = L_15;
 		Array_t1209885965 * L_16 = __this->get_leaves_14();
 		int32_t L_17 = V_5;
@@ -6798,16 +6950,16 @@ IL_00fd:
 		NullCheck(L_49);
 		Array_set_Item_m461199559(L_49, L_50, L_51, /*hidden argument*/NULL);
 		int32_t L_52 = V_1;
-		Array_t1209885965 * L_53 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_52);
+		Array_t1209885965 * L_53 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_52);
 		V_13 = L_53;
 		int32_t L_54 = V_2;
-		Array_t1209885965 * L_55 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_54);
+		Array_t1209885965 * L_55 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(32 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromCol(System.Int32) */, __this, L_54);
 		V_14 = L_55;
 		int32_t L_56 = V_3;
-		Array_t1209885965 * L_57 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_56);
+		Array_t1209885965 * L_57 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_56);
 		V_15 = L_57;
 		int32_t L_58 = V_4;
-		Array_t1209885965 * L_59 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(30 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_58);
+		Array_t1209885965 * L_59 = VirtFuncInvoker1< Array_t1209885965 *, int32_t >::Invoke(31 /* UnityScript.Lang.Array SceneScript::getFlipingLeavesFromRow(System.Int32) */, __this, L_58);
 		V_16 = L_59;
 		Array_t1209885965 * L_60 = __this->get_leaves_14();
 		int32_t L_61 = V_5;
@@ -6954,7 +7106,7 @@ extern "C"  void SceneScript_handleDecklock_m2957880961 (SceneScript_t1382933591
 {
 	bool V_0 = false;
 	{
-		bool L_0 = VirtFuncInvoker0< bool >::Invoke(55 /* System.Boolean SceneScript::isDeckLock() */, __this);
+		bool L_0 = VirtFuncInvoker0< bool >::Invoke(56 /* System.Boolean SceneScript::isDeckLock() */, __this);
 		V_0 = L_0;
 		bool L_1 = V_0;
 		if (!L_1)
@@ -6969,7 +7121,7 @@ extern "C"  void SceneScript_handleDecklock_m2957880961 (SceneScript_t1382933591
 IL_0012:
 	{
 		VirtActionInvoker0::Invoke(21 /* System.Void SceneScript::shuffleAllLeaves() */, __this);
-		bool L_2 = VirtFuncInvoker0< bool >::Invoke(55 /* System.Boolean SceneScript::isDeckLock() */, __this);
+		bool L_2 = VirtFuncInvoker0< bool >::Invoke(56 /* System.Boolean SceneScript::isDeckLock() */, __this);
 		if (L_2)
 		{
 			goto IL_0028;
@@ -6986,7 +7138,7 @@ IL_0028:
 
 IL_002d:
 	{
-		VirtActionInvoker0::Invoke(57 /* System.Void SceneScript::flipAllLeaves() */, __this);
+		VirtActionInvoker0::Invoke(58 /* System.Void SceneScript::flipAllLeaves() */, __this);
 	}
 
 IL_0033:
@@ -7060,7 +7212,7 @@ extern "C"  bool SceneScript_isHintNeeded_m2010987405 (SceneScript_t1382933591 *
 extern "C"  void SceneScript_handleHint_m2378644724 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
 	{
-		bool L_0 = VirtFuncInvoker0< bool >::Invoke(58 /* System.Boolean SceneScript::isHintNeeded() */, __this);
+		bool L_0 = VirtFuncInvoker0< bool >::Invoke(59 /* System.Boolean SceneScript::isHintNeeded() */, __this);
 		if (!L_0)
 		{
 			goto IL_0022;
@@ -7070,7 +7222,7 @@ extern "C"  void SceneScript_handleHint_m2378644724 (SceneScript_t1382933591 * _
 		float L_1 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
 		__this->set_lastSuccessfulRotationTime_30(L_1);
 		Array_t1209885965 * L_2 = __this->get_hintArray_38();
-		VirtActionInvoker1< Array_t1209885965 * >::Invoke(61 /* System.Void SceneScript::highlightArray(UnityScript.Lang.Array) */, __this, L_2);
+		VirtActionInvoker1< Array_t1209885965 * >::Invoke(62 /* System.Void SceneScript::highlightArray(UnityScript.Lang.Array) */, __this, L_2);
 	}
 
 IL_0022:
@@ -7270,7 +7422,7 @@ IL_0050:
 		memset(&L_9, 0, sizeof(L_9));
 		Color__ctor_m2252924356(&L_9, (((float)((float)1))), (((float)((float)0))), (((float)((float)0))), (((float)((float)1))), /*hidden argument*/NULL);
 		float L_10 = __this->get_TIME_STAMP_SCALE_42();
-		GameObject_t4012695102 * L_11 = VirtFuncInvoker3< GameObject_t4012695102 *, Vector3_t3525329789 , Color_t1588175760 , float >::Invoke(64 /* UnityEngine.GameObject SceneScript::createTimeStamp(UnityEngine.Vector3,UnityEngine.Color,System.Single) */, __this, L_8, L_9, L_10);
+		GameObject_t4012695102 * L_11 = VirtFuncInvoker3< GameObject_t4012695102 *, Vector3_t3525329789 , Color_t1588175760 , float >::Invoke(65 /* UnityEngine.GameObject SceneScript::createTimeStamp(UnityEngine.Vector3,UnityEngine.Color,System.Single) */, __this, L_8, L_9, L_10);
 		V_3 = L_11;
 		Array_t1209885965 * L_12 = __this->get_timeStamps_44();
 		GameObject_t4012695102 * L_13 = V_3;
@@ -7346,13 +7498,12 @@ IL_0098:
 	}
 }
 // UnityEngine.GameObject SceneScript::createTimeStamp(UnityEngine.Vector3,UnityEngine.Color,System.Single)
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
 extern const Il2CppType* SpriteRenderer_t2223784725_0_0_0_var;
-extern const Il2CppType* ScoreCircleScript_t2158634317_0_0_0_var;
 extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
 extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
 extern Il2CppClass* SpriteRenderer_t2223784725_il2cpp_TypeInfo_var;
-extern Il2CppClass* ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1572;
 extern const uint32_t SceneScript_createTimeStamp_m22196264_MetadataUsageId;
 extern "C"  GameObject_t4012695102 * SceneScript_createTimeStamp_m22196264 (SceneScript_t1382933591 * __this, Vector3_t3525329789  ___vector0, Color_t1588175760  ___color1, float ___scale2, const MethodInfo* method)
 {
@@ -7363,42 +7514,58 @@ extern "C"  GameObject_t4012695102 * SceneScript_createTimeStamp_m22196264 (Scen
 		s_Il2CppMethodIntialized = true;
 	}
 	GameObject_t4012695102 * V_0 = NULL;
+	TimeStampScript_t3474365761 * V_1 = NULL;
+	Vector3_t3525329789  V_2;
+	memset(&V_2, 0, sizeof(V_2));
 	{
-		GameObject_t4012695102 * L_0 = __this->get_scoreCirclePrefab_33();
+		GameObject_t4012695102 * L_0 = __this->get_timeStampPrefab_60();
 		Vector3_t3525329789  L_1 = ___vector0;
 		Quaternion_t1891715979  L_2 = Quaternion_get_identity_m1743882806(NULL /*static, unused*/, /*hidden argument*/NULL);
 		Object_t3878351788 * L_3 = Object_Instantiate_m2255090103(NULL /*static, unused*/, L_0, L_1, L_2, /*hidden argument*/NULL);
 		V_0 = ((GameObject_t4012695102 *)IsInstSealed(((GameObject_t4012695102 *)CastclassSealed(L_3, GameObject_t4012695102_il2cpp_TypeInfo_var)), GameObject_t4012695102_il2cpp_TypeInfo_var));
 		GameObject_t4012695102 * L_4 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_5 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(SpriteRenderer_t2223784725_0_0_0_var), /*hidden argument*/NULL);
+		Type_t * L_5 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
 		NullCheck(L_4);
 		Component_t2126946602 * L_6 = GameObject_GetComponent_m1004814461(L_4, L_5, /*hidden argument*/NULL);
-		Color_t1588175760  L_7 = ___color1;
-		NullCheck(((SpriteRenderer_t2223784725 *)CastclassSealed(L_6, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)));
-		SpriteRenderer_set_color_m2701854973(((SpriteRenderer_t2223784725 *)CastclassSealed(L_6, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)), L_7, /*hidden argument*/NULL);
-		GameObject_t4012695102 * L_8 = V_0;
-		NullCheck(L_8);
-		Transform_t284553113 * L_9 = GameObject_get_transform_m1278640159(L_8, /*hidden argument*/NULL);
-		GameObject_t4012695102 * L_10 = V_0;
-		NullCheck(L_10);
-		Transform_t284553113 * L_11 = GameObject_get_transform_m1278640159(L_10, /*hidden argument*/NULL);
+		V_1 = ((TimeStampScript_t3474365761 *)CastclassClass(L_6, TimeStampScript_t3474365761_il2cpp_TypeInfo_var));
+		GameObject_t4012695102 * L_7 = V_0;
+		Type_t * L_8 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(SpriteRenderer_t2223784725_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_7);
+		Component_t2126946602 * L_9 = GameObject_GetComponent_m1004814461(L_7, L_8, /*hidden argument*/NULL);
+		Color_t1588175760  L_10 = ___color1;
+		NullCheck(((SpriteRenderer_t2223784725 *)CastclassSealed(L_9, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)));
+		SpriteRenderer_set_color_m2701854973(((SpriteRenderer_t2223784725 *)CastclassSealed(L_9, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)), L_10, /*hidden argument*/NULL);
+		GameObject_t4012695102 * L_11 = V_0;
 		NullCheck(L_11);
-		Vector3_t3525329789  L_12 = Transform_get_localScale_m3886572677(L_11, /*hidden argument*/NULL);
-		float L_13 = ___scale2;
-		Vector3_t3525329789  L_14 = Vector3_op_Multiply_m973638459(NULL /*static, unused*/, L_12, L_13, /*hidden argument*/NULL);
-		NullCheck(L_9);
-		Transform_set_localScale_m310756934(L_9, L_14, /*hidden argument*/NULL);
-		GameObject_t4012695102 * L_15 = V_0;
-		Type_t * L_16 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(ScoreCircleScript_t2158634317_0_0_0_var), /*hidden argument*/NULL);
-		NullCheck(L_15);
-		Component_t2126946602 * L_17 = GameObject_GetComponent_m1004814461(L_15, L_16, /*hidden argument*/NULL);
-		NullCheck(((ScoreCircleScript_t2158634317 *)CastclassClass(L_17, ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var)));
-		Text_t3286458198 * L_18 = ((ScoreCircleScript_t2158634317 *)CastclassClass(L_17, ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var))->get_textObject_15();
-		NullCheck(L_18);
-		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_18, _stringLiteral1572);
+		Transform_t284553113 * L_12 = GameObject_get_transform_m1278640159(L_11, /*hidden argument*/NULL);
+		GameObject_t4012695102 * L_13 = V_0;
+		NullCheck(L_13);
+		Transform_t284553113 * L_14 = GameObject_get_transform_m1278640159(L_13, /*hidden argument*/NULL);
+		NullCheck(L_14);
+		Vector3_t3525329789  L_15 = Transform_get_localScale_m3886572677(L_14, /*hidden argument*/NULL);
+		float L_16 = ___scale2;
+		Vector3_t3525329789  L_17 = Vector3_op_Multiply_m973638459(NULL /*static, unused*/, L_15, L_16, /*hidden argument*/NULL);
+		NullCheck(L_12);
+		Transform_set_localScale_m310756934(L_12, L_17, /*hidden argument*/NULL);
+		TimeStampScript_t3474365761 * L_18 = V_1;
 		GameObject_t4012695102 * L_19 = V_0;
-		return L_19;
+		NullCheck(L_19);
+		Transform_t284553113 * L_20 = GameObject_get_transform_m1278640159(L_19, /*hidden argument*/NULL);
+		NullCheck(L_20);
+		Vector3_t3525329789  L_21 = Transform_get_localScale_m3886572677(L_20, /*hidden argument*/NULL);
+		V_2 = L_21;
+		float L_22 = (&V_2)->get_x_1();
+		NullCheck(L_18);
+		L_18->set_ORIGINAL_SCALE_2(L_22);
+		TimeStampScript_t3474365761 * L_23 = V_1;
+		TimeStampScript_t3474365761 * L_24 = V_1;
+		NullCheck(L_24);
+		float L_25 = L_24->get_ORIGINAL_SCALE_2();
+		NullCheck(L_23);
+		L_23->set_SHRINK_AMOUNT_3(((float)((float)L_25/(float)(((float)((float)2))))));
+		GameObject_t4012695102 * L_26 = V_0;
+		return L_26;
 	}
 }
 // System.Boolean SceneScript::isOneSecPass()
@@ -7438,10 +7605,10 @@ extern "C"  void SceneScript_updateAccumTime_m1681234906 (SceneScript_t138293359
 	}
 }
 // System.Void SceneScript::subtractOneSec()
-extern const Il2CppType* ScoreCircleScript_t2158634317_0_0_0_var;
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
 extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
 extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
 extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
 extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
@@ -7456,7 +7623,7 @@ extern "C"  void SceneScript_subtractOneSec_m1268727396 (SceneScript_t1382933591
 	}
 	int32_t V_0 = 0;
 	GameObject_t4012695102 * V_1 = NULL;
-	ScoreCircleScript_t2158634317 * V_2 = NULL;
+	TimeStampScript_t3474365761 * V_2 = NULL;
 	{
 		Array_t1209885965 * L_0 = __this->get_timeStamps_44();
 		NullCheck(L_0);
@@ -7474,31 +7641,31 @@ IL_0013:
 		V_1 = ((GameObject_t4012695102 *)IsInstSealed(L_4, GameObject_t4012695102_il2cpp_TypeInfo_var));
 		GameObject_t4012695102 * L_5 = V_1;
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
-		Type_t * L_6 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(ScoreCircleScript_t2158634317_0_0_0_var), /*hidden argument*/NULL);
+		Type_t * L_6 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
 		NullCheck(L_5);
 		Component_t2126946602 * L_7 = GameObject_GetComponent_m1004814461(L_5, L_6, /*hidden argument*/NULL);
-		V_2 = ((ScoreCircleScript_t2158634317 *)CastclassClass(L_7, ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var));
-		ScoreCircleScript_t2158634317 * L_8 = V_2;
+		V_2 = ((TimeStampScript_t3474365761 *)CastclassClass(L_7, TimeStampScript_t3474365761_il2cpp_TypeInfo_var));
+		TimeStampScript_t3474365761 * L_8 = V_2;
 		NullCheck(L_8);
-		int32_t L_9 = L_8->get_number_16();
+		int32_t L_9 = L_8->get_number_6();
 		if (!L_9)
 		{
 			goto IL_009a;
 		}
 	}
 	{
-		ScoreCircleScript_t2158634317 * L_10 = V_2;
-		ScoreCircleScript_t2158634317 * L_11 = V_2;
+		TimeStampScript_t3474365761 * L_10 = V_2;
+		TimeStampScript_t3474365761 * L_11 = V_2;
 		NullCheck(L_11);
-		int32_t L_12 = L_11->get_number_16();
+		int32_t L_12 = L_11->get_number_6();
 		NullCheck(L_10);
-		L_10->set_number_16(((int32_t)((int32_t)L_12-(int32_t)1)));
-		ScoreCircleScript_t2158634317 * L_13 = V_2;
+		L_10->set_number_6(((int32_t)((int32_t)L_12-(int32_t)1)));
+		TimeStampScript_t3474365761 * L_13 = V_2;
 		NullCheck(L_13);
-		Text_t3286458198 * L_14 = L_13->get_textObject_15();
-		ScoreCircleScript_t2158634317 * L_15 = V_2;
+		Text_t3286458198 * L_14 = L_13->get_textObject_5();
+		TimeStampScript_t3474365761 * L_15 = V_2;
 		NullCheck(L_15);
-		int32_t L_16 = L_15->get_number_16();
+		int32_t L_16 = L_15->get_number_6();
 		int32_t L_17 = L_16;
 		Il2CppObject * L_18 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_17);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -7507,25 +7674,25 @@ IL_0013:
 		String_t* L_20 = RuntimeServices_op_Addition_m3420210656(NULL /*static, unused*/, L_18, L_19, /*hidden argument*/NULL);
 		NullCheck(L_14);
 		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_14, L_20);
-		ScoreCircleScript_t2158634317 * L_21 = V_2;
+		TimeStampScript_t3474365761 * L_21 = V_2;
 		NullCheck(L_21);
-		int32_t L_22 = L_21->get_number_16();
+		int32_t L_22 = L_21->get_number_6();
 		if (L_22)
 		{
 			goto IL_0095;
 		}
 	}
 	{
-		ScoreCircleScript_t2158634317 * L_23 = V_2;
+		TimeStampScript_t3474365761 * L_23 = V_2;
 		NullCheck(L_23);
-		Text_t3286458198 * L_24 = L_23->get_textObject_15();
+		Text_t3286458198 * L_24 = L_23->get_textObject_5();
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_25 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
 		NullCheck(L_24);
 		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_24, L_25);
-		ScoreCircleScript_t2158634317 * L_26 = V_2;
+		TimeStampScript_t3474365761 * L_26 = V_2;
 		NullCheck(L_26);
-		VirtActionInvoker0::Invoke(13 /* System.Void ScoreCircleScript::timeUp() */, L_26);
+		VirtActionInvoker0::Invoke(7 /* System.Void TimeStampScript::hide() */, L_26);
 	}
 
 IL_0095:
@@ -7595,6 +7762,50 @@ extern "C"  void SceneScript_bingo_m1140923229 (SceneScript_t1382933591 * __this
 		return;
 	}
 }
+// System.Void SceneScript::penalty(System.Int32)
+extern const Il2CppType* Animator_t792326996_0_0_0_var;
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Animator_t792326996_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral109264530;
+extern const uint32_t SceneScript_penalty_m3266286391_MetadataUsageId;
+extern "C"  void SceneScript_penalty_m3266286391 (SceneScript_t1382933591 * __this, int32_t ___score0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_penalty_m3266286391_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Text_t3286458198 * L_0 = __this->get_addScoreText_47();
+		int32_t L_1 = ___score0;
+		int32_t L_2 = L_1;
+		Il2CppObject * L_3 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_2);
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_4 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t2273795202_il2cpp_TypeInfo_var);
+		String_t* L_5 = RuntimeServices_op_Addition_m3420210656(NULL /*static, unused*/, L_3, L_4, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_0, L_5);
+		Text_t3286458198 * L_6 = __this->get_addScoreText_47();
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_7 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Animator_t792326996_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_6);
+		Component_t2126946602 * L_8 = Component_GetComponent_m936021879(L_6, L_7, /*hidden argument*/NULL);
+		NullCheck(((Animator_t792326996 *)CastclassSealed(L_8, Animator_t792326996_il2cpp_TypeInfo_var)));
+		Animator_SetBool_m2336836203(((Animator_t792326996 *)CastclassSealed(L_8, Animator_t792326996_il2cpp_TypeInfo_var)), _stringLiteral109264530, (bool)1, /*hidden argument*/NULL);
+		Canvas_t3534013893 * L_9 = __this->get_canvas_46();
+		Type_t * L_10 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Animator_t792326996_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_9);
+		Component_t2126946602 * L_11 = Component_GetComponent_m936021879(L_9, L_10, /*hidden argument*/NULL);
+		NullCheck(((Animator_t792326996 *)CastclassSealed(L_11, Animator_t792326996_il2cpp_TypeInfo_var)));
+		Animator_SetBool_m2336836203(((Animator_t792326996 *)CastclassSealed(L_11, Animator_t792326996_il2cpp_TypeInfo_var)), _stringLiteral109264530, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void SceneScript::resetAllLeaves()
 extern const Il2CppType* LeafScript_t136690153_0_0_0_var;
 extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
@@ -7647,32 +7858,346 @@ IL_0035:
 	}
 }
 // System.Boolean SceneScript::isGameOver()
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_isGameOver_m3244978135_MetadataUsageId;
 extern "C"  bool SceneScript_isGameOver_m3244978135 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
 	{
-		float L_0 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
-		float L_1 = __this->get_gameStartTime_50();
-		float L_2 = __this->get_GAME_TIME_53();
-		return (bool)((((float)((float)((float)L_0-(float)L_1))) > ((float)L_2))? 1 : 0);
+		il2cpp_codegen_initialize_method (SceneScript_isGameOver_m3244978135_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Array_t1209885965 * L_0 = __this->get_timeStamps_44();
+		NullCheck(L_0);
+		Il2CppObject * L_1 = Array_get_Item_m3470539834(L_0, 0, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_2 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(((GameObject_t4012695102 *)IsInstSealed(L_1, GameObject_t4012695102_il2cpp_TypeInfo_var)));
+		Component_t2126946602 * L_3 = GameObject_GetComponent_m1004814461(((GameObject_t4012695102 *)IsInstSealed(L_1, GameObject_t4012695102_il2cpp_TypeInfo_var)), L_2, /*hidden argument*/NULL);
+		NullCheck(((TimeStampScript_t3474365761 *)CastclassClass(L_3, TimeStampScript_t3474365761_il2cpp_TypeInfo_var)));
+		int32_t L_4 = ((TimeStampScript_t3474365761 *)CastclassClass(L_3, TimeStampScript_t3474365761_il2cpp_TypeInfo_var))->get_number_6();
+		return (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0);
 	}
 }
-// System.Void SceneScript::handleGameOver()
-extern "C"  void SceneScript_handleGameOver_m3697655955 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+// System.Collections.IEnumerator SceneScript::handleGameOver()
+extern Il2CppClass* U24handleGameOverU2453_t2071569712_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_handleGameOver_m767146817_MetadataUsageId;
+extern "C"  Il2CppObject * SceneScript_handleGameOver_m767146817 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_handleGameOver_m767146817_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		U24handleGameOverU2453_t2071569712 * L_0 = (U24handleGameOverU2453_t2071569712 *)il2cpp_codegen_object_new(U24handleGameOverU2453_t2071569712_il2cpp_TypeInfo_var);
+		U24handleGameOverU2453__ctor_m256039187(L_0, __this, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Il2CppObject* L_1 = U24handleGameOverU2453_GetEnumerator_m2414612360(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Collections.IEnumerator SceneScript::pauseGame()
+extern Il2CppClass* U24pauseGameU2456_t3867230177_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_pauseGame_m2309832503_MetadataUsageId;
+extern "C"  Il2CppObject * SceneScript_pauseGame_m2309832503 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_pauseGame_m2309832503_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		U24pauseGameU2456_t3867230177 * L_0 = (U24pauseGameU2456_t3867230177 *)il2cpp_codegen_object_new(U24pauseGameU2456_t3867230177_il2cpp_TypeInfo_var);
+		U24pauseGameU2456__ctor_m4149488334(L_0, __this, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Il2CppObject* L_1 = U24pauseGameU2456_GetEnumerator_m1824728861(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript::_pauseGame()
+extern "C"  void SceneScript__pauseGame_m1203863342 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
 	{
-		VirtActionInvoker0::Invoke(69 /* System.Void SceneScript::resetAllLeaves() */, __this);
-		VirtActionInvoker0::Invoke(74 /* System.Void SceneScript::toggleAllCenterColliders() */, __this);
-		VirtActionInvoker0::Invoke(75 /* System.Void SceneScript::toggleAllLeaves() */, __this);
+		Il2CppObject * L_0 = VirtFuncInvoker0< Il2CppObject * >::Invoke(74 /* System.Collections.IEnumerator SceneScript::pauseGame() */, __this);
+		MonoBehaviour_StartCoroutine_Auto_m1831125106(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void SceneScript::startGame()
-extern "C"  void SceneScript_startGame_m4274572305 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+// System.Collections.IEnumerator SceneScript::resumeGame()
+extern Il2CppClass* U24resumeGameU2459_t4285886981_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_resumeGame_m2481487762_MetadataUsageId;
+extern "C"  Il2CppObject * SceneScript_resumeGame_m2481487762 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_resumeGame_m2481487762_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		U24resumeGameU2459_t4285886981 * L_0 = (U24resumeGameU2459_t4285886981 *)il2cpp_codegen_object_new(U24resumeGameU2459_t4285886981_il2cpp_TypeInfo_var);
+		U24resumeGameU2459__ctor_m727680744(L_0, __this, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Il2CppObject* L_1 = U24resumeGameU2459_GetEnumerator_m4120600019(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript::_resumeGame()
+extern "C"  void SceneScript__resumeGame_m2556182139 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
 	{
-		__this->set_isGameOverHandled_52((bool)0);
-		float L_0 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
-		__this->set_gameStartTime_50(L_0);
+		Il2CppObject * L_0 = VirtFuncInvoker0< Il2CppObject * >::Invoke(76 /* System.Collections.IEnumerator SceneScript::resumeGame() */, __this);
+		MonoBehaviour_StartCoroutine_Auto_m1831125106(__this, L_0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::updateHighestScore()
+extern Il2CppCodeGenString* _stringLiteral1259550830;
+extern const uint32_t SceneScript_updateHighestScore_m934944220_MetadataUsageId;
+extern "C"  void SceneScript_updateHighestScore_m934944220 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_updateHighestScore_m934944220_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		int32_t L_0 = __this->get_scores_39();
+		int32_t L_1 = PlayerPrefs_GetInt_m1334009359(NULL /*static, unused*/, _stringLiteral1259550830, /*hidden argument*/NULL);
+		if ((((int32_t)L_0) <= ((int32_t)L_1)))
+		{
+			goto IL_0025;
+		}
+	}
+	{
+		int32_t L_2 = __this->get_scores_39();
+		PlayerPrefs_SetInt_m3485171996(NULL /*static, unused*/, _stringLiteral1259550830, L_2, /*hidden argument*/NULL);
+	}
+
+IL_0025:
+	{
+		return;
+	}
+}
+// System.Void SceneScript::shuffleAndApplyNewColorAtLeaves()
+extern "C"  void SceneScript_shuffleAndApplyNewColorAtLeaves_m3662186399 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		goto IL_001b;
+	}
+
+IL_0005:
+	{
+		VirtActionInvoker0::Invoke(21 /* System.Void SceneScript::shuffleAllLeaves() */, __this);
+		bool L_0 = VirtFuncInvoker0< bool >::Invoke(56 /* System.Boolean SceneScript::isDeckLock() */, __this);
+		if (L_0)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		goto IL_0020;
+	}
+
+IL_001b:
+	{
+		goto IL_0005;
+	}
+
+IL_0020:
+	{
+		VirtActionInvoker0::Invoke(22 /* System.Void SceneScript::applyNewColorAtAllLeaves() */, __this);
+		return;
+	}
+}
+// System.Collections.IEnumerator SceneScript::startGame()
+extern Il2CppClass* U24startGameU2462_t1992282128_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_startGame_m2249350307_MetadataUsageId;
+extern "C"  Il2CppObject * SceneScript_startGame_m2249350307 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_startGame_m2249350307_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		U24startGameU2462_t1992282128 * L_0 = (U24startGameU2462_t1992282128 *)il2cpp_codegen_object_new(U24startGameU2462_t1992282128_il2cpp_TypeInfo_var);
+		U24startGameU2462__ctor_m1455410557(L_0, __this, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Il2CppObject* L_1 = U24startGameU2462_GetEnumerator_m3326024398(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Collections.IEnumerator SceneScript::restartGame()
+extern Il2CppClass* U24restartGameU2465_t1034105030_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_restartGame_m1737354512_MetadataUsageId;
+extern "C"  Il2CppObject * SceneScript_restartGame_m1737354512 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_restartGame_m1737354512_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		U24restartGameU2465_t1034105030 * L_0 = (U24restartGameU2465_t1034105030 *)il2cpp_codegen_object_new(U24restartGameU2465_t1034105030_il2cpp_TypeInfo_var);
+		U24restartGameU2465__ctor_m321271283(L_0, __this, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Il2CppObject* L_1 = U24restartGameU2465_GetEnumerator_m3389655064(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript::_restartGame()
+extern "C"  void SceneScript__restartGame_m4052880199 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Il2CppObject * L_0 = VirtFuncInvoker0< Il2CppObject * >::Invoke(81 /* System.Collections.IEnumerator SceneScript::restartGame() */, __this);
+		MonoBehaviour_StartCoroutine_Auto_m1831125106(__this, L_0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::showHighestScore()
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2094473596;
+extern Il2CppCodeGenString* _stringLiteral1259550830;
+extern const uint32_t SceneScript_showHighestScore_m3407887888_MetadataUsageId;
+extern "C"  void SceneScript_showHighestScore_m3407887888 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_showHighestScore_m3407887888_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Text_t3286458198 * L_0 = __this->get_highestScoreText_61();
+		int32_t L_1 = PlayerPrefs_GetInt_m1334009359(NULL /*static, unused*/, _stringLiteral1259550830, /*hidden argument*/NULL);
+		int32_t L_2 = L_1;
+		Il2CppObject * L_3 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_2);
+		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t2273795202_il2cpp_TypeInfo_var);
+		String_t* L_4 = RuntimeServices_op_Addition_m3613207904(NULL /*static, unused*/, _stringLiteral2094473596, L_3, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_0, L_4);
+		return;
+	}
+}
+// System.Void SceneScript::hideHighestScore()
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_hideHighestScore_m2798871445_MetadataUsageId;
+extern "C"  void SceneScript_hideHighestScore_m2798871445 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_hideHighestScore_m2798871445_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Text_t3286458198 * L_0 = __this->get_highestScoreText_61();
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_1 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		NullCheck(L_0);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_0, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::_startGame()
+extern "C"  void SceneScript__startGame_m1143381146 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Il2CppObject * L_0 = VirtFuncInvoker0< Il2CppObject * >::Invoke(80 /* System.Collections.IEnumerator SceneScript::startGame() */, __this);
+		MonoBehaviour_StartCoroutine_Auto_m1831125106(__this, L_0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::foldAllLeaves()
+extern "C"  void SceneScript_foldAllLeaves_m1988880185 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		bool L_0 = __this->get_leavesAreOpen_54();
+		if (!L_0)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		VirtActionInvoker0::Invoke(92 /* System.Void SceneScript::toggleAllLeaves() */, __this);
+		__this->set_leavesAreOpen_54((bool)0);
+	}
+
+IL_0018:
+	{
+		return;
+	}
+}
+// System.Void SceneScript::openAllLeaves()
+extern "C"  void SceneScript_openAllLeaves_m1216066896 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		bool L_0 = __this->get_leavesAreOpen_54();
+		if (L_0)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		VirtActionInvoker0::Invoke(92 /* System.Void SceneScript::toggleAllLeaves() */, __this);
+		__this->set_leavesAreOpen_54((bool)1);
+	}
+
+IL_0018:
+	{
+		return;
+	}
+}
+// System.Void SceneScript::enableAllColliders()
+extern "C"  void SceneScript_enableAllColliders_m595027750 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		bool L_0 = __this->get_collidersEnable_55();
+		if (L_0)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		VirtActionInvoker0::Invoke(91 /* System.Void SceneScript::toggleAllCenterColliders() */, __this);
+		__this->set_collidersEnable_55((bool)1);
+	}
+
+IL_0018:
+	{
+		return;
+	}
+}
+// System.Void SceneScript::disableAllColliders()
+extern "C"  void SceneScript_disableAllColliders_m3754503811 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		bool L_0 = __this->get_collidersEnable_55();
+		if (!L_0)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		VirtActionInvoker0::Invoke(91 /* System.Void SceneScript::toggleAllCenterColliders() */, __this);
+		__this->set_collidersEnable_55((bool)0);
+	}
+
+IL_0018:
+	{
 		return;
 	}
 }
@@ -7729,7 +8254,7 @@ IL_0007:
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
 		Il2CppObject * L_2 = Array_get_Item_m3470539834(L_0, L_1, /*hidden argument*/NULL);
-		VirtActionInvoker1< GameObject_t4012695102 * >::Invoke(73 /* System.Void SceneScript::toggleCollider(UnityEngine.GameObject) */, __this, ((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)));
+		VirtActionInvoker1< GameObject_t4012695102 * >::Invoke(90 /* System.Void SceneScript::toggleCollider(UnityEngine.GameObject) */, __this, ((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)));
 		int32_t L_3 = V_0;
 		V_0 = ((int32_t)((int32_t)L_3+(int32_t)1));
 	}
@@ -7800,11 +8325,1312 @@ IL_0035:
 		return;
 	}
 }
+// System.Void SceneScript::showAllTimeStamps()
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_showAllTimeStamps_m757894174_MetadataUsageId;
+extern "C"  void SceneScript_showAllTimeStamps_m757894174 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_showAllTimeStamps_m757894174_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		V_0 = 0;
+		goto IL_0035;
+	}
+
+IL_0007:
+	{
+		Array_t1209885965 * L_0 = __this->get_timeStamps_44();
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		Il2CppObject * L_2 = Array_get_Item_m3470539834(L_0, L_1, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_3 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)));
+		Component_t2126946602 * L_4 = GameObject_GetComponent_m1004814461(((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)), L_3, /*hidden argument*/NULL);
+		NullCheck(((TimeStampScript_t3474365761 *)CastclassClass(L_4, TimeStampScript_t3474365761_il2cpp_TypeInfo_var)));
+		VirtActionInvoker0::Invoke(8 /* System.Void TimeStampScript::show() */, ((TimeStampScript_t3474365761 *)CastclassClass(L_4, TimeStampScript_t3474365761_il2cpp_TypeInfo_var)));
+		int32_t L_5 = V_0;
+		V_0 = ((int32_t)((int32_t)L_5+(int32_t)1));
+	}
+
+IL_0035:
+	{
+		int32_t L_6 = V_0;
+		Array_t1209885965 * L_7 = __this->get_timeStamps_44();
+		NullCheck(L_7);
+		int32_t L_8 = Array_get_length_m1103403365(L_7, /*hidden argument*/NULL);
+		if ((((int32_t)L_6) < ((int32_t)L_8)))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void SceneScript::hideAllTimeStamps()
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_hideAllTimeStamps_m3353220921_MetadataUsageId;
+extern "C"  void SceneScript_hideAllTimeStamps_m3353220921 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_hideAllTimeStamps_m3353220921_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		V_0 = 0;
+		goto IL_0035;
+	}
+
+IL_0007:
+	{
+		Array_t1209885965 * L_0 = __this->get_timeStamps_44();
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		Il2CppObject * L_2 = Array_get_Item_m3470539834(L_0, L_1, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_3 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)));
+		Component_t2126946602 * L_4 = GameObject_GetComponent_m1004814461(((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var)), L_3, /*hidden argument*/NULL);
+		NullCheck(((TimeStampScript_t3474365761 *)CastclassClass(L_4, TimeStampScript_t3474365761_il2cpp_TypeInfo_var)));
+		VirtActionInvoker0::Invoke(7 /* System.Void TimeStampScript::hide() */, ((TimeStampScript_t3474365761 *)CastclassClass(L_4, TimeStampScript_t3474365761_il2cpp_TypeInfo_var)));
+		int32_t L_5 = V_0;
+		V_0 = ((int32_t)((int32_t)L_5+(int32_t)1));
+	}
+
+IL_0035:
+	{
+		int32_t L_6 = V_0;
+		Array_t1209885965 * L_7 = __this->get_timeStamps_44();
+		NullCheck(L_7);
+		int32_t L_8 = Array_get_length_m1103403365(L_7, /*hidden argument*/NULL);
+		if ((((int32_t)L_6) < ((int32_t)L_8)))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void SceneScript::resetTime()
+extern "C"  void SceneScript_resetTime_m1452718937 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		VirtActionInvoker0::Invoke(96 /* System.Void SceneScript::setTimeForTimeStamps() */, __this);
+		float L_0 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_gameStartTime_50(L_0);
+		float L_1 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_accuTime_45((((int32_t)((int32_t)L_1))));
+		return;
+	}
+}
+// System.Void SceneScript::setTimeForTimeStamps()
+extern const Il2CppType* TimeStampScript_t3474365761_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeStampScript_t3474365761_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_setTimeForTimeStamps_m858730236_MetadataUsageId;
+extern "C"  void SceneScript_setTimeForTimeStamps_m858730236 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_setTimeForTimeStamps_m858730236_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	GameObject_t4012695102 * V_1 = NULL;
+	TimeStampScript_t3474365761 * V_2 = NULL;
+	{
+		V_0 = 0;
+		goto IL_005f;
+	}
+
+IL_0007:
+	{
+		Array_t1209885965 * L_0 = __this->get_timeStamps_44();
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		Il2CppObject * L_2 = Array_get_Item_m3470539834(L_0, L_1, /*hidden argument*/NULL);
+		V_1 = ((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var));
+		GameObject_t4012695102 * L_3 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_4 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(TimeStampScript_t3474365761_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_3);
+		Component_t2126946602 * L_5 = GameObject_GetComponent_m1004814461(L_3, L_4, /*hidden argument*/NULL);
+		V_2 = ((TimeStampScript_t3474365761 *)CastclassClass(L_5, TimeStampScript_t3474365761_il2cpp_TypeInfo_var));
+		TimeStampScript_t3474365761 * L_6 = V_2;
+		int32_t L_7 = __this->get_STAMP_INITTIME_64();
+		NullCheck(L_6);
+		L_6->set_number_6(L_7);
+		TimeStampScript_t3474365761 * L_8 = V_2;
+		NullCheck(L_8);
+		Text_t3286458198 * L_9 = L_8->get_textObject_5();
+		TimeStampScript_t3474365761 * L_10 = V_2;
+		NullCheck(L_10);
+		int32_t L_11 = L_10->get_number_6();
+		int32_t L_12 = L_11;
+		Il2CppObject * L_13 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_12);
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_14 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t2273795202_il2cpp_TypeInfo_var);
+		String_t* L_15 = RuntimeServices_op_Addition_m3420210656(NULL /*static, unused*/, L_13, L_14, /*hidden argument*/NULL);
+		NullCheck(L_9);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_9, L_15);
+		int32_t L_16 = V_0;
+		V_0 = ((int32_t)((int32_t)L_16+(int32_t)1));
+	}
+
+IL_005f:
+	{
+		int32_t L_17 = V_0;
+		Array_t1209885965 * L_18 = __this->get_timeStamps_44();
+		NullCheck(L_18);
+		int32_t L_19 = Array_get_length_m1103403365(L_18, /*hidden argument*/NULL);
+		if ((((int32_t)L_17) < ((int32_t)L_19)))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void SceneScript::resetScore()
+extern const Il2CppType* ScoreCircleScript_t2158634317_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_resetScore_m1027628456_MetadataUsageId;
+extern "C"  void SceneScript_resetScore_m1027628456 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_resetScore_m1027628456_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	GameObject_t4012695102 * V_1 = NULL;
+	ScoreCircleScript_t2158634317 * V_2 = NULL;
+	{
+		V_0 = 0;
+		goto IL_003a;
+	}
+
+IL_0007:
+	{
+		Array_t1209885965 * L_0 = __this->get_scoreBoard_40();
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		Il2CppObject * L_2 = Array_get_Item_m3470539834(L_0, L_1, /*hidden argument*/NULL);
+		V_1 = ((GameObject_t4012695102 *)IsInstSealed(L_2, GameObject_t4012695102_il2cpp_TypeInfo_var));
+		GameObject_t4012695102 * L_3 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_4 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(ScoreCircleScript_t2158634317_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_3);
+		Component_t2126946602 * L_5 = GameObject_GetComponent_m1004814461(L_3, L_4, /*hidden argument*/NULL);
+		V_2 = ((ScoreCircleScript_t2158634317 *)CastclassClass(L_5, ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var));
+		__this->set_scores_39(0);
+		int32_t L_6 = V_0;
+		V_0 = ((int32_t)((int32_t)L_6+(int32_t)1));
+	}
+
+IL_003a:
+	{
+		int32_t L_7 = V_0;
+		Array_t1209885965 * L_8 = __this->get_scoreBoard_40();
+		NullCheck(L_8);
+		int32_t L_9 = Array_get_length_m1103403365(L_8, /*hidden argument*/NULL);
+		if ((((int32_t)L_7) < ((int32_t)L_9)))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void SceneScript::showHighestScoreOnScoreBoard()
+extern const Il2CppType* ScoreCircleScript_t2158634317_0_0_0_var;
+extern Il2CppClass* GameObject_t4012695102_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1259550830;
+extern const uint32_t SceneScript_showHighestScoreOnScoreBoard_m3632362915_MetadataUsageId;
+extern "C"  void SceneScript_showHighestScoreOnScoreBoard_m3632362915 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_showHighestScoreOnScoreBoard_m3632362915_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	GameObject_t4012695102 * V_1 = NULL;
+	ScoreCircleScript_t2158634317 * V_2 = NULL;
+	{
+		int32_t L_0 = PlayerPrefs_GetInt_m1334009359(NULL /*static, unused*/, _stringLiteral1259550830, /*hidden argument*/NULL);
+		__this->set_scores_39(L_0);
+		V_0 = 0;
+		goto IL_004f;
+	}
+
+IL_0017:
+	{
+		Array_t1209885965 * L_1 = __this->get_scoreBoard_40();
+		int32_t L_2 = V_0;
+		NullCheck(L_1);
+		Il2CppObject * L_3 = Array_get_Item_m3470539834(L_1, L_2, /*hidden argument*/NULL);
+		V_1 = ((GameObject_t4012695102 *)IsInstSealed(L_3, GameObject_t4012695102_il2cpp_TypeInfo_var));
+		GameObject_t4012695102 * L_4 = V_1;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_5 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(ScoreCircleScript_t2158634317_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_4);
+		Component_t2126946602 * L_6 = GameObject_GetComponent_m1004814461(L_4, L_5, /*hidden argument*/NULL);
+		V_2 = ((ScoreCircleScript_t2158634317 *)CastclassClass(L_6, ScoreCircleScript_t2158634317_il2cpp_TypeInfo_var));
+		ScoreCircleScript_t2158634317 * L_7 = V_2;
+		int32_t L_8 = __this->get_scores_39();
+		NullCheck(L_7);
+		VirtActionInvoker1< int32_t >::Invoke(13 /* System.Void ScoreCircleScript::updateTextWithValue(System.Int32) */, L_7, L_8);
+		int32_t L_9 = V_0;
+		V_0 = ((int32_t)((int32_t)L_9+(int32_t)1));
+	}
+
+IL_004f:
+	{
+		int32_t L_10 = V_0;
+		Array_t1209885965 * L_11 = __this->get_scoreBoard_40();
+		NullCheck(L_11);
+		int32_t L_12 = Array_get_length_m1103403365(L_11, /*hidden argument*/NULL);
+		if ((((int32_t)L_10) < ((int32_t)L_12)))
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void SceneScript::hidePauseButton()
+extern "C"  void SceneScript_hidePauseButton_m3606918467 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_pauseButton_57();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(107 /* System.Void SceneScript::hideButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_pauseButton_57();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(109 /* System.Void SceneScript::disableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::showPauseButton()
+extern "C"  void SceneScript_showPauseButton_m717070184 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_pauseButton_57();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(108 /* System.Void SceneScript::showButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_pauseButton_57();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(110 /* System.Void SceneScript::enableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::showRestartButton()
+extern "C"  void SceneScript_showRestartButton_m2978251457 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_restartButton_59();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(108 /* System.Void SceneScript::showButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_restartButton_59();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(110 /* System.Void SceneScript::enableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::hideRestartButton()
+extern "C"  void SceneScript_hideRestartButton_m1278610908 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_restartButton_59();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(107 /* System.Void SceneScript::hideButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_restartButton_59();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(109 /* System.Void SceneScript::disableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::showResumeButton()
+extern "C"  void SceneScript_showResumeButton_m807208769 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_resumeButton_58();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(108 /* System.Void SceneScript::showButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_resumeButton_58();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(110 /* System.Void SceneScript::enableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::hideResumeButton()
+extern "C"  void SceneScript_hideResumeButton_m198192326 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_resumeButton_58();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(107 /* System.Void SceneScript::hideButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_resumeButton_58();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(109 /* System.Void SceneScript::disableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::hidePlayButton()
+extern "C"  void SceneScript_hidePlayButton_m3530142285 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_startButton_56();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(107 /* System.Void SceneScript::hideButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_startButton_56();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(109 /* System.Void SceneScript::disableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::showPlayButton()
+extern "C"  void SceneScript_showPlayButton_m2744184712 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = __this->get_startButton_56();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(108 /* System.Void SceneScript::showButton(UnityEngine.UI.Button) */, __this, L_0);
+		Button_t990034267 * L_1 = __this->get_startButton_56();
+		VirtActionInvoker1< Button_t990034267 * >::Invoke(110 /* System.Void SceneScript::enableButton(UnityEngine.UI.Button) */, __this, L_1);
+		return;
+	}
+}
+// System.Void SceneScript::hideButton(UnityEngine.UI.Button)
+extern const Il2CppType* Animator_t792326996_0_0_0_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Animator_t792326996_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3202370;
+extern const uint32_t SceneScript_hideButton_m1437297220_MetadataUsageId;
+extern "C"  void SceneScript_hideButton_m1437297220 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_hideButton_m1437297220_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Button_t990034267 * L_0 = ___button0;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_1 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Animator_t792326996_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Component_t2126946602 * L_2 = Component_GetComponent_m936021879(L_0, L_1, /*hidden argument*/NULL);
+		NullCheck(((Animator_t792326996 *)CastclassSealed(L_2, Animator_t792326996_il2cpp_TypeInfo_var)));
+		Animator_SetBool_m2336836203(((Animator_t792326996 *)CastclassSealed(L_2, Animator_t792326996_il2cpp_TypeInfo_var)), _stringLiteral3202370, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::showButton(UnityEngine.UI.Button)
+extern const Il2CppType* Animator_t792326996_0_0_0_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Animator_t792326996_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3202370;
+extern const uint32_t SceneScript_showButton_m669313641_MetadataUsageId;
+extern "C"  void SceneScript_showButton_m669313641 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_showButton_m669313641_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Button_t990034267 * L_0 = ___button0;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_1 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(Animator_t792326996_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Component_t2126946602 * L_2 = Component_GetComponent_m936021879(L_0, L_1, /*hidden argument*/NULL);
+		NullCheck(((Animator_t792326996 *)CastclassSealed(L_2, Animator_t792326996_il2cpp_TypeInfo_var)));
+		Animator_SetBool_m2336836203(((Animator_t792326996 *)CastclassSealed(L_2, Animator_t792326996_il2cpp_TypeInfo_var)), _stringLiteral3202370, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::disableButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_disableButton_m1934242214 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = ___button0;
+		NullCheck(L_0);
+		Selectable_set_interactable_m2686686419(L_0, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::enableButton(UnityEngine.UI.Button)
+extern "C"  void SceneScript_enableButton_m642072227 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method)
+{
+	{
+		Button_t990034267 * L_0 = ___button0;
+		NullCheck(L_0);
+		Selectable_set_interactable_m2686686419(L_0, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::setLowerButtonPosition(UnityEngine.UI.Button)
+extern "C"  void SceneScript_setLowerButtonPosition_m2862219390 (SceneScript_t1382933591 * __this, Button_t990034267 * ___button0, const MethodInfo* method)
+{
+	float V_0 = 0.0f;
+	float V_1 = 0.0f;
+	Vector3_t3525329789  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Vector3_t3525329789  V_3;
+	memset(&V_3, 0, sizeof(V_3));
+	{
+		float L_0 = __this->get_VERTICAL_ADJUST_12();
+		float L_1 = __this->get_LEAF_WIDTH_11();
+		float L_2 = __this->get_CENTER_HALF_LENGTH_5();
+		V_0 = ((float)((float)((float)((float)L_0+(float)((float)((float)L_1/(float)(((float)((float)2)))))))+(float)((float)((float)(((float)((float)2)))*(float)L_2))));
+		float L_3 = V_0;
+		float L_4 = __this->get_UIScaleFactorY_67();
+		V_1 = ((float)((float)L_3*(float)L_4));
+		Button_t990034267 * L_5 = ___button0;
+		NullCheck(L_5);
+		Transform_t284553113 * L_6 = Component_get_transform_m4257140443(L_5, /*hidden argument*/NULL);
+		Button_t990034267 * L_7 = ___button0;
+		NullCheck(L_7);
+		Transform_t284553113 * L_8 = Component_get_transform_m4257140443(L_7, /*hidden argument*/NULL);
+		NullCheck(L_8);
+		Vector3_t3525329789  L_9 = Transform_get_position_m2211398607(L_8, /*hidden argument*/NULL);
+		V_2 = L_9;
+		float L_10 = (&V_2)->get_x_1();
+		float L_11 = V_1;
+		Button_t990034267 * L_12 = ___button0;
+		NullCheck(L_12);
+		Transform_t284553113 * L_13 = Component_get_transform_m4257140443(L_12, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		Vector3_t3525329789  L_14 = Transform_get_position_m2211398607(L_13, /*hidden argument*/NULL);
+		V_3 = L_14;
+		float L_15 = (&V_3)->get_z_3();
+		Vector3_t3525329789  L_16;
+		memset(&L_16, 0, sizeof(L_16));
+		Vector3__ctor_m2926210380(&L_16, L_10, L_11, L_15, /*hidden argument*/NULL);
+		NullCheck(L_6);
+		Transform_set_position_m3111394108(L_6, L_16, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::setTutorialPosition()
+extern "C"  void SceneScript_setTutorialPosition_m1790247814 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	float V_0 = 0.0f;
+	float V_1 = 0.0f;
+	Vector3_t3525329789  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Vector3_t3525329789  V_3;
+	memset(&V_3, 0, sizeof(V_3));
+	{
+		float L_0 = __this->get_VERTICAL_ADJUST_12();
+		float L_1 = __this->get_CENTER_HALF_LENGTH_5();
+		float L_2 = __this->get_LEAF_WIDTH_11();
+		V_0 = ((float)((float)((float)((float)L_0+(float)((float)((float)(((float)((float)4)))*(float)L_1))))+(float)((float)((float)L_2/(float)(((float)((float)2)))))));
+		float L_3 = V_0;
+		float L_4 = __this->get_UIScaleFactorY_67();
+		V_1 = ((float)((float)L_3*(float)L_4));
+		Text_t3286458198 * L_5 = __this->get_tutorial_68();
+		NullCheck(L_5);
+		Transform_t284553113 * L_6 = Component_get_transform_m4257140443(L_5, /*hidden argument*/NULL);
+		Text_t3286458198 * L_7 = __this->get_tutorial_68();
+		NullCheck(L_7);
+		Transform_t284553113 * L_8 = Component_get_transform_m4257140443(L_7, /*hidden argument*/NULL);
+		NullCheck(L_8);
+		Vector3_t3525329789  L_9 = Transform_get_position_m2211398607(L_8, /*hidden argument*/NULL);
+		V_2 = L_9;
+		float L_10 = (&V_2)->get_x_1();
+		float L_11 = V_1;
+		Text_t3286458198 * L_12 = __this->get_tutorial_68();
+		NullCheck(L_12);
+		Transform_t284553113 * L_13 = Component_get_transform_m4257140443(L_12, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		Vector3_t3525329789  L_14 = Transform_get_position_m2211398607(L_13, /*hidden argument*/NULL);
+		V_3 = L_14;
+		float L_15 = (&V_3)->get_z_3();
+		Vector3_t3525329789  L_16;
+		memset(&L_16, 0, sizeof(L_16));
+		Vector3__ctor_m2926210380(&L_16, L_10, L_11, L_15, /*hidden argument*/NULL);
+		NullCheck(L_6);
+		Transform_set_position_m3111394108(L_6, L_16, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::setTutorialScale()
+extern const Il2CppType* RectTransform_t3317474837_0_0_0_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* RectTransform_t3317474837_il2cpp_TypeInfo_var;
+extern const uint32_t SceneScript_setTutorialScale_m513465775_MetadataUsageId;
+extern "C"  void SceneScript_setTutorialScale_m513465775 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (SceneScript_setTutorialScale_m513465775_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	float V_0 = 0.0f;
+	float V_1 = 0.0f;
+	RectTransform_t3317474837 * V_2 = NULL;
+	Rect_t1525428817  V_3;
+	memset(&V_3, 0, sizeof(V_3));
+	{
+		float L_0 = __this->get_CENTER_HALF_LENGTH_5();
+		float L_1 = __this->get_UIScaleFactorX_66();
+		V_0 = ((float)((float)((float)((float)(((float)((float)8)))*(float)L_0))*(float)L_1));
+		float L_2 = __this->get_CENTER_HALF_LENGTH_5();
+		float L_3 = __this->get_UIScaleFactorY_67();
+		V_1 = ((float)((float)((float)((float)(((float)((float)6)))*(float)L_2))*(float)L_3));
+		Text_t3286458198 * L_4 = __this->get_tutorial_68();
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_5 = Type_GetTypeFromHandle_m3806905434(NULL /*static, unused*/, LoadTypeToken(RectTransform_t3317474837_0_0_0_var), /*hidden argument*/NULL);
+		NullCheck(L_4);
+		Component_t2126946602 * L_6 = Component_GetComponent_m936021879(L_4, L_5, /*hidden argument*/NULL);
+		V_2 = ((RectTransform_t3317474837 *)CastclassSealed(L_6, RectTransform_t3317474837_il2cpp_TypeInfo_var));
+		RectTransform_t3317474837 * L_7 = V_2;
+		NullCheck(L_7);
+		Rect_t1525428817  L_8 = RectTransform_get_rect_m1566017036(L_7, /*hidden argument*/NULL);
+		V_3 = L_8;
+		RectTransform_t3317474837 * L_9 = V_2;
+		float L_10 = V_0;
+		float L_11 = V_1;
+		Vector2_t3525329788  L_12;
+		memset(&L_12, 0, sizeof(L_12));
+		Vector2__ctor_m1517109030(&L_12, L_10, L_11, /*hidden argument*/NULL);
+		NullCheck(L_9);
+		RectTransform_set_sizeDelta_m1223846609(L_9, L_12, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::hideTutorial()
+extern "C"  void SceneScript_hideTutorial_m1892219301 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Text_t3286458198 * L_0 = __this->get_tutorial_68();
+		NullCheck(L_0);
+		Behaviour_set_enabled_m2046806933(L_0, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void SceneScript::showTutorial()
+extern "C"  void SceneScript_showTutorial_m59001248 (SceneScript_t1382933591 * __this, const MethodInfo* method)
+{
+	{
+		Text_t3286458198 * L_0 = __this->get_tutorial_68();
+		NullCheck(L_0);
+		Behaviour_set_enabled_m2046806933(L_0, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void SceneScript::Main()
 extern "C"  void SceneScript_Main_m765471358 (SceneScript_t1382933591 * __this, const MethodInfo* method)
 {
 	{
 		return;
+	}
+}
+// System.Void SceneScript/$handleGameOver$53::.ctor(SceneScript)
+extern const MethodInfo* GenericGenerator_1__ctor_m1086344373_MethodInfo_var;
+extern const uint32_t U24handleGameOverU2453__ctor_m256039187_MetadataUsageId;
+extern "C"  void U24handleGameOverU2453__ctor_m256039187 (U24handleGameOverU2453_t2071569712 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24handleGameOverU2453__ctor_m256039187_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGenerator_1__ctor_m1086344373(__this, /*hidden argument*/GenericGenerator_1__ctor_m1086344373_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2455_0(L_0);
+		return;
+	}
+}
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds> SceneScript/$handleGameOver$53::GetEnumerator()
+extern Il2CppClass* U24_t36_il2cpp_TypeInfo_var;
+extern const uint32_t U24handleGameOverU2453_GetEnumerator_m2414612360_MetadataUsageId;
+extern "C"  Il2CppObject* U24handleGameOverU2453_GetEnumerator_m2414612360 (U24handleGameOverU2453_t2071569712 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24handleGameOverU2453_GetEnumerator_m2414612360_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		SceneScript_t1382933591 * L_0 = __this->get_U24self_U2455_0();
+		U24_t36 * L_1 = (U24_t36 *)il2cpp_codegen_object_new(U24_t36_il2cpp_TypeInfo_var);
+		U24__ctor_m4056469416(L_1, L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript/$handleGameOver$53/$::.ctor(SceneScript)
+extern const MethodInfo* GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var;
+extern const uint32_t U24__ctor_m4056469416_MetadataUsageId;
+extern "C"  void U24__ctor_m4056469416 (U24_t36 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24__ctor_m4056469416_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGeneratorEnumerator_1__ctor_m3634585745(__this, /*hidden argument*/GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2454_2(L_0);
+		return;
+	}
+}
+// System.Boolean SceneScript/$handleGameOver$53/$::MoveNext()
+extern Il2CppClass* WaitForSeconds_t1291133240_il2cpp_TypeInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var;
+extern const uint32_t U24_MoveNext_m781841235_MetadataUsageId;
+extern "C"  bool U24_MoveNext_m781841235 (U24_t36 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24_MoveNext_m781841235_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t G_B4_0 = 0;
+	{
+		int32_t L_0 = ((GenericGeneratorEnumerator_1_t1056199668 *)__this)->get__state_1();
+		if (L_0 == 0)
+		{
+			goto IL_0017;
+		}
+		if (L_0 == 1)
+		{
+			goto IL_0082;
+		}
+		if (L_0 == 2)
+		{
+			goto IL_0059;
+		}
+	}
+
+IL_0017:
+	{
+		SceneScript_t1382933591 * L_1 = __this->get_U24self_U2454_2();
+		NullCheck(L_1);
+		VirtActionInvoker0::Invoke(78 /* System.Void SceneScript::updateHighestScore() */, L_1);
+		SceneScript_t1382933591 * L_2 = __this->get_U24self_U2454_2();
+		NullCheck(L_2);
+		VirtActionInvoker0::Invoke(71 /* System.Void SceneScript::resetAllLeaves() */, L_2);
+		SceneScript_t1382933591 * L_3 = __this->get_U24self_U2454_2();
+		NullCheck(L_3);
+		VirtActionInvoker0::Invoke(86 /* System.Void SceneScript::foldAllLeaves() */, L_3);
+		SceneScript_t1382933591 * L_4 = __this->get_U24self_U2454_2();
+		NullCheck(L_4);
+		VirtActionInvoker0::Invoke(89 /* System.Void SceneScript::disableAllColliders() */, L_4);
+		WaitForSeconds_t1291133240 * L_5 = (WaitForSeconds_t1291133240 *)il2cpp_codegen_object_new(WaitForSeconds_t1291133240_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m3184996201(L_5, (0.5f), /*hidden argument*/NULL);
+		bool L_6 = GenericGeneratorEnumerator_1_Yield_m4040456012(__this, 2, L_5, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var);
+		G_B4_0 = ((int32_t)(L_6));
+		goto IL_0083;
+	}
+
+IL_0059:
+	{
+		SceneScript_t1382933591 * L_7 = __this->get_U24self_U2454_2();
+		NullCheck(L_7);
+		VirtActionInvoker0::Invoke(106 /* System.Void SceneScript::showPlayButton() */, L_7);
+		SceneScript_t1382933591 * L_8 = __this->get_U24self_U2454_2();
+		NullCheck(L_8);
+		VirtActionInvoker0::Invoke(83 /* System.Void SceneScript::showHighestScore() */, L_8);
+		SceneScript_t1382933591 * L_9 = __this->get_U24self_U2454_2();
+		NullCheck(L_9);
+		VirtActionInvoker0::Invoke(99 /* System.Void SceneScript::hidePauseButton() */, L_9);
+		GenericGeneratorEnumerator_1_YieldDefault_m289716250(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var);
+	}
+
+IL_0082:
+	{
+		G_B4_0 = 0;
+	}
+
+IL_0083:
+	{
+		return (bool)G_B4_0;
+	}
+}
+// System.Void SceneScript/$pauseGame$56::.ctor(SceneScript)
+extern const MethodInfo* GenericGenerator_1__ctor_m1086344373_MethodInfo_var;
+extern const uint32_t U24pauseGameU2456__ctor_m4149488334_MetadataUsageId;
+extern "C"  void U24pauseGameU2456__ctor_m4149488334 (U24pauseGameU2456_t3867230177 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24pauseGameU2456__ctor_m4149488334_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGenerator_1__ctor_m1086344373(__this, /*hidden argument*/GenericGenerator_1__ctor_m1086344373_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2458_0(L_0);
+		return;
+	}
+}
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds> SceneScript/$pauseGame$56::GetEnumerator()
+extern Il2CppClass* U24_t37_il2cpp_TypeInfo_var;
+extern const uint32_t U24pauseGameU2456_GetEnumerator_m1824728861_MetadataUsageId;
+extern "C"  Il2CppObject* U24pauseGameU2456_GetEnumerator_m1824728861 (U24pauseGameU2456_t3867230177 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24pauseGameU2456_GetEnumerator_m1824728861_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		SceneScript_t1382933591 * L_0 = __this->get_U24self_U2458_0();
+		U24_t37 * L_1 = (U24_t37 *)il2cpp_codegen_object_new(U24_t37_il2cpp_TypeInfo_var);
+		U24__ctor_m449617571(L_1, L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript/$pauseGame$56/$::.ctor(SceneScript)
+extern const MethodInfo* GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var;
+extern const uint32_t U24__ctor_m449617571_MetadataUsageId;
+extern "C"  void U24__ctor_m449617571 (U24_t37 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24__ctor_m449617571_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGeneratorEnumerator_1__ctor_m3634585745(__this, /*hidden argument*/GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2457_2(L_0);
+		return;
+	}
+}
+// System.Boolean SceneScript/$pauseGame$56/$::MoveNext()
+extern Il2CppClass* WaitForSeconds_t1291133240_il2cpp_TypeInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var;
+extern const uint32_t U24_MoveNext_m4063080082_MetadataUsageId;
+extern "C"  bool U24_MoveNext_m4063080082 (U24_t37 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24_MoveNext_m4063080082_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t G_B4_0 = 0;
+	{
+		int32_t L_0 = ((GenericGeneratorEnumerator_1_t1056199668 *)__this)->get__state_1();
+		if (L_0 == 0)
+		{
+			goto IL_0017;
+		}
+		if (L_0 == 1)
+		{
+			goto IL_0083;
+		}
+		if (L_0 == 2)
+		{
+			goto IL_0070;
+		}
+	}
+
+IL_0017:
+	{
+		SceneScript_t1382933591 * L_1 = __this->get_U24self_U2457_2();
+		NullCheck(L_1);
+		VirtActionInvoker0::Invoke(99 /* System.Void SceneScript::hidePauseButton() */, L_1);
+		SceneScript_t1382933591 * L_2 = __this->get_U24self_U2457_2();
+		NullCheck(L_2);
+		VirtActionInvoker0::Invoke(101 /* System.Void SceneScript::showRestartButton() */, L_2);
+		SceneScript_t1382933591 * L_3 = __this->get_U24self_U2457_2();
+		NullCheck(L_3);
+		VirtActionInvoker0::Invoke(103 /* System.Void SceneScript::showResumeButton() */, L_3);
+		SceneScript_t1382933591 * L_4 = __this->get_U24self_U2457_2();
+		NullCheck(L_4);
+		VirtActionInvoker0::Invoke(86 /* System.Void SceneScript::foldAllLeaves() */, L_4);
+		SceneScript_t1382933591 * L_5 = __this->get_U24self_U2457_2();
+		NullCheck(L_5);
+		VirtActionInvoker0::Invoke(89 /* System.Void SceneScript::disableAllColliders() */, L_5);
+		SceneScript_t1382933591 * L_6 = __this->get_U24self_U2457_2();
+		NullCheck(L_6);
+		L_6->set_isPause_62((bool)1);
+		WaitForSeconds_t1291133240 * L_7 = (WaitForSeconds_t1291133240 *)il2cpp_codegen_object_new(WaitForSeconds_t1291133240_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m3184996201(L_7, (0.5f), /*hidden argument*/NULL);
+		bool L_8 = GenericGeneratorEnumerator_1_Yield_m4040456012(__this, 2, L_7, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var);
+		G_B4_0 = ((int32_t)(L_8));
+		goto IL_0084;
+	}
+
+IL_0070:
+	{
+		SceneScript_t1382933591 * L_9 = __this->get_U24self_U2457_2();
+		NullCheck(L_9);
+		VirtActionInvoker0::Invoke(115 /* System.Void SceneScript::showTutorial() */, L_9);
+		GenericGeneratorEnumerator_1_YieldDefault_m289716250(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var);
+	}
+
+IL_0083:
+	{
+		G_B4_0 = 0;
+	}
+
+IL_0084:
+	{
+		return (bool)G_B4_0;
+	}
+}
+// System.Void SceneScript/$restartGame$65::.ctor(SceneScript)
+extern const MethodInfo* GenericGenerator_1__ctor_m1086344373_MethodInfo_var;
+extern const uint32_t U24restartGameU2465__ctor_m321271283_MetadataUsageId;
+extern "C"  void U24restartGameU2465__ctor_m321271283 (U24restartGameU2465_t1034105030 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24restartGameU2465__ctor_m321271283_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGenerator_1__ctor_m1086344373(__this, /*hidden argument*/GenericGenerator_1__ctor_m1086344373_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2467_0(L_0);
+		return;
+	}
+}
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds> SceneScript/$restartGame$65::GetEnumerator()
+extern Il2CppClass* U24_t40_il2cpp_TypeInfo_var;
+extern const uint32_t U24restartGameU2465_GetEnumerator_m3389655064_MetadataUsageId;
+extern "C"  Il2CppObject* U24restartGameU2465_GetEnumerator_m3389655064 (U24restartGameU2465_t1034105030 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24restartGameU2465_GetEnumerator_m3389655064_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		SceneScript_t1382933591 * L_0 = __this->get_U24self_U2467_0();
+		U24_t40 * L_1 = (U24_t40 *)il2cpp_codegen_object_new(U24_t40_il2cpp_TypeInfo_var);
+		U24__ctor_m2320004232(L_1, L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript/$restartGame$65/$::.ctor(SceneScript)
+extern const MethodInfo* GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var;
+extern const uint32_t U24__ctor_m2320004232_MetadataUsageId;
+extern "C"  void U24__ctor_m2320004232 (U24_t40 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24__ctor_m2320004232_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGeneratorEnumerator_1__ctor_m3634585745(__this, /*hidden argument*/GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2466_2(L_0);
+		return;
+	}
+}
+// System.Boolean SceneScript/$restartGame$65/$::MoveNext()
+extern Il2CppClass* WaitForSeconds_t1291133240_il2cpp_TypeInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var;
+extern const uint32_t U24_MoveNext_m1708781815_MetadataUsageId;
+extern "C"  bool U24_MoveNext_m1708781815 (U24_t40 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24_MoveNext_m1708781815_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t G_B4_0 = 0;
+	{
+		int32_t L_0 = ((GenericGeneratorEnumerator_1_t1056199668 *)__this)->get__state_1();
+		if (L_0 == 0)
+		{
+			goto IL_0017;
+		}
+		if (L_0 == 1)
+		{
+			goto IL_00d6;
+		}
+		if (L_0 == 2)
+		{
+			goto IL_0059;
+		}
+	}
+
+IL_0017:
+	{
+		SceneScript_t1382933591 * L_1 = __this->get_U24self_U2466_2();
+		NullCheck(L_1);
+		VirtActionInvoker0::Invoke(104 /* System.Void SceneScript::hideResumeButton() */, L_1);
+		SceneScript_t1382933591 * L_2 = __this->get_U24self_U2466_2();
+		NullCheck(L_2);
+		VirtActionInvoker0::Invoke(102 /* System.Void SceneScript::hideRestartButton() */, L_2);
+		SceneScript_t1382933591 * L_3 = __this->get_U24self_U2466_2();
+		NullCheck(L_3);
+		VirtActionInvoker0::Invoke(100 /* System.Void SceneScript::showPauseButton() */, L_3);
+		SceneScript_t1382933591 * L_4 = __this->get_U24self_U2466_2();
+		NullCheck(L_4);
+		VirtActionInvoker0::Invoke(114 /* System.Void SceneScript::hideTutorial() */, L_4);
+		WaitForSeconds_t1291133240 * L_5 = (WaitForSeconds_t1291133240 *)il2cpp_codegen_object_new(WaitForSeconds_t1291133240_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m3184996201(L_5, (0.2f), /*hidden argument*/NULL);
+		bool L_6 = GenericGeneratorEnumerator_1_Yield_m4040456012(__this, 2, L_5, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var);
+		G_B4_0 = ((int32_t)(L_6));
+		goto IL_00d7;
+	}
+
+IL_0059:
+	{
+		SceneScript_t1382933591 * L_7 = __this->get_U24self_U2466_2();
+		NullCheck(L_7);
+		VirtActionInvoker0::Invoke(79 /* System.Void SceneScript::shuffleAndApplyNewColorAtLeaves() */, L_7);
+		SceneScript_t1382933591 * L_8 = __this->get_U24self_U2466_2();
+		NullCheck(L_8);
+		L_8->set_isGameOverHandled_52((bool)0);
+		SceneScript_t1382933591 * L_9 = __this->get_U24self_U2466_2();
+		NullCheck(L_9);
+		L_9->set_isPause_62((bool)0);
+		SceneScript_t1382933591 * L_10 = __this->get_U24self_U2466_2();
+		float L_11 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_10);
+		L_10->set_gameStartTime_50(L_11);
+		SceneScript_t1382933591 * L_12 = __this->get_U24self_U2466_2();
+		NullCheck(L_12);
+		VirtActionInvoker0::Invoke(87 /* System.Void SceneScript::openAllLeaves() */, L_12);
+		SceneScript_t1382933591 * L_13 = __this->get_U24self_U2466_2();
+		NullCheck(L_13);
+		VirtActionInvoker0::Invoke(88 /* System.Void SceneScript::enableAllColliders() */, L_13);
+		SceneScript_t1382933591 * L_14 = __this->get_U24self_U2466_2();
+		NullCheck(L_14);
+		VirtActionInvoker0::Invoke(95 /* System.Void SceneScript::resetTime() */, L_14);
+		SceneScript_t1382933591 * L_15 = __this->get_U24self_U2466_2();
+		NullCheck(L_15);
+		VirtActionInvoker0::Invoke(93 /* System.Void SceneScript::showAllTimeStamps() */, L_15);
+		SceneScript_t1382933591 * L_16 = __this->get_U24self_U2466_2();
+		NullCheck(L_16);
+		VirtActionInvoker0::Invoke(97 /* System.Void SceneScript::resetScore() */, L_16);
+		SceneScript_t1382933591 * L_17 = __this->get_U24self_U2466_2();
+		NullCheck(L_17);
+		VirtActionInvoker0::Invoke(39 /* System.Void SceneScript::shrinkEnlargeFlipScoreBoard() */, L_17);
+		GenericGeneratorEnumerator_1_YieldDefault_m289716250(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var);
+	}
+
+IL_00d6:
+	{
+		G_B4_0 = 0;
+	}
+
+IL_00d7:
+	{
+		return (bool)G_B4_0;
+	}
+}
+// System.Void SceneScript/$resumeGame$59::.ctor(SceneScript)
+extern const MethodInfo* GenericGenerator_1__ctor_m1086344373_MethodInfo_var;
+extern const uint32_t U24resumeGameU2459__ctor_m727680744_MetadataUsageId;
+extern "C"  void U24resumeGameU2459__ctor_m727680744 (U24resumeGameU2459_t4285886981 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24resumeGameU2459__ctor_m727680744_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGenerator_1__ctor_m1086344373(__this, /*hidden argument*/GenericGenerator_1__ctor_m1086344373_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2461_0(L_0);
+		return;
+	}
+}
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds> SceneScript/$resumeGame$59::GetEnumerator()
+extern Il2CppClass* U24_t38_il2cpp_TypeInfo_var;
+extern const uint32_t U24resumeGameU2459_GetEnumerator_m4120600019_MetadataUsageId;
+extern "C"  Il2CppObject* U24resumeGameU2459_GetEnumerator_m4120600019 (U24resumeGameU2459_t4285886981 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24resumeGameU2459_GetEnumerator_m4120600019_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		SceneScript_t1382933591 * L_0 = __this->get_U24self_U2461_0();
+		U24_t38 * L_1 = (U24_t38 *)il2cpp_codegen_object_new(U24_t38_il2cpp_TypeInfo_var);
+		U24__ctor_m2037472317(L_1, L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript/$resumeGame$59/$::.ctor(SceneScript)
+extern const MethodInfo* GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var;
+extern const uint32_t U24__ctor_m2037472317_MetadataUsageId;
+extern "C"  void U24__ctor_m2037472317 (U24_t38 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24__ctor_m2037472317_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGeneratorEnumerator_1__ctor_m3634585745(__this, /*hidden argument*/GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2460_2(L_0);
+		return;
+	}
+}
+// System.Boolean SceneScript/$resumeGame$59/$::MoveNext()
+extern Il2CppClass* WaitForSeconds_t1291133240_il2cpp_TypeInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var;
+extern const uint32_t U24_MoveNext_m1919456232_MetadataUsageId;
+extern "C"  bool U24_MoveNext_m1919456232 (U24_t38 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24_MoveNext_m1919456232_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t G_B4_0 = 0;
+	{
+		int32_t L_0 = ((GenericGeneratorEnumerator_1_t1056199668 *)__this)->get__state_1();
+		if (L_0 == 0)
+		{
+			goto IL_0017;
+		}
+		if (L_0 == 1)
+		{
+			goto IL_0083;
+		}
+		if (L_0 == 2)
+		{
+			goto IL_002d;
+		}
+	}
+
+IL_0017:
+	{
+		WaitForSeconds_t1291133240 * L_1 = (WaitForSeconds_t1291133240 *)il2cpp_codegen_object_new(WaitForSeconds_t1291133240_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m3184996201(L_1, (0.2f), /*hidden argument*/NULL);
+		bool L_2 = GenericGeneratorEnumerator_1_Yield_m4040456012(__this, 2, L_1, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var);
+		G_B4_0 = ((int32_t)(L_2));
+		goto IL_0084;
+	}
+
+IL_002d:
+	{
+		SceneScript_t1382933591 * L_3 = __this->get_U24self_U2460_2();
+		NullCheck(L_3);
+		VirtActionInvoker0::Invoke(87 /* System.Void SceneScript::openAllLeaves() */, L_3);
+		SceneScript_t1382933591 * L_4 = __this->get_U24self_U2460_2();
+		NullCheck(L_4);
+		VirtActionInvoker0::Invoke(88 /* System.Void SceneScript::enableAllColliders() */, L_4);
+		SceneScript_t1382933591 * L_5 = __this->get_U24self_U2460_2();
+		NullCheck(L_5);
+		L_5->set_isPause_62((bool)0);
+		SceneScript_t1382933591 * L_6 = __this->get_U24self_U2460_2();
+		NullCheck(L_6);
+		VirtActionInvoker0::Invoke(100 /* System.Void SceneScript::showPauseButton() */, L_6);
+		SceneScript_t1382933591 * L_7 = __this->get_U24self_U2460_2();
+		NullCheck(L_7);
+		VirtActionInvoker0::Invoke(102 /* System.Void SceneScript::hideRestartButton() */, L_7);
+		SceneScript_t1382933591 * L_8 = __this->get_U24self_U2460_2();
+		NullCheck(L_8);
+		VirtActionInvoker0::Invoke(104 /* System.Void SceneScript::hideResumeButton() */, L_8);
+		SceneScript_t1382933591 * L_9 = __this->get_U24self_U2460_2();
+		NullCheck(L_9);
+		VirtActionInvoker0::Invoke(114 /* System.Void SceneScript::hideTutorial() */, L_9);
+		GenericGeneratorEnumerator_1_YieldDefault_m289716250(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var);
+	}
+
+IL_0083:
+	{
+		G_B4_0 = 0;
+	}
+
+IL_0084:
+	{
+		return (bool)G_B4_0;
+	}
+}
+// System.Void SceneScript/$startGame$62::.ctor(SceneScript)
+extern const MethodInfo* GenericGenerator_1__ctor_m1086344373_MethodInfo_var;
+extern const uint32_t U24startGameU2462__ctor_m1455410557_MetadataUsageId;
+extern "C"  void U24startGameU2462__ctor_m1455410557 (U24startGameU2462_t1992282128 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24startGameU2462__ctor_m1455410557_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGenerator_1__ctor_m1086344373(__this, /*hidden argument*/GenericGenerator_1__ctor_m1086344373_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2464_0(L_0);
+		return;
+	}
+}
+// System.Collections.Generic.IEnumerator`1<UnityEngine.WaitForSeconds> SceneScript/$startGame$62::GetEnumerator()
+extern Il2CppClass* U24_t39_il2cpp_TypeInfo_var;
+extern const uint32_t U24startGameU2462_GetEnumerator_m3326024398_MetadataUsageId;
+extern "C"  Il2CppObject* U24startGameU2462_GetEnumerator_m3326024398 (U24startGameU2462_t1992282128 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24startGameU2462_GetEnumerator_m3326024398_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		SceneScript_t1382933591 * L_0 = __this->get_U24self_U2464_0();
+		U24_t39 * L_1 = (U24_t39 *)il2cpp_codegen_object_new(U24_t39_il2cpp_TypeInfo_var);
+		U24__ctor_m1306153362(L_1, L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void SceneScript/$startGame$62/$::.ctor(SceneScript)
+extern const MethodInfo* GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var;
+extern const uint32_t U24__ctor_m1306153362_MetadataUsageId;
+extern "C"  void U24__ctor_m1306153362 (U24_t39 * __this, SceneScript_t1382933591 * ___self_0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24__ctor_m1306153362_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		GenericGeneratorEnumerator_1__ctor_m3634585745(__this, /*hidden argument*/GenericGeneratorEnumerator_1__ctor_m3634585745_MethodInfo_var);
+		SceneScript_t1382933591 * L_0 = ___self_0;
+		__this->set_U24self_U2463_2(L_0);
+		return;
+	}
+}
+// System.Boolean SceneScript/$startGame$62/$::MoveNext()
+extern Il2CppClass* WaitForSeconds_t1291133240_il2cpp_TypeInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var;
+extern const MethodInfo* GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var;
+extern const uint32_t U24_MoveNext_m687390849_MetadataUsageId;
+extern "C"  bool U24_MoveNext_m687390849 (U24_t39 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (U24_MoveNext_m687390849_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t G_B4_0 = 0;
+	{
+		int32_t L_0 = ((GenericGeneratorEnumerator_1_t1056199668 *)__this)->get__state_1();
+		if (L_0 == 0)
+		{
+			goto IL_0017;
+		}
+		if (L_0 == 1)
+		{
+			goto IL_00ca;
+		}
+		if (L_0 == 2)
+		{
+			goto IL_004e;
+		}
+	}
+
+IL_0017:
+	{
+		SceneScript_t1382933591 * L_1 = __this->get_U24self_U2463_2();
+		NullCheck(L_1);
+		VirtActionInvoker0::Invoke(105 /* System.Void SceneScript::hidePlayButton() */, L_1);
+		SceneScript_t1382933591 * L_2 = __this->get_U24self_U2463_2();
+		NullCheck(L_2);
+		VirtActionInvoker0::Invoke(100 /* System.Void SceneScript::showPauseButton() */, L_2);
+		SceneScript_t1382933591 * L_3 = __this->get_U24self_U2463_2();
+		NullCheck(L_3);
+		VirtActionInvoker0::Invoke(114 /* System.Void SceneScript::hideTutorial() */, L_3);
+		WaitForSeconds_t1291133240 * L_4 = (WaitForSeconds_t1291133240 *)il2cpp_codegen_object_new(WaitForSeconds_t1291133240_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m3184996201(L_4, (0.2f), /*hidden argument*/NULL);
+		bool L_5 = GenericGeneratorEnumerator_1_Yield_m4040456012(__this, 2, L_4, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m4040456012_MethodInfo_var);
+		G_B4_0 = ((int32_t)(L_5));
+		goto IL_00cb;
+	}
+
+IL_004e:
+	{
+		SceneScript_t1382933591 * L_6 = __this->get_U24self_U2463_2();
+		NullCheck(L_6);
+		VirtActionInvoker0::Invoke(79 /* System.Void SceneScript::shuffleAndApplyNewColorAtLeaves() */, L_6);
+		SceneScript_t1382933591 * L_7 = __this->get_U24self_U2463_2();
+		NullCheck(L_7);
+		L_7->set_isGameOverHandled_52((bool)0);
+		SceneScript_t1382933591 * L_8 = __this->get_U24self_U2463_2();
+		float L_9 = Time_get_time_m342192902(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_8);
+		L_8->set_gameStartTime_50(L_9);
+		SceneScript_t1382933591 * L_10 = __this->get_U24self_U2463_2();
+		NullCheck(L_10);
+		VirtActionInvoker0::Invoke(87 /* System.Void SceneScript::openAllLeaves() */, L_10);
+		SceneScript_t1382933591 * L_11 = __this->get_U24self_U2463_2();
+		NullCheck(L_11);
+		VirtActionInvoker0::Invoke(88 /* System.Void SceneScript::enableAllColliders() */, L_11);
+		SceneScript_t1382933591 * L_12 = __this->get_U24self_U2463_2();
+		NullCheck(L_12);
+		VirtActionInvoker0::Invoke(93 /* System.Void SceneScript::showAllTimeStamps() */, L_12);
+		SceneScript_t1382933591 * L_13 = __this->get_U24self_U2463_2();
+		NullCheck(L_13);
+		VirtActionInvoker0::Invoke(95 /* System.Void SceneScript::resetTime() */, L_13);
+		SceneScript_t1382933591 * L_14 = __this->get_U24self_U2463_2();
+		NullCheck(L_14);
+		VirtActionInvoker0::Invoke(97 /* System.Void SceneScript::resetScore() */, L_14);
+		SceneScript_t1382933591 * L_15 = __this->get_U24self_U2463_2();
+		NullCheck(L_15);
+		VirtActionInvoker0::Invoke(39 /* System.Void SceneScript::shrinkEnlargeFlipScoreBoard() */, L_15);
+		SceneScript_t1382933591 * L_16 = __this->get_U24self_U2463_2();
+		NullCheck(L_16);
+		VirtActionInvoker0::Invoke(84 /* System.Void SceneScript::hideHighestScore() */, L_16);
+		GenericGeneratorEnumerator_1_YieldDefault_m289716250(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m289716250_MethodInfo_var);
+	}
+
+IL_00ca:
+	{
+		G_B4_0 = 0;
+	}
+
+IL_00cb:
+	{
+		return (bool)G_B4_0;
 	}
 }
 // System.Void ScoreCircleScript::.ctor()
@@ -7899,7 +9725,6 @@ IL_0026:
 
 IL_0042:
 	{
-		VirtActionInvoker0::Invoke(14 /* System.Void ScoreCircleScript::shrinkForTime() */, __this);
 		return;
 	}
 }
@@ -7912,14 +9737,14 @@ extern "C"  void ScoreCircleScript_flipping_m3717253818 (ScoreCircleScript_t2158
 		bool L_1 = L_0->get_inUserRotation_22();
 		if (L_1)
 		{
-			goto IL_00b4;
+			goto IL_00cd;
 		}
 	}
 	{
 		float L_2 = __this->get_degreeToTurn_3();
 		if ((((float)L_2) <= ((float)(((float)((float)0))))))
 		{
-			goto IL_00b4;
+			goto IL_00cd;
 		}
 	}
 	{
@@ -7976,6 +9801,20 @@ IL_0063:
 	}
 
 IL_00b4:
+	{
+		float L_17 = __this->get_degreeToTurn_3();
+		if ((((float)L_17) > ((float)(((float)((float)0))))))
+		{
+			goto IL_00cd;
+		}
+	}
+	{
+		SceneScript_t1382933591 * L_18 = __this->get_sceneScript_2();
+		NullCheck(L_18);
+		L_18->set_scoreBoardInRotation_63((bool)0);
+	}
+
+IL_00cd:
 	{
 		return;
 	}
@@ -8124,115 +9963,176 @@ extern "C"  void ScoreCircleScript_triggerMatchAnimation_m416122494 (ScoreCircle
 	}
 }
 // System.Void ScoreCircleScript::updateText()
-extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
-extern const uint32_t ScoreCircleScript_updateText_m2913590449_MetadataUsageId;
 extern "C"  void ScoreCircleScript_updateText_m2913590449 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method)
 {
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (ScoreCircleScript_updateText_m2913590449_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
 	int32_t V_0 = 0;
-	int32_t V_1 = 0;
 	{
 		SceneScript_t1382933591 * L_0 = __this->get_sceneScript_2();
 		NullCheck(L_0);
 		int32_t L_1 = L_0->get_scores_39();
 		V_0 = L_1;
-		V_1 = 0;
-		goto IL_001c;
+		int32_t L_2 = V_0;
+		VirtActionInvoker1< int32_t >::Invoke(13 /* System.Void ScoreCircleScript::updateTextWithValue(System.Int32) */, __this, L_2);
+		return;
+	}
+}
+// System.Void ScoreCircleScript::updateTextWithValue(System.Int32)
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* RuntimeServices_t2273795202_il2cpp_TypeInfo_var;
+extern const uint32_t ScoreCircleScript_updateTextWithValue_m1577028621_MetadataUsageId;
+extern "C"  void ScoreCircleScript_updateTextWithValue_m1577028621 (ScoreCircleScript_t2158634317 * __this, int32_t ___newNum0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (ScoreCircleScript_updateTextWithValue_m1577028621_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		V_0 = 0;
+		goto IL_0015;
 	}
 
-IL_0013:
+IL_0007:
+	{
+		int32_t L_0 = ___newNum0;
+		___newNum0 = ((int32_t)((int32_t)L_0/(int32_t)((int32_t)10)));
+		int32_t L_1 = V_0;
+		V_0 = ((int32_t)((int32_t)L_1+(int32_t)1));
+	}
+
+IL_0015:
 	{
 		int32_t L_2 = V_0;
-		V_0 = ((int32_t)((int32_t)L_2/(int32_t)((int32_t)10)));
-		int32_t L_3 = V_1;
-		V_1 = ((int32_t)((int32_t)L_3+(int32_t)1));
-	}
-
-IL_001c:
-	{
-		int32_t L_4 = V_1;
-		int32_t L_5 = __this->get_position_13();
-		if ((((int32_t)L_4) < ((int32_t)L_5)))
+		int32_t L_3 = __this->get_position_13();
+		if ((((int32_t)L_2) < ((int32_t)L_3)))
 		{
-			goto IL_0013;
+			goto IL_0007;
 		}
 	}
 	{
-		int32_t L_6 = V_0;
-		V_0 = ((int32_t)((int32_t)L_6%(int32_t)((int32_t)10)));
-		Text_t3286458198 * L_7 = __this->get_textObject_15();
-		int32_t L_8 = V_0;
-		int32_t L_9 = L_8;
-		Il2CppObject * L_10 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_9);
+		int32_t L_4 = ___newNum0;
+		___newNum0 = ((int32_t)((int32_t)L_4%(int32_t)((int32_t)10)));
+		Text_t3286458198 * L_5 = __this->get_textObject_15();
+		int32_t L_6 = ___newNum0;
+		int32_t L_7 = L_6;
+		Il2CppObject * L_8 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_7);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_11 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		String_t* L_9 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
 		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t2273795202_il2cpp_TypeInfo_var);
-		String_t* L_12 = RuntimeServices_op_Addition_m3420210656(NULL /*static, unused*/, L_10, L_11, /*hidden argument*/NULL);
-		NullCheck(L_7);
-		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_7, L_12);
-		return;
-	}
-}
-// System.Void ScoreCircleScript::timeUp()
-extern "C"  void ScoreCircleScript_timeUp_m3792883171 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method)
-{
-	{
-		float L_0 = __this->get_TIME_UP_SCALE_AMOUNT_17();
-		__this->set_totalScaleAmountForTime_18(L_0);
-		return;
-	}
-}
-// System.Void ScoreCircleScript::shrinkForTime()
-extern "C"  void ScoreCircleScript_shrinkForTime_m2939784404 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method)
-{
-	{
-		float L_0 = __this->get_totalScaleAmountForTime_18();
-		if ((((float)L_0) <= ((float)(((float)((float)0))))))
-		{
-			goto IL_0050;
-		}
-	}
-	{
-		float L_1 = __this->get_totalScaleAmountForTime_18();
-		float L_2 = __this->get_SCALE_SPEED_7();
-		if ((((float)L_1) >= ((float)L_2)))
-		{
-			goto IL_0030;
-		}
-	}
-	{
-		float L_3 = __this->get_totalScaleAmountForTime_18();
-		VirtActionInvoker1< float >::Invoke(10 /* System.Void ScoreCircleScript::scale(System.Single) */, __this, ((-L_3)));
-		goto IL_003d;
-	}
-
-IL_0030:
-	{
-		float L_4 = __this->get_SCALE_SPEED_7();
-		VirtActionInvoker1< float >::Invoke(10 /* System.Void ScoreCircleScript::scale(System.Single) */, __this, ((-L_4)));
-	}
-
-IL_003d:
-	{
-		float L_5 = __this->get_totalScaleAmountForTime_18();
-		float L_6 = __this->get_SCALE_SPEED_7();
-		__this->set_totalScaleAmountForTime_18(((float)((float)L_5-(float)L_6)));
-	}
-
-IL_0050:
-	{
+		String_t* L_10 = RuntimeServices_op_Addition_m3420210656(NULL /*static, unused*/, L_8, L_9, /*hidden argument*/NULL);
+		NullCheck(L_5);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_5, L_10);
 		return;
 	}
 }
 // System.Void ScoreCircleScript::Main()
 extern "C"  void ScoreCircleScript_Main_m1972643764 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void TimeStampScript::.ctor()
+extern "C"  void TimeStampScript__ctor_m3608380213 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	{
+		MonoBehaviour__ctor_m2022291967(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void TimeStampScript::Start()
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern const uint32_t TimeStampScript_Start_m2555518005_MetadataUsageId;
+extern "C"  void TimeStampScript_Start_m2555518005 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (TimeStampScript_Start_m2555518005_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		__this->set_number_6(0);
+		Text_t3286458198 * L_0 = __this->get_textObject_5();
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_1 = ((String_t_StaticFields*)String_t_il2cpp_TypeInfo_var->static_fields)->get_Empty_2();
+		NullCheck(L_0);
+		VirtActionInvoker1< String_t* >::Invoke(65 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_0, L_1);
+		VirtActionInvoker0::Invoke(7 /* System.Void TimeStampScript::hide() */, __this);
+		return;
+	}
+}
+// System.Void TimeStampScript::Update()
+extern "C"  void TimeStampScript_Update_m1917499000 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	{
+		VirtActionInvoker0::Invoke(6 /* System.Void TimeStampScript::applyCurveValue() */, __this);
+		return;
+	}
+}
+// System.Void TimeStampScript::applyCurveValue()
+extern "C"  void TimeStampScript_applyCurveValue_m3316695491 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	{
+		Transform_t284553113 * L_0 = Component_get_transform_m4257140443(__this, /*hidden argument*/NULL);
+		float L_1 = __this->get_ORIGINAL_SCALE_2();
+		float L_2 = __this->get_curveValue_4();
+		float L_3 = __this->get_SHRINK_AMOUNT_3();
+		float L_4 = __this->get_ORIGINAL_SCALE_2();
+		float L_5 = __this->get_curveValue_4();
+		float L_6 = __this->get_SHRINK_AMOUNT_3();
+		float L_7 = __this->get_ORIGINAL_SCALE_2();
+		float L_8 = __this->get_curveValue_4();
+		float L_9 = __this->get_SHRINK_AMOUNT_3();
+		Vector3_t3525329789  L_10;
+		memset(&L_10, 0, sizeof(L_10));
+		Vector3__ctor_m2926210380(&L_10, ((float)((float)L_1-(float)((float)((float)L_2*(float)L_3)))), ((float)((float)L_4-(float)((float)((float)L_5*(float)L_6)))), ((float)((float)L_7-(float)((float)((float)L_8*(float)L_9)))), /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Transform_set_localScale_m310756934(L_0, L_10, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void TimeStampScript::hide()
+extern Il2CppCodeGenString* _stringLiteral3202370;
+extern const uint32_t TimeStampScript_hide_m1366300689_MetadataUsageId;
+extern "C"  void TimeStampScript_hide_m1366300689 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (TimeStampScript_hide_m1366300689_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Animator_t792326996 * L_0 = __this->get_anim_7();
+		NullCheck(L_0);
+		Animator_SetBool_m2336836203(L_0, _stringLiteral3202370, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void TimeStampScript::show()
+extern Il2CppCodeGenString* _stringLiteral3202370;
+extern const uint32_t TimeStampScript_show_m1680642828_MetadataUsageId;
+extern "C"  void TimeStampScript_show_m1680642828 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (TimeStampScript_show_m1680642828_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Animator_t792326996 * L_0 = __this->get_anim_7();
+		NullCheck(L_0);
+		Animator_SetBool_m2336836203(L_0, _stringLiteral3202370, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void TimeStampScript::Main()
+extern "C"  void TimeStampScript_Main_m586083048 (TimeStampScript_t3474365761 * __this, const MethodInfo* method)
 {
 	{
 		return;

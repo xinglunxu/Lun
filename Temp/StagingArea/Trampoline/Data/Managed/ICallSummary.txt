@@ -412,10 +412,11 @@ UnityEngine.Physics::INTERNAL_CALL_Internal_Raycast
 UnityEngine.Physics::INTERNAL_CALL_RaycastAll
 UnityEngine.Physics2D::INTERNAL_CALL_Internal_Raycast
 UnityEngine.Physics2D::INTERNAL_CALL_GetRayIntersectionAll
+UnityEngine.PlayerPrefs::TrySetInt
+UnityEngine.PlayerPrefs::GetInt
 UnityEngine.QualitySettings::get_activeColorSpace
 UnityEngine.Quaternion::INTERNAL_CALL_AngleAxis
 UnityEngine.Quaternion::INTERNAL_CALL_Internal_FromEulerRad
-UnityEngine.Quaternion::INTERNAL_CALL_Internal_ToEulerRad
 UnityEngine.Quaternion::INTERNAL_CALL_Inverse
 UnityEngine.Random::Range
 UnityEngine.Random::get_value

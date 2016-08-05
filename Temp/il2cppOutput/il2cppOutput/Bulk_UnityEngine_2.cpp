@@ -13,6 +13,8 @@
 #include <limits>
 #include <assert.h>
 
+// UnityEngine.SelectionBaseAttribute
+struct SelectionBaseAttribute_t178688268;
 // UnityEngine.GUILayer
 struct GUILayer_t999894339;
 // System.Object
@@ -170,9 +172,14 @@ struct TypeInferenceRuleAttribute_t471424957;
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Array2840145358.h"
+#include "UnityEngine_UnityEngine_SelectionBaseAttribute178688268.h"
+#include "UnityEngine_UnityEngine_SelectionBaseAttribute178688268MethodDeclarations.h"
+#include "mscorlib_System_Void2779279689.h"
+#include "mscorlib_System_Attribute498693649MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_SendMessageOptions2623293100.h"
+#include "UnityEngine_UnityEngine_SendMessageOptions2623293100MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_SendMouseEvents2490149283.h"
 #include "UnityEngine_UnityEngine_SendMouseEvents2490149283MethodDeclarations.h"
-#include "mscorlib_System_Void2779279689.h"
 #include "UnityEngine_UnityEngine_SendMouseEvents_HitInfo2591228609.h"
 #include "mscorlib_System_Boolean211005341.h"
 #include "UnityEngine_ArrayTypes.h"
@@ -201,10 +208,8 @@ struct TypeInferenceRuleAttribute_t471424957;
 #include "mscorlib_System_String968488902.h"
 #include "UnityEngine_UnityEngine_GameObject4012695102MethodDeclarations.h"
 #include "mscorlib_System_Object837106420.h"
-#include "UnityEngine_UnityEngine_SendMessageOptions2623293100.h"
 #include "UnityEngine_UnityEngine_Serialization_FormerlySeria581346955.h"
 #include "UnityEngine_UnityEngine_Serialization_FormerlySeria581346955MethodDeclarations.h"
-#include "mscorlib_System_Attribute498693649MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_SerializeField3430139495.h"
 #include "UnityEngine_UnityEngine_SerializeField3430139495MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_SerializePrivateVariables2126293601.h"
@@ -463,6 +468,14 @@ extern "C"  Il2CppObject * Component_GetComponent_TisIl2CppObject_m267839954_gsh
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void UnityEngine.SelectionBaseAttribute::.ctor()
+extern "C"  void SelectionBaseAttribute__ctor_m3830336046 (SelectionBaseAttribute_t178688268 * __this, const MethodInfo* method)
+{
+	{
+		Attribute__ctor_m2985353781(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void UnityEngine.SendMouseEvents::.cctor()
 extern Il2CppClass* SendMouseEvents_t2490149283_il2cpp_TypeInfo_var;
 extern Il2CppClass* HitInfoU5BU5D_t3030088988_il2cpp_TypeInfo_var;
@@ -9022,18 +9035,6 @@ extern "C"  void Transform_INTERNAL_set_localPosition_m221305727 (Transform_t284
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Transform_INTERNAL_set_localPosition_m221305727_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Transform::INTERNAL_set_localPosition(UnityEngine.Vector3&)");
 	_il2cpp_icall_func(__this, ___value0);
-}
-// UnityEngine.Vector3 UnityEngine.Transform::get_eulerAngles()
-extern "C"  Vector3_t3525329789  Transform_get_eulerAngles_m1058084741 (Transform_t284553113 * __this, const MethodInfo* method)
-{
-	Quaternion_t1891715979  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	{
-		Quaternion_t1891715979  L_0 = Transform_get_rotation_m11483428(__this, /*hidden argument*/NULL);
-		V_0 = L_0;
-		Vector3_t3525329789  L_1 = Quaternion_get_eulerAngles_m997303795((&V_0), /*hidden argument*/NULL);
-		return L_1;
-	}
 }
 // System.Void UnityEngine.Transform::set_eulerAngles(UnityEngine.Vector3)
 extern "C"  void Transform_set_eulerAngles_m1704681314 (Transform_t284553113 * __this, Vector3_t3525329789  ___value0, const MethodInfo* method)

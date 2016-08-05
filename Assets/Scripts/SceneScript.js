@@ -65,10 +65,14 @@ var highestScoreText:UnityEngine.UI.Text;
 var isPause:boolean;
 var scoreBoardInRotation:boolean;
 var STAMP_INITTIME:int;
+var canvasScaler:UnityEngine.UI.CanvasScaler;
+var UIScaleFactorX:float;
+var UIScaleFactorY:float;
+var tutorial:UnityEngine.UI.Text;
 
 
 function Start () {
-	STAMP_INITTIME = 99;
+	STAMP_INITTIME = 15;
 	scoreBoardInRotation = false;
 	isPause = false;
 	isGameOverHandled = true;
@@ -168,6 +172,15 @@ function Start () {
 	disableAllColliders();
 	showHighestScoreOnScoreBoard();
 	showPlayButton();
+	// setStartButtonPosition();
+
+	UIScaleFactorX = Screen.width / SCREEN_WIDTH;
+	UIScaleFactorY = Screen.height / SCREEN_HEIGHT;
+	setLowerButtonPosition(startButton);
+	setLowerButtonPosition(resumeButton);
+	setLowerButtonPosition(restartButton);
+	setTutorialPosition();
+	setTutorialScale();
 	// hidePauseButton();
 
 	// startGame();
@@ -945,6 +958,12 @@ function pauseGame(){
 	foldAllLeaves();
 	disableAllColliders();
 	isPause = true;
+	yield WaitForSeconds(0.5);
+	showTutorial();
+}
+
+function _pauseGame(){
+	pauseGame();
 }
 
 function resumeGame(){
@@ -955,6 +974,7 @@ function resumeGame(){
 	showPauseButton();
 	hideRestartButton();
 	hideResumeButton();
+	hideTutorial();
 }
 
 function _resumeGame(){
@@ -967,12 +987,19 @@ function updateHighestScore(){
 	}
 }
 
+function shuffleAndApplyNewColorAtLeaves(){
+	do{shuffleAllLeaves();} while(isDeckLock());
+	applyNewColorAtAllLeaves();
+}
+
 function startGame(){
 	hidePlayButton();
 	showPauseButton();
+	hideTutorial();
 
 	yield WaitForSeconds(0.2);
 
+	shuffleAndApplyNewColorAtLeaves();
 	isGameOverHandled = false;
 	gameStartTime = Time.time;
 	openAllLeaves();
@@ -989,9 +1016,11 @@ function restartGame(){
 	hideResumeButton();
 	hideRestartButton();
 	showPauseButton();
+	hideTutorial();
 
 	yield WaitForSeconds(0.2);
 
+	shuffleAndApplyNewColorAtLeaves();
 	isGameOverHandled = false;
 	isPause = false;
 	gameStartTime = Time.time;
@@ -1177,7 +1206,38 @@ function enableButton(button:UnityEngine.UI.Button){
 }
 
 
+function setLowerButtonPosition(button:UnityEngine.UI.Button){
+	var yAdjust:float = VERTICAL_ADJUST+LEAF_WIDTH/2 + 2*CENTER_HALF_LENGTH;
+	var yAdjustUI:float = yAdjust * UIScaleFactorY;
+	// Debug.Log(UIScaleFactorY);
+	button.transform.position = new Vector3(button.transform.position.x, yAdjustUI, button.transform.position.z);
+}
 
+function setTutorialPosition(){
+	var yAdjust:float = VERTICAL_ADJUST + 4*CENTER_HALF_LENGTH + LEAF_WIDTH/2;
+	var yAdjustUI:float = yAdjust * UIScaleFactorY;
+	// Debug.Log(yAdjustUI);
+	tutorial.transform.position = new Vector3(tutorial.transform.position.x, yAdjustUI, tutorial.transform.position.z);
+}	
+
+function setTutorialScale(){
+	var newWidth = 4*2*CENTER_HALF_LENGTH*UIScaleFactorX;
+	var newHeight = 3*2*CENTER_HALF_LENGTH*UIScaleFactorY;
+
+	// Debug.Log(tutorial.GetComponent(RectTransform).rect);
+	var RectTransform = tutorial.GetComponent(RectTransform);
+	var rect = RectTransform.rect;
+
+	RectTransform.sizeDelta = new Vector2(newWidth, newHeight);
+}
+
+function hideTutorial(){
+	tutorial.enabled = false;
+}
+
+function showTutorial(){
+	tutorial.enabled = true;
+}
 
 
 

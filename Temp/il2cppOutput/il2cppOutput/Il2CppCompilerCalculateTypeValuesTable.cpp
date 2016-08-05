@@ -1125,7 +1125,18 @@
 #include "AssemblyU2DUnityScript_LeafScript136690153.h"
 #include "AssemblyU2DUnityScript_RingScript2386927419.h"
 #include "AssemblyU2DUnityScript_SceneScript1382933591.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOv2071569712.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24handleGameOverU2453_36.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU243867230177.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24pauseGameU2456_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU24285886981.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24resumeGameU2459_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU241992282128.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24startGameU2462_U2436.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU1034105030.h"
+#include "AssemblyU2DUnityScript_SceneScript_U24restartGameU2465_U2436.h"
 #include "AssemblyU2DUnityScript_ScoreCircleScript2158634317.h"
+#include "AssemblyU2DUnityScript_TimeStampScript3474365761.h"
 #include "mscorlib_U3CModuleU3E86524790.h"
 #include "mscorlib_System_Object837106420.h"
 #include "mscorlib_System_ValueType4014882752.h"
@@ -1470,6 +1481,8 @@
 #include "UnityEngine_UnityEngine_Time1525492538.h"
 #include "UnityEngine_UnityEngine_Random3963434288.h"
 #include "UnityEngine_UnityEngine_YieldInstruction3557331758.h"
+#include "UnityEngine_UnityEngine_PlayerPrefsException3551081773.h"
+#include "UnityEngine_UnityEngine_PlayerPrefs3733964924.h"
 #include "UnityEngine_UnityEngine_Motion3833401379.h"
 #include "UnityEngine_UnityEngine_iOS_ADBannerView_BannerWas1325188367.h"
 #include "UnityEngine_UnityEngine_iOS_ADBannerView_BannerWasLo69910023.h"
@@ -1549,6 +1562,7 @@
 #include "UnityScript_Lang_U3CModuleU3E86524790.h"
 #include "UnityScript_Lang_UnityScript_Lang_Array1209885965.h"
 #include "AssemblyU2DCSharp_U3CModuleU3E86524790.h"
+#include "AssemblyU2DCSharp_HideButtonIdleScript3930033171.h"
 #include "AssemblyU2DCSharp_HideOrShowScript4069683949.h"
 #include "AssemblyU2DCSharp_IdleLeafScript2562657501.h"
 #include "AssemblyU2DCSharp_PopOutTextScript3208952725.h"
@@ -1557,6 +1571,7 @@
 #include "AssemblyU2DCSharpU2Dfirstpass_UnityStandardAssets_2914300976.h"
 #include "AssemblyU2DCSharpU2Dfirstpass_UnityStandardAssets_I620751400.h"
 #include "AssemblyU2DUnityScript_U3CModuleU3E86524790.h"
+#include "AssemblyU2DUnityScript_PlayButtonScript4170460177.h"
 #include "AssemblyU2DUnityScript_Idle2274292.h"
 
 
@@ -1566,7 +1581,7 @@
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-extern const int32_t g_FieldOffsetTable[7185] = 
+extern const int32_t g_FieldOffsetTable[7218] = 
 {
 	0,
 	0,
@@ -6028,6 +6043,8 @@ extern const int32_t g_FieldOffsetTable[7185] =
 	0,
 	0,
 	0,
+	0,
+	0,
 	DispatcherCache_t1616774716_StaticFields::get_offset_of__cache_0(),
 	DispatcherKey_t3258056537_StaticFields::get_offset_of_EqualityComparer_0(),
 	DispatcherKey_t3258056537::get_offset_of__type_1(),
@@ -8736,6 +8753,31 @@ extern const int32_t g_FieldOffsetTable[7185] =
 	SceneScript_t1382933591::get_offset_of_centers_51(),
 	SceneScript_t1382933591::get_offset_of_isGameOverHandled_52(),
 	SceneScript_t1382933591::get_offset_of_GAME_TIME_53(),
+	SceneScript_t1382933591::get_offset_of_leavesAreOpen_54(),
+	SceneScript_t1382933591::get_offset_of_collidersEnable_55(),
+	SceneScript_t1382933591::get_offset_of_startButton_56(),
+	SceneScript_t1382933591::get_offset_of_pauseButton_57(),
+	SceneScript_t1382933591::get_offset_of_resumeButton_58(),
+	SceneScript_t1382933591::get_offset_of_restartButton_59(),
+	SceneScript_t1382933591::get_offset_of_timeStampPrefab_60(),
+	SceneScript_t1382933591::get_offset_of_highestScoreText_61(),
+	SceneScript_t1382933591::get_offset_of_isPause_62(),
+	SceneScript_t1382933591::get_offset_of_scoreBoardInRotation_63(),
+	SceneScript_t1382933591::get_offset_of_STAMP_INITTIME_64(),
+	SceneScript_t1382933591::get_offset_of_canvasScaler_65(),
+	SceneScript_t1382933591::get_offset_of_UIScaleFactorX_66(),
+	SceneScript_t1382933591::get_offset_of_UIScaleFactorY_67(),
+	SceneScript_t1382933591::get_offset_of_tutorial_68(),
+	U24handleGameOverU2453_t2071569712::get_offset_of_U24self_U2455_0(),
+	U24_t36::get_offset_of_U24self_U2454_2(),
+	U24pauseGameU2456_t3867230177::get_offset_of_U24self_U2458_0(),
+	U24_t37::get_offset_of_U24self_U2457_2(),
+	U24resumeGameU2459_t4285886981::get_offset_of_U24self_U2461_0(),
+	U24_t38::get_offset_of_U24self_U2460_2(),
+	U24startGameU2462_t1992282128::get_offset_of_U24self_U2464_0(),
+	U24_t39::get_offset_of_U24self_U2463_2(),
+	U24restartGameU2465_t1034105030::get_offset_of_U24self_U2467_0(),
+	U24_t40::get_offset_of_U24self_U2466_2(),
 	ScoreCircleScript_t2158634317::get_offset_of_sceneScript_2(),
 	ScoreCircleScript_t2158634317::get_offset_of_degreeToTurn_3(),
 	ScoreCircleScript_t2158634317::get_offset_of_FLIP_SPEED_4(),
@@ -8753,11 +8795,17 @@ extern const int32_t g_FieldOffsetTable[7185] =
 	ScoreCircleScript_t2158634317::get_offset_of_number_16(),
 	ScoreCircleScript_t2158634317::get_offset_of_TIME_UP_SCALE_AMOUNT_17(),
 	ScoreCircleScript_t2158634317::get_offset_of_totalScaleAmountForTime_18(),
+	TimeStampScript_t3474365761::get_offset_of_ORIGINAL_SCALE_2(),
+	TimeStampScript_t3474365761::get_offset_of_SHRINK_AMOUNT_3(),
+	TimeStampScript_t3474365761::get_offset_of_curveValue_4(),
+	TimeStampScript_t3474365761::get_offset_of_textObject_5(),
+	TimeStampScript_t3474365761::get_offset_of_number_6(),
+	TimeStampScript_t3474365761::get_offset_of_anim_7(),
 };
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1756] = 
+extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1773] = 
 {
 	sizeof (U3CModuleU3E_t86524790), -1, 0, 0,
 	sizeof (Il2CppObject), -1, 0, 0,
@@ -9934,6 +9982,8 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1756] =
 	sizeof (Builtins_t4233200974), -1, 0, 0,
 	0, 0, 0, 0,
 	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
 	sizeof (DispatcherCache_t1616774716), -1, sizeof(DispatcherCache_t1616774716_StaticFields), 0,
 	sizeof (DispatcherFactory_t2992698435), sizeof(Il2CppMethodPointer), 0, 0,
 	sizeof (DispatcherKey_t3258056537), -1, sizeof(DispatcherKey_t3258056537_StaticFields), 0,
@@ -10052,6 +10102,8 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1756] =
 	sizeof (Time_t1525492538), -1, 0, 0,
 	sizeof (Random_t3963434288), -1, 0, 0,
 	sizeof (YieldInstruction_t3557331758), sizeof(YieldInstruction_t3557331758_marshaled_pinvoke), 0, 0,
+	sizeof (PlayerPrefsException_t3551081773), -1, 0, 0,
+	sizeof (PlayerPrefs_t3733964924), -1, 0, 0,
 	sizeof (Motion_t3833401379), -1, 0, 0,
 	sizeof (ADBannerView_t2458921414), -1, sizeof(ADBannerView_t2458921414_StaticFields), 0,
 	sizeof (BannerWasClickedDelegate_t1325188367), sizeof(Il2CppMethodPointer), 0, 0,
@@ -10431,6 +10483,7 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1756] =
 	sizeof (U3CModuleU3E_t86524797), -1, 0, 0,
 	sizeof (Array_t1209885965), -1, 0, 0,
 	sizeof (U3CModuleU3E_t86524798), -1, 0, 0,
+	sizeof (HideButtonIdleScript_t3930033171), -1, 0, 0,
 	sizeof (HideOrShowScript_t4069683949), -1, 0, 0,
 	sizeof (IdleLeafScript_t2562657501), -1, 0, 0,
 	sizeof (PopOutTextScript_t3208952725), -1, 0, 0,
@@ -10507,12 +10560,24 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1756] =
 	sizeof (AberrationMode_t2099006772)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,
 	sizeof (Vortex_t3534108302), -1, 0, 0,
 	sizeof (U3CModuleU3E_t86524800), -1, 0, 0,
+	sizeof (PlayButtonScript_t4170460177), -1, 0, 0,
 	sizeof (CenterScript_t99715488), -1, 0, 0,
 	sizeof (CircleScript_t2039869915), -1, 0, 0,
 	sizeof (InitiateScene_t3935731027), -1, 0, 0,
 	sizeof (LeafScript_t136690153), -1, 0, 0,
 	sizeof (RingScript_t2386927419), -1, 0, 0,
 	sizeof (SceneScript_t1382933591), -1, 0, 0,
+	sizeof (U24handleGameOverU2453_t2071569712), -1, 0, 0,
+	sizeof (U24_t36), -1, 0, 0,
+	sizeof (U24pauseGameU2456_t3867230177), -1, 0, 0,
+	sizeof (U24_t37), -1, 0, 0,
+	sizeof (U24resumeGameU2459_t4285886981), -1, 0, 0,
+	sizeof (U24_t38), -1, 0, 0,
+	sizeof (U24startGameU2462_t1992282128), -1, 0, 0,
+	sizeof (U24_t39), -1, 0, 0,
+	sizeof (U24restartGameU2465_t1034105030), -1, 0, 0,
+	sizeof (U24_t40), -1, 0, 0,
 	sizeof (ScoreCircleScript_t2158634317), -1, 0, 0,
 	sizeof (Idle_t2274292), -1, 0, 0,
+	sizeof (TimeStampScript_t3474365761), -1, 0, 0,
 };

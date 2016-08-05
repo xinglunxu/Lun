@@ -148,6 +148,8 @@ struct ObjectU5BU5D_t3051965477;
 struct RaycastHitU5BU5D_t1365728750;
 // UnityEngine.RaycastHit2D[]
 struct RaycastHit2DU5BU5D_t2162384532;
+// UnityEngine.PlayerPrefsException
+struct PlayerPrefsException_t3551081773;
 // UnityEngine.PropertyAttribute
 struct PropertyAttribute_t3076083828;
 // UnityEngine.RangeAttribute
@@ -187,8 +189,6 @@ struct ScriptableObject_t184905905_marshaled_pinvoke;
 struct RequiredByNativeCodeAttribute_t641452194;
 // UnityEngine.Scripting.UsedByNativeCodeAttribute
 struct UsedByNativeCodeAttribute_t1800197956;
-// UnityEngine.SelectionBaseAttribute
-struct SelectionBaseAttribute_t178688268;
 
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
@@ -418,6 +418,10 @@ struct SelectionBaseAttribute_t178688268;
 #include "UnityEngine_UnityEngine_RaycastHit2D4082783401.h"
 #include "UnityEngine_UnityEngine_Plane1600081545.h"
 #include "UnityEngine_UnityEngine_Plane1600081545MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_PlayerPrefs3733964924.h"
+#include "UnityEngine_UnityEngine_PlayerPrefs3733964924MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_PlayerPrefsException3551081773MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_PlayerPrefsException3551081773.h"
 #include "UnityEngine_UnityEngine_PropertyAttribute3076083828.h"
 #include "UnityEngine_UnityEngine_PropertyAttribute3076083828MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_QualitySettings3538980463.h"
@@ -500,10 +504,6 @@ struct SelectionBaseAttribute_t178688268;
 #include "UnityEngine_UnityEngine_Scripting_RequiredByNativeC641452194MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Scripting_UsedByNativeCode1800197956.h"
 #include "UnityEngine_UnityEngine_Scripting_UsedByNativeCode1800197956MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_SelectionBaseAttribute178688268.h"
-#include "UnityEngine_UnityEngine_SelectionBaseAttribute178688268MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_SendMessageOptions2623293100.h"
-#include "UnityEngine_UnityEngine_SendMessageOptions2623293100MethodDeclarations.h"
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -16261,6 +16261,77 @@ extern "C" void Plane_t1600081545_marshal_com_cleanup(Plane_t1600081545_marshale
 {
 	Vector3_t3525329789_marshal_com_cleanup(marshaled.___m_Normal_0);
 }
+// System.Boolean UnityEngine.PlayerPrefs::TrySetInt(System.String,System.Int32)
+extern "C"  bool PlayerPrefs_TrySetInt_m2066630347 (Il2CppObject * __this /* static, unused */, String_t* ___key0, int32_t ___value1, const MethodInfo* method)
+{
+	typedef bool (*PlayerPrefs_TrySetInt_m2066630347_ftn) (String_t*, int32_t);
+	static PlayerPrefs_TrySetInt_m2066630347_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (PlayerPrefs_TrySetInt_m2066630347_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerPrefs::TrySetInt(System.String,System.Int32)");
+	return _il2cpp_icall_func(___key0, ___value1);
+}
+// System.Void UnityEngine.PlayerPrefs::SetInt(System.String,System.Int32)
+extern Il2CppClass* PlayerPrefsException_t3551081773_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2586178071;
+extern const uint32_t PlayerPrefs_SetInt_m3485171996_MetadataUsageId;
+extern "C"  void PlayerPrefs_SetInt_m3485171996 (Il2CppObject * __this /* static, unused */, String_t* ___key0, int32_t ___value1, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (PlayerPrefs_SetInt_m3485171996_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		String_t* L_0 = ___key0;
+		int32_t L_1 = ___value1;
+		bool L_2 = PlayerPrefs_TrySetInt_m2066630347(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
+		if (L_2)
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		PlayerPrefsException_t3551081773 * L_3 = (PlayerPrefsException_t3551081773 *)il2cpp_codegen_object_new(PlayerPrefsException_t3551081773_il2cpp_TypeInfo_var);
+		PlayerPrefsException__ctor_m3661687413(L_3, _stringLiteral2586178071, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3);
+	}
+
+IL_0017:
+	{
+		return;
+	}
+}
+// System.Int32 UnityEngine.PlayerPrefs::GetInt(System.String,System.Int32)
+extern "C"  int32_t PlayerPrefs_GetInt_m3632746280 (Il2CppObject * __this /* static, unused */, String_t* ___key0, int32_t ___defaultValue1, const MethodInfo* method)
+{
+	typedef int32_t (*PlayerPrefs_GetInt_m3632746280_ftn) (String_t*, int32_t);
+	static PlayerPrefs_GetInt_m3632746280_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (PlayerPrefs_GetInt_m3632746280_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.PlayerPrefs::GetInt(System.String,System.Int32)");
+	return _il2cpp_icall_func(___key0, ___defaultValue1);
+}
+// System.Int32 UnityEngine.PlayerPrefs::GetInt(System.String)
+extern "C"  int32_t PlayerPrefs_GetInt_m1334009359 (Il2CppObject * __this /* static, unused */, String_t* ___key0, const MethodInfo* method)
+{
+	int32_t V_0 = 0;
+	{
+		V_0 = 0;
+		String_t* L_0 = ___key0;
+		int32_t L_1 = V_0;
+		int32_t L_2 = PlayerPrefs_GetInt_m3632746280(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
+		return L_2;
+	}
+}
+// System.Void UnityEngine.PlayerPrefsException::.ctor(System.String)
+extern "C"  void PlayerPrefsException__ctor_m3661687413 (PlayerPrefsException_t3551081773 * __this, String_t* ___error0, const MethodInfo* method)
+{
+	{
+		String_t* L_0 = ___error0;
+		Exception__ctor_m3870771296(__this, L_0, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void UnityEngine.PropertyAttribute::.ctor()
 extern "C"  void PropertyAttribute__ctor_m1741701746 (PropertyAttribute_t3076083828 * __this, const MethodInfo* method)
 {
@@ -16409,15 +16480,6 @@ extern "C"  String_t* Quaternion_ToString_m1793285860 (Quaternion_t1891715979 * 
 		return L_16;
 	}
 }
-// UnityEngine.Vector3 UnityEngine.Quaternion::get_eulerAngles()
-extern "C"  Vector3_t3525329789  Quaternion_get_eulerAngles_m997303795 (Quaternion_t1891715979 * __this, const MethodInfo* method)
-{
-	{
-		Vector3_t3525329789  L_0 = Quaternion_Internal_ToEulerRad_m1608666215(NULL /*static, unused*/, (*(Quaternion_t1891715979 *)__this), /*hidden argument*/NULL);
-		Vector3_t3525329789  L_1 = Vector3_op_Multiply_m973638459(NULL /*static, unused*/, L_0, (57.29578f), /*hidden argument*/NULL);
-		return L_1;
-	}
-}
 // UnityEngine.Quaternion UnityEngine.Quaternion::Euler(System.Single,System.Single,System.Single)
 extern "C"  Quaternion_t1891715979  Quaternion_Euler_m1204688217 (Il2CppObject * __this /* static, unused */, float ___x0, float ___y1, float ___z2, const MethodInfo* method)
 {
@@ -16442,26 +16504,6 @@ extern "C"  Quaternion_t1891715979  Quaternion_Euler_m1940911101 (Il2CppObject *
 		Quaternion_t1891715979  L_2 = Quaternion_Internal_FromEulerRad_m3681319598(NULL /*static, unused*/, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
-}
-// UnityEngine.Vector3 UnityEngine.Quaternion::Internal_ToEulerRad(UnityEngine.Quaternion)
-extern "C"  Vector3_t3525329789  Quaternion_Internal_ToEulerRad_m1608666215 (Il2CppObject * __this /* static, unused */, Quaternion_t1891715979  ___rotation0, const MethodInfo* method)
-{
-	Vector3_t3525329789  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	{
-		Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351(NULL /*static, unused*/, (&___rotation0), (&V_0), /*hidden argument*/NULL);
-		Vector3_t3525329789  L_0 = V_0;
-		return L_0;
-	}
-}
-// System.Void UnityEngine.Quaternion::INTERNAL_CALL_Internal_ToEulerRad(UnityEngine.Quaternion&,UnityEngine.Vector3&)
-extern "C"  void Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351 (Il2CppObject * __this /* static, unused */, Quaternion_t1891715979 * ___rotation0, Vector3_t3525329789 * ___value1, const MethodInfo* method)
-{
-	typedef void (*Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351_ftn) (Quaternion_t1891715979 *, Vector3_t3525329789 *);
-	static Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Quaternion_INTERNAL_CALL_Internal_ToEulerRad_m1660134351_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Quaternion::INTERNAL_CALL_Internal_ToEulerRad(UnityEngine.Quaternion&,UnityEngine.Vector3&)");
-	_il2cpp_icall_func(___rotation0, ___value1);
 }
 // UnityEngine.Quaternion UnityEngine.Quaternion::Internal_FromEulerRad(UnityEngine.Vector3)
 extern "C"  Quaternion_t1891715979  Quaternion_Internal_FromEulerRad_m3681319598 (Il2CppObject * __this /* static, unused */, Vector3_t3525329789  ___euler0, const MethodInfo* method)
@@ -20069,14 +20111,6 @@ extern "C"  void RequiredByNativeCodeAttribute__ctor_m940065582 (RequiredByNativ
 }
 // System.Void UnityEngine.Scripting.UsedByNativeCodeAttribute::.ctor()
 extern "C"  void UsedByNativeCodeAttribute__ctor_m3320039756 (UsedByNativeCodeAttribute_t1800197956 * __this, const MethodInfo* method)
-{
-	{
-		Attribute__ctor_m2985353781(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-// System.Void UnityEngine.SelectionBaseAttribute::.ctor()
-extern "C"  void SelectionBaseAttribute__ctor_m3830336046 (SelectionBaseAttribute_t178688268 * __this, const MethodInfo* method)
 {
 	{
 		Attribute__ctor_m2985353781(__this, /*hidden argument*/NULL);

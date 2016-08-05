@@ -37,6 +37,7 @@
 <type fullname="UnityStandardAssets.ImageEffects.Vortex" preserve="all"/>
 </assembly>
 <assembly fullname="Assembly-CSharp">
+<type fullname="HideButtonIdleScript" preserve="all"/>
 <type fullname="HideOrShowScript" preserve="all"/>
 <type fullname="IdleLeafScript" preserve="all"/>
 <type fullname="PopOutTextScript" preserve="all"/>
@@ -44,6 +45,7 @@
 <type fullname="shrinkScript" preserve="all"/>
 </assembly>
 <assembly fullname="Assembly-UnityScript">
+<type fullname="PlayButtonScript" preserve="all"/>
 <type fullname="CenterScript" preserve="all"/>
 <type fullname="CircleScript" preserve="all"/>
 <type fullname="InitiateScene" preserve="all"/>
@@ -52,6 +54,7 @@
 <type fullname="SceneScript" preserve="all"/>
 <type fullname="ScoreCircleScript" preserve="all"/>
 <type fullname="Idle" preserve="all"/>
+<type fullname="TimeStampScript" preserve="all"/>
 </assembly>
 <assembly fullname="UnityEngine.UI">
 <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all"/>

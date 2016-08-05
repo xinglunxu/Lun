@@ -37,9 +37,7 @@ extern "C"  void ScoreCircleScript_scale_m1263609178 (ScoreCircleScript_t2158634
 extern "C"  void ScoreCircleScript_triggerMatchAnimation_m416122494 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void ScoreCircleScript::updateText()
 extern "C"  void ScoreCircleScript_updateText_m2913590449 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void ScoreCircleScript::timeUp()
-extern "C"  void ScoreCircleScript_timeUp_m3792883171 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void ScoreCircleScript::shrinkForTime()
-extern "C"  void ScoreCircleScript_shrinkForTime_m2939784404 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void ScoreCircleScript::updateTextWithValue(System.Int32)
+extern "C"  void ScoreCircleScript_updateTextWithValue_m1577028621 (ScoreCircleScript_t2158634317 * __this, int32_t ___newNum0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void ScoreCircleScript::Main()
 extern "C"  void ScoreCircleScript_Main_m1972643764 (ScoreCircleScript_t2158634317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -17,6 +17,8 @@
 struct enLargeBehavior_t2925536388;
 // UnityEngine.Animator
 struct Animator_t792326996;
+// HideButtonIdleScript
+struct HideButtonIdleScript_t3930033171;
 // HideOrShowScript
 struct HideOrShowScript_t4069683949;
 // IdleLeafScript
@@ -52,6 +54,8 @@ struct shrinkScript_t3703740468;
 #include "UnityEngine_UnityEngine_Sprite4006040370.h"
 #include "UnityEngine_UnityEngine_Color1588175760.h"
 #include "mscorlib_System_Single958209021.h"
+#include "AssemblyU2DCSharp_HideButtonIdleScript3930033171.h"
+#include "AssemblyU2DCSharp_HideButtonIdleScript3930033171MethodDeclarations.h"
 #include "AssemblyU2DCSharp_HideOrShowScript4069683949.h"
 #include "AssemblyU2DCSharp_HideOrShowScript4069683949MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Animator792326996MethodDeclarations.h"
@@ -119,6 +123,21 @@ extern "C"  void enLargeBehavior_OnStateEnter_m326619335 (enLargeBehavior_t29255
 		Component_t2126946602 * L_12 = GameObject_GetComponent_m1004814461(L_10, L_11, /*hidden argument*/NULL);
 		NullCheck(((SpriteRenderer_t2223784725 *)IsInstSealed(L_12, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)));
 		Renderer_set_sortingOrder_m3971126610(((SpriteRenderer_t2223784725 *)IsInstSealed(L_12, SpriteRenderer_t2223784725_il2cpp_TypeInfo_var)), 1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void HideButtonIdleScript::.ctor()
+extern "C"  void HideButtonIdleScript__ctor_m2400826344 (HideButtonIdleScript_t3930033171 * __this, const MethodInfo* method)
+{
+	{
+		StateMachineBehaviour__ctor_m3149540562(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void HideButtonIdleScript::OnStateEnter(UnityEngine.Animator,UnityEngine.AnimatorStateInfo,System.Int32)
+extern "C"  void HideButtonIdleScript_OnStateEnter_m1405837448 (HideButtonIdleScript_t3930033171 * __this, Animator_t792326996 * ___animator0, AnimatorStateInfo_t4162640357  ___stateInfo1, int32_t ___layerIndex2, const MethodInfo* method)
+{
+	{
 		return;
 	}
 }
