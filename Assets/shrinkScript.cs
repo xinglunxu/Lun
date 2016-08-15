@@ -17,7 +17,7 @@ public class shrinkScript : StateMachineBehaviour {
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		(animator.gameObject.GetComponent (typeof(SpriteRenderer)) as SpriteRenderer).sprite = newSprite;
-		(animator.gameObject.GetComponent (typeof(SpriteRenderer)) as SpriteRenderer).color = new Color(28.0f/255, 150.0f/255, 210.0f/255);
+		(animator.gameObject.GetComponent (typeof(SpriteRenderer)) as SpriteRenderer).color = new Color(102f/255, 102f/255, 153f/255);
 		(animator.gameObject.GetComponent (typeof(SpriteRenderer)) as SpriteRenderer).sortingOrder = 0;
 	}
 

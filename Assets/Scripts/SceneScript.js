@@ -72,11 +72,17 @@ var pauseButton:UnityEngine.UI.Button;
 var resumeButton:UnityEngine.UI.Button;
 var restartButton:UnityEngine.UI.Button;
 
+var flipInterval:float;
+var needFlipTimeStamp:boolean;
+var comboNum:int;
+
 
 function Start () {
-	STAMP_INITTIME = 15;
+	needFlipTimeStamp = false;
+	flipInterval = 3;
+	STAMP_INITTIME = 99;
 	scoreBoardInRotation = false;
-	isPause = false;
+	isPause = true;
 	isGameOverHandled = true;
 	collidersEnable = true;
 	leavesAreOpen = false;
@@ -87,19 +93,19 @@ function Start () {
 	accuTime = 0;
 	scoreBoard = new Array();
 	scores = 0;
-	hintTime = 7;
+	hintTime = 12;
 	colorForHint = -1;
 	lastSuccessfulRotationTime = Time.time;
 	colorDict = new Hashtable();
-	var red = new Color(1,0,0,1);
-	var blue = new Color(0,0,1,1);
-	var yellow = new Color(1,0.92,0.016,1);
-	var green = new Color(0,1,0,1);
-	var purple = new Color(204.0/255, 0.0, 204.0/255);
+	var red = new Color(1, 0, 102.0/255,1);
+	// var blue = new Color(0,0,1,1);
+	var yellow = new Color(1,204.0/255, 0,1);
+	var green = new Color(0.0/255, 204.0/255, 153.0/255,1);
+	var blue = new Color(51.0/255, 153.0, 255.0/255);
 	colorDict.Add(0, yellow);
 	colorDict.Add(1, red);
 	colorDict.Add(2, green);
-	colorDict.Add(3, purple);
+	colorDict.Add(3, blue);
 	totalColorNum = 4;
 	// FIRST_COLOR = RED;
 	// SECOND_COLOR = GREEN;
@@ -132,12 +138,13 @@ function Start () {
 	isScaling = false;
 	isTilting = false;
 
-	TIME_STAMP_LENGTH = SCREEN_WIDTH/9.5;
+	TIME_STAMP_NUM = 8;
+
+	TIME_STAMP_LENGTH = SCREEN_WIDTH/TIME_STAMP_NUM;
 
 	if(TIME_STAMP_LENGTH>VERTICAL_ADJUST) TIME_STAMP_LENGTH = VERTICAL_ADJUST;
 
-	TIME_STAMP_SCALE = TIME_STAMP_LENGTH/scoreCirclePrefab.GetComponent(Renderer).bounds.size.x;
-	TIME_STAMP_NUM = 6;
+	TIME_STAMP_SCALE = TIME_STAMP_LENGTH/timeStampPrefab.GetComponent(Renderer).bounds.size.x;
 	timeStamps = new Array();
 
 	UIStartingPosition = VERTICAL_ADJUST + ROWS*CENTER_SCALE*centerPrefab.GetComponent(Renderer).bounds.size.x+LEAF_WIDTH;
@@ -162,9 +169,9 @@ function Start () {
 	while(isDeckLock());
 	applyNewColorAtAllLeaves();
 
-	setIdleCurve();
-	setEnlargeCurve();
-	setShrinkCurve();
+	// setIdleCurve();
+	// setEnlargeCurve();
+	// setShrinkCurve();
 
 	needCheckDeadlock = false;
 
@@ -179,6 +186,7 @@ function Start () {
 	UIScaleFactorX = Screen.width / SCREEN_WIDTH;
 	UIScaleFactorY = Screen.height / SCREEN_HEIGHT;
 	adjustButtons();
+
 	// Debug.Log(SCREEN_HEIGHT);
 	// Debug.Log(SCREEN_WIDTH);
 	// hidePauseButton();
@@ -212,9 +220,15 @@ function Update () {
 			isScoreAdded = false;
 	}
 
-	if(isOneSecPass() && !isPause){
-			subtractOneSec();
+	if(isFlipIntervalPass() && !isPause){
+			// subtractOneSec();
+			flipOneTimeStamp();
 			updateAccumTime();
+	}
+
+	if(needFlipTimeStamp && !inUserRotation && !isScaling){
+		unFlipTimeStamps();
+		needFlipTimeStamp = false;
 	}
 
 	if(isGameOver()){
@@ -241,11 +255,11 @@ function initiateScoreBoard(){
 	var startingX = (SCREEN_WIDTH-SCORE_CIRCLE_SCALE*3*scoreCirclePrefab.GetComponent(Renderer).bounds.size.x)/2+scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE/2- SCREEN_WIDTH/2 ;
 	var startingPosition = new Vector3(startingX, SCREEN_HEIGHT/2 - EMPTY_SPACE/2, 0);
 	// Debug.Log(startingPosition);
-	var object1 = createScoreCircle(startingPosition, new Color(1,0,0,1),2);
+	var object1 = createScoreCircle(startingPosition, colorDict[1],2);
 	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
-	var object2 = createScoreCircle(startingPosition, new Color(1,0.92,0.016,1),1);
+	var object2 = createScoreCircle(startingPosition, colorDict[0],1);
 	startingPosition += new Vector3(scoreCirclePrefab.GetComponent(Renderer).bounds.size.x*SCORE_CIRCLE_SCALE, 0,0);
-	var object3 = createScoreCircle(startingPosition, new Color(0,1,0,1),0);
+	var object3 = createScoreCircle(startingPosition, colorDict[2],0);
 	scoreBoard.Push(object1);
 	scoreBoard.Push(object2);
 	scoreBoard.Push(object3);
@@ -532,7 +546,7 @@ function handleRotatation(index:int, vector:Vector3){
 
 	if(isRotationValid(index)){
 		// Debug.Log("valid");
-
+		needFlipTimeStamp = true;
 		leftLeafScript.startRotate(vector);
 		rightLeafScript.startRotate(vector);
 		topLeafScript.startRotate(vector);
@@ -544,6 +558,12 @@ function handleRotatation(index:int, vector:Vector3){
 		botLeafScript.orientation = Vector3(0,1,0);
 
 		handleEventsAfterRotatingCenter(index);
+
+		// addScores(3);
+		// scoreToAdded = 3;
+		// isScoreAdded = true;
+
+
 		needCheckDeadlock = true;
 		lastSuccessfulRotationTime = Time.time;
 		// Debug.Log(lastSuccessfulRotationTime);
@@ -641,7 +661,25 @@ function getBotRowNumFromCenterNum(index:int):int{
 }
 
 function handleEventsAfterRotatingCenter(centerIndex:int){
-	var addedScore = getComboNum(centerIndex);
+	var leftCol:int = getLeftColNumFromCenterNum(centerIndex);
+	var leftCombo = getFlipingLeavesFromCol(leftCol);
+	var rightCol:int = getRightColNumFromCenterNum(centerIndex);
+	var rightCombo = getFlipingLeavesFromCol(rightCol);
+	var topRow:int = getTopRowNumFromCenterNum(centerIndex);
+	var topCombo = getFlipingLeavesFromRow(topRow);
+	var botRow:int = getBotRowNumFromCenterNum(centerIndex);
+	var botCombo = getFlipingLeavesFromRow(botRow);
+
+	var addedScore = leftCombo.length+rightCombo.length+topCombo.length+botCombo.length;
+
+	comboNum = 0;
+	if(leftCombo.length>0) comboNum++;
+	if(rightCombo.length>0) comboNum++;
+	if(topCombo.length>0) comboNum++;
+	if(botCombo.length>0) comboNum++;
+
+	// Debug.Log(comboNum);
+
 	addScores(addedScore);
 	scoreToAdded = addedScore;
 	isScoreAdded = true;
@@ -768,26 +806,26 @@ function triggerMatchAnimationAtArray(array:Array){
 	}
 }
 
-function setIdleCurve(){
-	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0,CENTER_SCALE), new Keyframe(1,CENTER_SCALE));
-	var ac:AnimationClip = Resources.Load("Animations/idle");
-	ac.SetCurve("", Transform, "localScale.x", curve);
-	ac.SetCurve("", Transform, "localScale.y", curve);
-}
+// function setIdleCurve(){
+// 	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0,CENTER_SCALE), new Keyframe(1,CENTER_SCALE));
+// 	var ac:AnimationClip = Resources.Load("Animations/idle");
+// 	ac.SetCurve("", Transform, "localScale.x", curve);
+// 	ac.SetCurve("", Transform, "localScale.y", curve);
+// }
 
-function setEnlargeCurve(){
-	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0, CENTER_SCALE*1.2), new Keyframe(0.3, CENTER_SCALE*2));
-	var ac:AnimationClip = Resources.Load("Animations/enlarge");
-	ac.SetCurve("", Transform, "localScale.x", curve);
-	ac.SetCurve("", Transform, "localScale.y", curve);
-}
+// function setEnlargeCurve(){
+// 	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0, CENTER_SCALE*1.2), new Keyframe(0.3, CENTER_SCALE*2));
+// 	var ac:AnimationClip = Resources.Load("Animations/enlarge");
+// 	ac.SetCurve("", Transform, "localScale.x", curve);
+// 	ac.SetCurve("", Transform, "localScale.y", curve);
+// }
 
-function setShrinkCurve(){
-	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0,CENTER_SCALE*2), new Keyframe(0.3, CENTER_SCALE*1.2));
-	var ac:AnimationClip = Resources.Load("Animations/shrink");
-	ac.SetCurve("", Transform, "localScale.x", curve);
-	ac.SetCurve("", Transform, "localScale.y", curve);
-}
+// function setShrinkCurve(){
+// 	var curve:AnimationCurve = new AnimationCurve(new Keyframe(0,CENTER_SCALE*2), new Keyframe(0.3, CENTER_SCALE*1));
+// 	var ac:AnimationClip = Resources.Load("Animations/shrink");
+// 	ac.SetCurve("", Transform, "localScale.x", curve);
+// 	ac.SetCurve("", Transform, "localScale.y", curve);
+// }
 
 function isDeckLock():boolean{
 	for(var i:int=0; i<CENTER_NUM; i++){
@@ -884,28 +922,47 @@ function getColorFromCombo(array:Array):int{
 	return (array[0] as GameObject).GetComponent(LeafScript).color;
 }
 
-function initiateTimeStamps(){
-	var startingX = (SCREEN_WIDTH-8.5*TIME_STAMP_LENGTH)/2+TIME_STAMP_LENGTH/2;
-	var startingPosition = new Vector3(-SCREEN_WIDTH/2+startingX, -SCREEN_HEIGHT/2+VERTICAL_ADJUST/2, 0);
-	for(var i:int=0; i<TIME_STAMP_NUM; i++){
-		var object = createTimeStamp(startingPosition, new Color(1,0,0,1), TIME_STAMP_SCALE);
-		timeStamps.Push(object);
-		startingPosition += Vector3(TIME_STAMP_LENGTH*1.5 ,0,0);
-	}
+// function initiateTimeStamps(){
+// 	var startingX = (SCREEN_WIDTH-8.5*TIME_STAMP_LENGTH)/2+TIME_STAMP_LENGTH/2;
+// 	var startingPosition = new Vector3(-SCREEN_WIDTH/2+startingX, -SCREEN_HEIGHT/2+VERTICAL_ADJUST/2, 0);
+// 	for(var i:int=0; i<TIME_STAMP_NUM; i++){
+// 		var object = createTimeStamp(startingPosition, colorDict[1], TIME_STAMP_SCALE);
+// 		timeStamps.Push(object);
+// 		startingPosition += Vector3(TIME_STAMP_LENGTH*1.5 ,0,0);
+// 	}
 
-	(timeStamps[2] as GameObject).GetComponent(SpriteRenderer).color = new Color(1,0.92,0.016,1);
-	(timeStamps[3] as GameObject).GetComponent(SpriteRenderer).color = new Color(1,0.92,0.016,1);
-	(timeStamps[4] as GameObject).GetComponent(SpriteRenderer).color = new Color(0,1,0,1);
-	(timeStamps[5] as GameObject).GetComponent(SpriteRenderer).color = new Color(0,1,0,1);
+// 	(timeStamps[2] as GameObject).GetComponent(SpriteRenderer).color = colorDict[0];
+// 	(timeStamps[3] as GameObject).GetComponent(SpriteRenderer).color = colorDict[0];
+// 	(timeStamps[4] as GameObject).GetComponent(SpriteRenderer).color = colorDict[2];
+// 	(timeStamps[5] as GameObject).GetComponent(SpriteRenderer).color = colorDict[2];
+// }
+
+function initiateTimeStamps(){
+	var startingX = -SCREEN_WIDTH/2 + TIME_STAMP_LENGTH/2 + (SCREEN_WIDTH - TIME_STAMP_NUM *TIME_STAMP_LENGTH)/2;
+	var startingY = -SCREEN_HEIGHT/2 + VERTICAL_ADJUST/2;
+	var startingPosition = new Vector3(startingX, startingY, 0);
+	for(var i:int=0; i<TIME_STAMP_NUM; i++){
+		var object = createTimeStamp(startingPosition, colorDict[1], TIME_STAMP_SCALE);
+		timeStamps.Push(object);
+		startingPosition += Vector3(TIME_STAMP_LENGTH, 0,0);
+	}
 }
+
+
+// function createTimeStamp(vector:Vector3, color:Color, scale:float):GameObject{
+// 	var object = Instantiate(timeStampPrefab, vector, Quaternion.identity) as GameObject;
+// 	var script = object.GetComponent(TimeStampScript);
+// 	object.GetComponent(SpriteRenderer).color = color;
+// 	object.transform.localScale *= scale;
+// 	script.ORIGINAL_SCALE = object.transform.localScale.x;
+// 	script.SHRINK_AMOUNT = script.ORIGINAL_SCALE/2;
+// 	return object;
+// }
 
 function createTimeStamp(vector:Vector3, color:Color, scale:float):GameObject{
 	var object = Instantiate(timeStampPrefab, vector, Quaternion.identity) as GameObject;
-	var script = object.GetComponent(TimeStampScript);
 	object.GetComponent(SpriteRenderer).color = color;
 	object.transform.localScale *= scale;
-	script.ORIGINAL_SCALE = object.transform.localScale.x;
-	script.SHRINK_AMOUNT = script.ORIGINAL_SCALE/2;
 	return object;
 }
 
@@ -913,23 +970,72 @@ function isOneSecPass():boolean{
 	if(Time.time - accuTime >=1) return true;
 }
 
+function isFlipIntervalPass():boolean{
+	if(Time.time - accuTime >= flipInterval) return true;
+}
+
 function updateAccumTime(){
 	accuTime = Time.time;
 }
 
-function subtractOneSec(){
-	for(var i:int=timeStamps.length-1; i>=0; i--){
+// function subtractOneSec(){
+// 	for(var i:int=timeStamps.length-1; i>=0; i--){
+// 		var object:GameObject = timeStamps[i] as GameObject;
+// 		var script = object.GetComponent(TimeStampScript);
+// 		if(script.number!=0){
+// 			script.number--;
+// 			script.textObject.text = script.number + "";
+// 			if(script.number==0){
+// 				script.textObject.text = "";
+// 				script.hide();
+// 			}
+// 			break;
+// 		} 
+// 	}
+// }
+
+function flipOneTimeStamp(){
+	// Debug.Log("flipOneTimeStamp called");
+	for(var i:int=timeStamps.length-1; i>=0;i--){
 		var object:GameObject = timeStamps[i] as GameObject;
-		var script = object.GetComponent(TimeStampScript);
-		if(script.number!=0){
-			script.number--;
-			script.textObject.text = script.number + "";
-			if(script.number==0){
-				script.textObject.text = "";
-				script.hide();
-			}
-			break;
-		} 
+		var script = object.GetComponent(NewTimeStampScript);
+		if(!script.isFliped() && !script.isRed()){
+			script.startFlip();
+			return;
+		}
+	}
+
+	for(i=timeStamps.length-1; i>=0;i--){
+		object = timeStamps[i] as GameObject;
+		script = object.GetComponent(NewTimeStampScript);
+		if(!script.isRed()){
+			script.setRed();
+			return;
+		}
+	}
+}
+
+function unFlipTimeStamps(){
+	var count = comboNum;
+
+	for(var i:int=0; i<timeStamps.length; i++){
+		var object:GameObject = timeStamps[i] as GameObject;
+		var script = object.GetComponent(NewTimeStampScript);
+		if(script.isRed()){
+			script.setYellow();
+			count--;
+			if(count<=0) return;
+		}
+	}
+
+	for(i=0; i<timeStamps.length; i++){
+		object = timeStamps[i] as GameObject;
+		script = object.GetComponent(NewTimeStampScript);
+		if(script.isFliped()){
+			script.startUnFlip();
+			count--;
+			if(count<=0) return;
+		}
 	}
 }
 
@@ -952,10 +1058,13 @@ function resetAllLeaves(){
 }
 
 function isGameOver():boolean{
-	return (timeStamps[0] as GameObject).GetComponent(TimeStampScript).number==0;
+	return (timeStamps[0] as GameObject).GetComponent(NewTimeStampScript).isDoneBecomeRed();
+	// return false;
 }
 
 function handleGameOver(){
+	hideAllUIInterface();
+
 	updateHighestScore();
 	resetAllLeaves();
 	foldAllLeaves();
@@ -963,12 +1072,14 @@ function handleGameOver(){
 	yield WaitForSeconds(0.5);
 	showPlayButton();
 	showHighestScore();
-	hidePauseButton();
+	// hidePauseButton();
 }
 
 
 function pauseGame(){
-	hidePauseButton();
+	// hidePauseButton();
+	hideAllUIInterface();
+
 	showRestartButton();
 	showResumeButton();
 	foldAllLeaves();
@@ -976,6 +1087,7 @@ function pauseGame(){
 	isPause = true;
 	yield WaitForSeconds(0.5);
 	showTutorial();
+	lastSuccessfulRotationTime = Time.time;
 }
 
 function _pauseGame(){
@@ -983,14 +1095,16 @@ function _pauseGame(){
 }
 
 function resumeGame(){
+	hideAllUIInterface();
+	showPauseButton();
 	yield WaitForSeconds(0.2);
 	openAllLeaves();
+	yield WaitForSeconds(0.75);
 	enableAllColliders();
 	isPause = false;
-	showPauseButton();
-	hideRestartButton();
-	hideResumeButton();
-	hideTutorial();
+	// hideRestartButton();
+	// hideResumeButton();
+	// hideTutorial();
 }
 
 function _resumeGame(){
@@ -1009,12 +1123,14 @@ function shuffleAndApplyNewColorAtLeaves(){
 }
 
 function startGame(){
-	hidePlayButton();
+	hideAllUIInterface();
+	// hidePlayButton();
 	showPauseButton();
-	hideTutorial();
+	// hideTutorial();
 
 	yield WaitForSeconds(0.2);
 
+	lastSuccessfulRotationTime = Time.time;
 	shuffleAndApplyNewColorAtLeaves();
 	isGameOverHandled = false;
 	gameStartTime = Time.time;
@@ -1024,18 +1140,21 @@ function startGame(){
 	resetTime();
 	resetScore();
 	shrinkEnlargeFlipScoreBoard();
-	hideHighestScore();
+	isPause = false;
+	// hideHighestScore();
 }
 
 function restartGame(){
+	hideAllUIInterface();
 	//handle buttons
-	hideResumeButton();
-	hideRestartButton();
+	// hideResumeButton();
+	// hideRestartButton();
 	showPauseButton();
-	hideTutorial();
+	// hideTutorial();
 
 	yield WaitForSeconds(0.2);
 
+	lastSuccessfulRotationTime = Time.time;
 	shuffleAndApplyNewColorAtLeaves();
 	isGameOverHandled = false;
 	isPause = false;
@@ -1114,19 +1233,20 @@ function toggleAllLeaves(){
 }
 
 function showAllTimeStamps(){
+	// Debug.Log("showAllTimeStamps called");
 	for(var i:int=0; i<timeStamps.length; i++){
-		(timeStamps[i] as GameObject).GetComponent(TimeStampScript).show();
+		(timeStamps[i] as GameObject).GetComponent(NewTimeStampScript).reset();
 	}
 }
 
 function hideAllTimeStamps(){
 	for(var i:int=0; i<timeStamps.length; i++){
-		(timeStamps[i] as GameObject).GetComponent(TimeStampScript).hide();
+		(timeStamps[i] as GameObject).GetComponent(NewTimeStampScript).startFlip();
 	}
 }
 
 function resetTime(){
-	setTimeForTimeStamps();
+	// setTimeForTimeStamps();
 	gameStartTime = Time.time;
 	accuTime = Time.time;
 }
@@ -1157,6 +1277,17 @@ function showHighestScoreOnScoreBoard(){
 		var script = object.GetComponent(ScoreCircleScript);
 		script.updateTextWithValue(scores);
 	}
+}
+
+function hideAllUIInterface(){
+	hideTutorial();
+	hidePauseButton();
+	hideRestartButton();
+	hideResumeButton();
+	hidePlayButton();
+	// hideAllTimeStamps();
+	hideHighestScore();
+	// foldAllLeaves();
 }
 
 function hidePauseButton(){
@@ -1223,7 +1354,7 @@ function enableButton(button:UnityEngine.UI.Button){
 
 
 function setLowerButtonPosition(button:UnityEngine.UI.Button, xPosition:float){
-	var yAdjust:float = VERTICAL_ADJUST+LEAF_WIDTH/2 + 2*CENTER_HALF_LENGTH;
+	var yAdjust:float = VERTICAL_ADJUST+LEAF_WIDTH/2 + 1*CENTER_HALF_LENGTH;
 	var yAdjustUI:float = yAdjust * UIScaleFactorY;
 	var xPositionUI:float = xPosition * UIScaleFactorX;
 	// Debug.Log(UIScaleFactorY);
